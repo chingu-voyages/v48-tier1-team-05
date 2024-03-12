@@ -41,3 +41,6 @@ coding!
 - Terri Fricker: [GitHub](https://github.com/terrifricker)
 
 - Matthew Neie: [GitHub](https://github.com/MatthewNeie) / [LinkedIn](https://linkedin.com/in/matthew-neie)
+
+- Yusuke Nagaoka: [GitHub](https://github.com/yusuken1121)
+
