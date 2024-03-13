@@ -44,3 +44,5 @@ coding!
 
 - Yusuke Nagaoka: [GitHub](https://github.com/yusuken1121)
 
+- Ki Kang: [GitHub](https://github.com/kikang20)
+
