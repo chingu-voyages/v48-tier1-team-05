@@ -92,6 +92,14 @@ main {
 
 }
 
+.results-end {
+  text-align: center;
+}
+
+.results-end hr {
+  width: 50vw;
+}
+
 .source-information {
   width: 942px;
   margin: 100px 0;
