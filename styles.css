@@ -31,6 +31,28 @@ body {
 
 }
 
+.source-information {
+  width: 942px;
+  margin: 100px 0;
+  padding: 44px 35px;
+  border-radius: 13px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #DBDBDB;
+  
+}
+.source-information-text {
+  margin: 0 0 10px;
+}
+.source-information-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
 .footer {
 
 }
