@@ -84,6 +84,26 @@ main {
 .options-bar {
 
 }
+.search-bar {
+  width: 40vw;
+  margin: 50px;
+  padding: 20px;
+  border: 3px solid black;
+  border-radius: 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-bar input {
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: 300;
+  border: none;
+}
+.search-bar button {
+  background-color: transparent;
+  border: none;
+}
 
 .dinosaur-cards {
 
