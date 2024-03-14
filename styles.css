@@ -12,11 +12,68 @@ body {
   font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
 .navbar {
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+  width: 100%;
+  
 }
 
-.background-picture {
+.navbar img {
+  width: 100px;
+  height: auto;
+  color: pink;
+  padding-left: 30px;
+  
+}
 
+nav ul {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  
+}
+
+.navbar nav ul li a {
+  color: white; 
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+
+
+.heading {
+  margin: 100px auto;
+  padding: 44px 35px;
+  border-radius: 13px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: black;
+  text-align: center;
+  color: white;
+  width: 90%;
+  margin-top: -2em;
+}
+
+.main_about {
+  margin: 100px auto;
+  padding: 44px 35px;
+  border-radius: 13px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #DBDBDB;
+  text-align: center;
+  color: black;
+  width: 60%;
+}
+
+
+.background-picture {
+  background-color: #DBDBDB;
+  height: 75vh; 
 }
 
 .announcement {
