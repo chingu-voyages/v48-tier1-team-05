@@ -43,7 +43,12 @@ nav ul {
   margin-right: 30px;
 }
 
-
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 .heading {
   margin: 100px auto;
@@ -70,10 +75,9 @@ nav ul {
   width: 60%;
 }
 
-
-.background-picture {
-  background-color: #DBDBDB;
-  height: 75vh; 
+.background-picture img {
+  width: 100vw;
+  background-size: cover;
 }
 
 .announcement {
