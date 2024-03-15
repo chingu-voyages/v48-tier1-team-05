@@ -123,5 +123,15 @@ main {
   align-items: center;
 }
 .footer {
+  background-color: black;
+  width: 100vw;
+}
 
+.footer-list {
+  list-style: none;
+}
+
+.footer-list li {
+  display: inline-block;
+  color: white;
 }
