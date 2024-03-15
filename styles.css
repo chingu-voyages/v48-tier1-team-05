@@ -80,10 +80,50 @@ main {
   background-size: cover;
 }
 
-
-.options-bar {
-
+.nav-bar {
+  margin: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+.decorative-line {
+  width: 100vw;
+  height: 4px;
+  position: absolute;
+  top: 55px;
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 0%, 1) 33%, hsla(0, 0%, 0%, 1) 66%, hsla(0, 0%, 100%, 1) 100%);;
+}
+.tabs {
+  width: 55vw;
+  height: 110px;
+  padding: 0 16px;
+  background-color: white;
+  border: 3px solid #4D4D4D;
+  border-radius: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  z-index: 2;
+}
+.tab {
+  flex: 1;
+  height: 77px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50px;
+  font-family: Inter, non-serif;
+  font-size: 1.35rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+.tab:hover,
+.tab:focus {
+  background-color: black;
+  color: white;
+}
+
 .search-bar {
   width: 40vw;
   margin: 50px;
