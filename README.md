@@ -47,3 +47,6 @@ coding!
 - Ki Kang: [GitHub](https://github.com/kikang20)
 
 - David G: [GitHub](https://github.com/david-nyc-pm)
+
+- Daeha Ko: [GIthub] (https://github.com/daehako) / [LinkedIn]
+(https://linkedin.com/in/daehako)
