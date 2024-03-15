@@ -118,10 +118,12 @@ main {
   font-weight: 300;
   cursor: pointer;
 }
-.tab:hover {
+.tab:hover,
+.tab:focus {
   background-color: black;
   color: white;
 }
+
 .search-bar {
   width: 40vw;
   margin: 50px;
