@@ -25,6 +25,14 @@ document.addEventListener("DOMContentLoaded", function() {
         onSearch(dinosaurs);
     });
 });
+
+/* Function countDiet(arrayOfDinosaurs)
+ * Takes an array of dinosaurs as a parameter
+ * and returns a javascript object whose keys are the different diets of
+ * the dinosaurs in the array and whose values are the number of dinosaurs
+ * in the array that have that particular diet.
+ * For example {herbivorous: 41, carnivorous: 28, omnivorous: 6}            */
+
 function countDiet(arrayOfDinosaurs) {
   const dietCount = {}
 
