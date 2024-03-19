@@ -25,3 +25,18 @@ document.addEventListener("DOMContentLoaded", function() {
         onSearch(dinosaurs);
     });
 });
+function countDiet(arrayOfDinosaurs) {
+  const dietCount = {}
+
+  dinosaurs.forEach(dinosaur => {
+    if (Object.keys(dietCount).includes(dinosaur.diet)) {
+      dietCount[dinosaur.diet] += 1
+    } else {
+      dietCount[dinosaur.diet] = 1
+    }
+  })
+  console.log(dietCount)
+  return dietCount
+}
+
+countDiet()
