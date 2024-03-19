@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function countDiet(arrayOfDinosaurs) {
   const dietCount = {}
 
-  dinosaurs.forEach(dinosaur => {
+  arrayOfDinosaurs.forEach(dinosaur => {
     if (Object.keys(dietCount).includes(dinosaur.diet)) {
       dietCount[dinosaur.diet] += 1
     } else {
@@ -39,4 +39,4 @@ function countDiet(arrayOfDinosaurs) {
   return dietCount
 }
 
-countDiet()
+countDiet(dinosaurs)
