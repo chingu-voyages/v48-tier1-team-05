@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+  width: 100%;
+  
+}
+
+.navbar img {
+  width: 100px;
+  height: auto;
+  color: pink;
+  padding-left: 30px;
+  
+}
+
+nav ul {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  
+}
+
+.navbar nav ul li a {
+  color: white; 
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.heading {
+  margin: 100px auto;
+  padding: 44px 35px;
+  border-radius: 13px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: black;
+  text-align: center;
+  color: white;
+  width: 90%;
+  margin-top: -2em;
+}
+
+.main_about {
+  margin: 100px auto;
+  padding: 44px 35px;
+  border-radius: 13px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #DBDBDB;
+  text-align: center;
+  color: black;
+  width: 60%;
+}
+
+.background-picture img {
+  width: 100vw;
+  background-size: cover;
+}
+
+.nav-bar {
+  margin: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.decorative-line {
+  width: 100vw;
+  height: 4px;
+  position: absolute;
+  top: 55px;
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 0%, 1) 33%, hsla(0, 0%, 0%, 1) 66%, hsla(0, 0%, 100%, 1) 100%);;
+}
+.tabs {
+  width: 55vw;
+  height: 110px;
+  padding: 0 16px;
+  background-color: white;
+  border: 3px solid #4D4D4D;
+  border-radius: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  z-index: 2;
+}
+.tab {
+  flex: 1;
+  height: 77px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50px;
+  font-family: Inter, non-serif;
+  font-size: 1.35rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+.tab:hover,
+.tab:focus {
+  background-color: black;
+  color: white;
+}
+
+.search-bar {
+  width: 40vw;
+  margin: 50px;
+  padding: 20px;
+  border: 3px solid black;
+  border-radius: 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-bar input {
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: 300;
+  border: none;
+}
+.search-bar button {
+  background-color: transparent;
+  border: none;
+}
+
+.dinosaur-cards {
+
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content 200px;
+}
+
+dt {
+  grid-column-start: 1;
+  padding-bottom: 20px;
+  margin-right: -30px;
+
+}
+
+dd {
+  grid-column-start: 2;
+}
+
+span {
+  background-color: #777;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+* {box-sizing: border-box;}
+
+
+.card-container {  
+  border: 5px solid #777;
+  border-radius: .5em;
+  padding: 10px;
+  display: inline-flex;
+  padding: 20px;
+  font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.card-container-1 {
+  width: 300px;
+  min-height: 300px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fff;
+  border: 2px solid #fff;
+}
+
+.card-container-2 {
+  width: 300px;
+  min-height: 300px;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-end {
+  text-align: center;
+}
+
+.results-end hr {
+  width: 50vw;
+}
+
+.source-information {
+  width: 942px;
+  margin: 100px 0;
+  padding: 44px 35px;
+  border-radius: 13px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #DBDBDB;
+  
+}
+.source-information-text {
+  margin: 0 0 10px;
+}
+.source-information-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.footer {
+  background-color: black;
+  width: 100vw;
+}
+
+.footer-list {
+  list-style: none;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin: auto 20px;
+
+}
+
+.footer-list li {
+  display: inline-block;
+  color: white;
+}

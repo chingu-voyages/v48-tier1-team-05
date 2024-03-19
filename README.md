@@ -1,3 +1,20 @@
+## Our Team
+
+- Daeha Ko: [GIthub](https://github.com/daehako) / [LinkedIn](https://linkedin.com/in/daehako)
+
+- David G: [GitHub](https://github.com/david-nyc-pm)
+
+- Ki Kang: [GitHub](https://github.com/kikang20)
+
+- Matthew Neie: [GitHub](https://github.com/MatthewNeie) / [LinkedIn](https://linkedin.com/in/matthew-neie)
+
+- Terri Fricker: [GitHub](https://github.com/terrifricker)
+
+- Yusuke Nagaoka: [GitHub](https://github.com/yusuken1121)
+  
+    
+    
+
 # voyage-tasks
 
 Your project's `readme` is as important to success as your code. For 
@@ -26,18 +43,3 @@ Meeting Agenda templates (located in the `/docs` directory in this repo):
 - Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
 - Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
 - Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
-
-## Our Team
-
-Everyone on your team should add their name along with a link to their GitHub
-& optionally their LinkedIn profiles below. Do this in Sprint #1 to validate
-your repo access and to practice PR'ing with your team *before* you start
-coding!
-
-- Teammate name #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-
-   ...
-- Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-
-- Matthew Neie: [GitHub](https://github.com/MatthewNeie) / [LinkedIn](https://linkedin.com/in/matthew-neie)
