@@ -1,3 +1,5 @@
+import dinosaurs from './dinosaurs.json' assert { type: 'json' }
+
 function onSearch(names) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
     const results = document.getElementById("search-result");
