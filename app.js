@@ -26,6 +26,44 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+/* Function createTableData(arrayOfAllDinosaurs)
+ * Takes the array of all dinosaurs as a parameter
+ * and returns an array of javascript data objects that contains the data needed
+ * for each graph with the following structure:
+ *   [
+ *     { mesozoic: {herbivorous: 41, carnivorous: 28, omnivorous: 6} }
+ *     { cretaceous: {carnivorous: 17, herbivorous: 22, omnivorous: 5} }
+ *     { jurassic: {herbivorous: 19, carnivorous: 8} }
+ *     { triassic: {carnivorous: 3, omnivorous: 1} }
+ *   ]
+ * So, an array of time period objects, that each contain a diet object                 
+ * This function calls the filterByTimePeriod function and the countDiet function. */
+
+function createTableData(arrayOfAllDinosaurs) {
+  // declare the return array
+  let allTableData = []
+
+  // call the filterByTimePeriod function to create four time period arrays of dinosaurs
+  const dinosuarsByTimePeriod = filterByTimePeriod(arrayOfAllDinosaurs)
+  console.log('array of dinosaurs filtered by time period', dinosuarsByTimePeriod)
+
+  // for each of the four arrays create a data object with the diet data
+  dinosuarsByTimePeriod.forEach(timePeriod => {
+    for (const time in timePeriod) {
+      let key = time
+      let value = countDiet(timePeriod[key])
+      console.log(`${time} diet object`, value)
+      let dataObject = {[key]: value}
+      console.log(`${time} data object`, dataObject)
+      // push the data object to the return array
+      allTableData.push(dataObject)
+    }
+  })
+
+  console.log('array of data objects', allTableData)
+  return allTableData
+}
+
 /* Function filterByTimePeriod(arrayOfDinosaurs)
  * Called by creteTableData function
  * Takes an array of dinosaurs as a parameter
