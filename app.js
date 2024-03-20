@@ -1,4 +1,8 @@
 import dinosaurs from './dinosaurs.json' assert { type: 'json' }
+console.log('all dinosaurs from dinosaur.json', dinosaurs)
+
+const tableData = createTableData(dinosaurs)
+
 
 function onSearch(names) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
@@ -111,6 +115,3 @@ function countDiet(arrayOfDinosaurs) {
   })
   return dietObject
 }
-
-console.log('all dinosaurs', dinosaurs)
-createTableData(dinosaurs)
