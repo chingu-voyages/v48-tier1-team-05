@@ -34,17 +34,16 @@ document.addEventListener("DOMContentLoaded", function() {
  * For example {herbivorous: 41, carnivorous: 28, omnivorous: 6}            */
 
 function countDiet(arrayOfDinosaurs) {
-  const dietCount = {}
+  const dietObject = {}
 
   arrayOfDinosaurs.forEach(dinosaur => {
-    if (Object.keys(dietCount).includes(dinosaur.diet)) {
-      dietCount[dinosaur.diet] += 1
+    if (Object.keys(dietObject).includes(dinosaur.diet)) {
+      dietObject[dinosaur.diet] += 1
     } else {
-      dietCount[dinosaur.diet] = 1
+      dietObject[dinosaur.diet] = 1
     }
   })
-  console.log(dietCount)
-  return dietCount
+  return dietObject
 }
 
 countDiet(dinosaurs)
