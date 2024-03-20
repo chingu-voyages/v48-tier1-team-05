@@ -112,4 +112,5 @@ function countDiet(arrayOfDinosaurs) {
   return dietObject
 }
 
-countDiet(dinosaurs)
+console.log('all dinosaurs', dinosaurs)
+createTableData(dinosaurs)
