@@ -26,6 +26,33 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+/* Function filterByTimePeriod(arrayOfDinosaurs)
+ * Called by creteTableData function
+ * Takes an array of dinosaurs as a parameter
+ * and returns an array of javascript objects where each object key is the 
+ * name of a time period and the value of each is the filtered array of just 
+ * the dinosaurs from that time period.
+ *   [
+ *     {mesozoic: [array of mesozoic dinosaurs] }
+ *     {cretaceous: [array of cretaceous dinosaurs] }
+ *     {jurassic: [array of jurassic dinosaurs] }
+ *     {triassic: [array of triassic dinosaurs] }
+ *   ]                                                                           */
+
+function filterByTimePeriod(arrayOfDinosaurs) {
+  let mesozoicDinosaurs = arrayOfDinosaurs
+  let cretaceousDinosaurs = arrayOfDinosaurs.filter(dinosaur => dinosaur.whenLived.includes('Cretaceous'))
+  let jurassicDinosaurs = arrayOfDinosaurs.filter(dinosaur => dinosaur.whenLived.includes('Jurassic'))
+  let triassicDinosaurs = arrayOfDinosaurs.filter(dinosaur => dinosaur.whenLived.includes('Triassic'))
+  let dinosuarsByTimePeriod = [
+    { mesozoic: mesozoicDinosaurs },
+    { cretaceous: cretaceousDinosaurs },
+    { jurrasic: jurassicDinosaurs },
+    { triassic: triassicDinosaurs },
+  ]
+  return dinosuarsByTimePeriod
+}
+
 /* Function countDiet(arrayOfDinosaurs)
  * Takes an array of dinosaurs as a parameter
  * and returns a javascript object whose keys are the different diets of
