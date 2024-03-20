@@ -2,6 +2,7 @@ import dinosaurs from './dinosaurs.json' assert { type: 'json' }
 console.log('all dinosaurs from dinosaur.json', dinosaurs)
 
 const tableData = createTableData(dinosaurs)
+console.log('tableData = ', tableData)
 
 
 function onSearch(names) {
