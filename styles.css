@@ -11,6 +11,15 @@ body {
   font-family: Inter, sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
+
+#loader {
+  background: white url(assets/6K8M.gif) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -252,10 +261,12 @@ span {
   justify-content: space-between;
   box-sizing: border-box;
   margin: auto 20px;
+  
 
 }
 
-.footer-list li {
+.footer-list li  {
   display: inline-block;
   color: white;
 }
+
