@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </head>
 
 <body>
@@ -57,15 +57,15 @@
             name="input"
             placeholder="Type to begin searching ..."
             aria-label="Search for dinosaurs by name"
-            size="25" />
-        <button type="button"><img src="./assets/search_icon_material_design.png" alt=""></button>
+        />
+        <button type="button"><img src="./assets/search_google_icon.png" alt=""></button>
     </form>
-    <div class="dinosaur-cards">
+    <div class="dinosaur-cards" id="all-dinos-container">
 
     </div>
 
     <div class="card-container">
-        <div class="card-container-1">
+        <div class="card-container-1" id="search-result">
         <dl>
             <dt><span>Type</span></dt>
             <dd>Copy</dd>
@@ -106,7 +106,7 @@
                 <li><p><a href="https://github.com/chingu-voyages/v48-tier1-team-05">Github</a></p></li>
             </ul>
         </div>
-
+    <script src ="fetch.js"></script>
 </body>
 
 </html>
