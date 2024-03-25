@@ -55,7 +55,7 @@ dinoElement.appendChild(dinoDetails)
                 const closeButton = dinoDetails.querySelector('.close-button')
                 closeButton.addEventListener('click', async (event) => {
                     event.preventDefault()
-                    playerDetails.remove()
+                    dinoDetails.remove()
                 })
 
             })
