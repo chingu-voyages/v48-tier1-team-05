@@ -3,9 +3,12 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #ccc;
-        stroke: #fff;
+        fill: #2a7035;
+        stroke: #2a7035;
         stroke-width: .5px;
+      }
+      .dinosaurs {
+        fill: #2a7035;
       }
     </style>
   </defs>
