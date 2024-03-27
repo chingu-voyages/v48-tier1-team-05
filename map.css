@@ -42,7 +42,7 @@ body{
     width: 50vw;
     margin-top: 10vh;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     flex-wrap: wrap;
 }
 .button-container button{
