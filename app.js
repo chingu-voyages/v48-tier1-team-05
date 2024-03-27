@@ -4,8 +4,6 @@ console.log('all dinosaurs from dinosaur.json', dinosaurs)
 const tableData = createTableData(dinosaurs)
 console.log('tableData = ', tableData)
 
-const dinoContainer = document.getElementById('all-dinos-container');
-
 function onSearch(names) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
     const results = document.getElementById("search-result");
