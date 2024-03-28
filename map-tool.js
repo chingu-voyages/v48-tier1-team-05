@@ -29,6 +29,20 @@ fetch("https://chinguapi.onrender.com/dinosaurs")
 // show country information on hover
 function showCountryInfo(event){
   if (countryCodes[event.target.id]) {
+    // update number of dinosaurs and country name in list-container
+    number.innerHTML = dinosaursPerCountry[countryCodes[event.target.id]]
+    country.innerHTML = countryCodes[event.target.id]
+
+    // filter for just the dinosaurs in that country
+    let dinosaursInCountry = dinosaurs.filter(dinosaur => dinosaur.foundIn.includes(countryCodes[event.target.id]))
+
+    // update dinosaur-list in list-container
+    dinosaurList.replaceChildren()
+    dinosaursInCountry.forEach(dinosaur => {
+      let newDinosaur = document.createElement('li')
+      newDinosaur.innerHTML = dinosaur.name
+      dinosaurList.appendChild(newDinosaur)
+    })
   }
 }
 
