@@ -58,6 +58,7 @@ function showCountryInfo(event){
   }
 }
 
+// helper function
 function countDinosaursPerCountry(dinosaurs) {
   const countryObject = {}
 
