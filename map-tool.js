@@ -52,6 +52,45 @@ function countDinosaursPerCountry(dinosaurs) {
   return countryObject
 }
 
+// on hover, the event.target.id is a country code
+const countryCodes = {
+  AQ: 'Antarctica',
+  AR: 'Argentina',
+  AT: 'Austria',
+  AU: 'Australia',
+  BE: 'Belgium',
+  BR: 'Brazil',
+  CA: 'Canada',
+  CH: 'Switzerland',
+  CL: 'Chile',
+  CN: 'China',
+  DE: 'Germany',
+  DZ: 'Algeria',
+  EG: 'Egypt',
+  ES: 'Spain',
+  FR: 'France',
+  GB: 'United Kingdom',
+  IN: 'India',
+  JP: 'Japan',
+  KZ: 'Kazakhstan',
+  LS: 'Lesotho',
+  MA: 'Morocco',
+  MG: 'Madagascar',
+  MN: 'Mongolia',
+  MW: 'Malawi',
+  NE: 'Niger',
+  PT: 'Portugal',
+  RO: 'Romania',
+  RU: 'Russia',
+  TN: 'Tunisia',
+  TZ: 'Tanzania',
+  US: 'USA',
+  UY: 'Uruguay',
+  UZ: 'Uzbekistan',
+  ZA: 'South Africa',
+  ZW: 'Zimbabwe'
+}
+
 // object holding the svg text for each continent
 const allMaps = {
   africa: `<?xml version="1.0" encoding="UTF-8"?>
