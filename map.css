@@ -1,13 +1,19 @@
+/* 
 *{
     margin: 0;
     padding: 0;
 }
-body{
+ body{
     font-family: Inter, sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+    font-feature-settings: 'liga' 1, 'calt' 1;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+} */
+
+.dinosaur-maps {
+    margin: 0;
+    padding: 0;
 }
 
 .flexcolumn-container{
