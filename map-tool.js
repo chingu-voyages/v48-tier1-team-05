@@ -1,3 +1,7 @@
+// global variables needed
+let dinosaurs = []
+let dinosaursPerCountry = {}
+
 // DOM elements needed
 const buttonContainer = document.querySelector('.button-container')
 const mapContainer = document.querySelector('.map-container')
