@@ -12,7 +12,7 @@ const fetchData = async () =>{
     }
 }
 
-const dinoContainer = document.getElementById('flip-card');
+const dinoContainer = document.getElementById('all-dinos-container');
 
 const getSingleDino = async (dinoId) => {
     try {
@@ -31,9 +31,14 @@ const displayAllDinos = (dinoList) => {
         dinoContainer.innerHTML = ""
         dinoList.forEach((dino) => {
             const dinoElement = document.createElement('div')
-            dinoElement.classList.add('flip-card-inner')
+            dinoElement.classList.add('flip-card')
 
 dinoContainer.appendChild(dinoElement)
+
+            const flipCardInner = document.createElement('div')
+            flipCardInner.classList.add('flip-card-inner')
+
+dinoElement.appendChild(flipCardInner)
 
             const dinoFront = document.createElement('div')
             dinoFront.classList.add('flip-card-front')
@@ -41,25 +46,25 @@ dinoContainer.appendChild(dinoElement)
                 <h2>${dino.name}</h2>
                 <img height="350" src = "${dino.imageSrc}" alt ="error"></img>
                 `
-dinoElement.appendChild(dinoFront)
+flipCardInner.appendChild(dinoFront)
 
             const dinoDetails = document.createElement('div')
             dinoDetails.classList.add('flip-card-back')
                 const fetchDetails = getSingleDino(`${dino.id}`)
                 dinoDetails.innerHTML = `
-                    <p>Name: ${dino.name}</p>
-                    <p>Species: ${dino.typeSpecies}</p>
-                    <p>Type: ${dino.typeOfDinosaur}</p>
-                    <p>Found In: ${dino.foundIn}</>
-                    <p>Taxonnomy: ${dino.taxonomy}</p>
-                    <p>Diet: ${dino.diet}</p>
-                    <p>Length: ${dino.length}ft.</p>
-                    <p>Named By: ${dino.namedBy}</p>
-                    <p>Description: ${dino.description}</p>
-                    `
+                <p>Name: ${dino.name}</p>
+                <p>Species: ${dino.typeSpecies}</p>
+                <p>Type: ${dino.typeOfDinosaur}</p>
+                <p>Found In: ${dino.foundIn}</>
+                <p>Taxonnomy: ${dino.taxonomy}</p>
+                <p>Diet: ${dino.diet}</p>
+                <p>Length: ${dino.length}ft.</p>
+                <p>Named By: ${dino.namedBy}</p>
+                <p>Description: ${dino.description}</p>
+                `
                 // console.log(fetchDetails)
         
-dinoElement.appendChild(dinoDetails)
+flipCardInner.appendChild(dinoDetails)
 
     })
     } catch {
@@ -68,8 +73,8 @@ dinoElement.appendChild(dinoDetails)
 };
 
 const init = async () => {
-    // const dinos = await fetchData()
-    displayAllDinos(dinosaurs);
+    const dinos = await fetchData()
+    displayAllDinos(dinos);
 }
 
 init()
