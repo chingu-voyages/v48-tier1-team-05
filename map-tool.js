@@ -26,6 +26,9 @@ fetch("https://chinguapi.onrender.com/dinosaurs")
     })
   .catch(error => console.log(error))
 
+// show country information on hover
+function showCountryInfo(event){
+}
 
 function countDinosaursPerCountry(dinosaurs) {
   const countryObject = {}
