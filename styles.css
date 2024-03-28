@@ -291,7 +291,9 @@ span {
   width: 70px;
   height: 70px;
 }
-
+.hidden {
+  display: none;
+}
 /* .footer-list {
   list-style: none;
   display:flex;
