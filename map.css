@@ -45,7 +45,7 @@ body{
     justify-content: center;
     flex-wrap: wrap;
 }
-.button-container button{
+.continent-button {
     background-color: white;
     border: 1px solid black;
     height: 64px;
@@ -55,7 +55,7 @@ body{
     cursor: pointer;
     border-radius: 10px;
 }
-.button-container button:hover{
+.continent-button:hover{
     background: black;
     color: white;
 }
