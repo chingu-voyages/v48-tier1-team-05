@@ -54,41 +54,38 @@
         </div>
     </nav>
     <form class="search-bar" role="search">
-        <input
-            type="search"
-            id="dinoSearch"
-            name="input"
-            placeholder="Type to begin searching ..."
-            aria-label="Search for dinosaurs by name"
-        />
-        <button type="button"><img src="./assets/search_google_icon.png" alt=""></button>
-    </form>
-    <div class="dinosaur-cards" id="all-dinos-container">
-
-    </div>
-
-    <div class="card-container">
-        <div class="card-container-1" id="search-result">
-        <dl>
-            <dt><span>Type</span></dt>
-            <dd>Copy</dd>
-            <dt><span>Length</span></dt>
-            <dd>Copy.</dd>
-            <dt><span>Diet</span></dt>
-            <dd>Copy.</dd>
-            <dt><span>Lived</span></dt>
-            <dd>Copy.</dd>
-            <dt><span>Species</span></dt>
-            <dd>Copy.</dd>
-            <dt><span>About</span></dt>
-            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </dd>
-        </dl>
-        </div>
+    
+    <!-- Dinosaur Profiles -->
+    <section class="dinosaur-profiles">
+        <form class="search-bar" role="search">
+            <input
+                type="search"
+                id="dinoSearch"
+                name="input"
+                placeholder="Type to begin searching ..."
+                aria-label="Search for dinosaurs by name"
+            />
+            <button type="button"><img src="./assets/search_google_icon.png" alt=""></button>
+        </form>
+        <div class="card-container">
+            <div class="card-container-1" id="search-result">
+                <dl>
+                    <dt><span>Type</span></dt>
+                    <dd>Copy</dd>
+                    <dt><span>Length</span></dt>
+                    <dd>Copy.</dd>
+                    <dt><span>Diet</span></dt>
+                    <dd>Copy.</dd>
+                    <dt><span>Lived</span></dt>
+                    <dd>Copy.</dd>
+                    <dt><span>Species</span></dt>
+                    <dd>Copy.</dd>
+                    <dt><span>About</span></dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </dd>
+                </dl>
+            </div>
             <div class="card-container-2"><img src="https://dummyimage.com/200x200/000/fff"></div>
-    </div>
-
-
-
+        </div> <!-- end card-container -->
         <div class="results-end">
             <p>End of results!</p>
             <hr />
@@ -101,26 +98,19 @@
                 <li><a href="https://www.nhm.ac.uk/discover/dino-directory.html">Dino Directory</a></li>
             </ul>
         </div>
-        <div class="footer">
-            <div class="footer-title">
-                <a href="#top">DINODAYS</a>
-            </div>
-            <div class="footer-container">
-                <p>Made by 
-                    <a target="_blank" href="https://github.com/daehako">@daehako</a>,
-                    <a target="_blank" href="https://github.com/david-nyc-pm">@david-nyc-pm</a>,
-                    <a target="_blank" href="https://github.com/MatthewNeie">@MatthewNeie</a>,
-                    <a target="_blank" href="https://github.com/kikang20">@kikang20</a>,
-                    <a target="_blank" href="https://github.com/terrifricker">@terrifricker</a>,
-                    <a target="_blank" href="https://github.com/yusuken1121">@yusuken1121</a>.
-                    Facilitated by Chingu.
-                </p>
-                <p>DINODAYS is open source! Find us on Github.</p>
-            </div>
-            <div class="footer-menubar">
-                <a href="#top"><img src="./assets/to-top-arrow.png" alt=""></a>
-            </div>
-        </div>
+    </section> <!-- end of dinosaur-profiles -->
+
+    <!-- Dinosaur Maps -->
+    <section class="dinosaur-maps hidden">
+    </section> <!-- end dinosaurs-map -->
+
+    <!-- Dinosaur Diets -->
+    <section class="dinosaur-diets hidden">
+        <h2>Dinosaur Diet Tool Coming Soon</h2>
+    </section>
+        <h2>Dinosaur Diet Tool Coming Soon</h2>
+    </section>
+
     <script src ="fetch.js"></script>
 </body>
 
