@@ -47,6 +47,7 @@ body{
 }
 .continent-button {
     background-color: white;
+    color: black;
     border: 1px solid black;
     height: 64px;
     padding: 5px;
