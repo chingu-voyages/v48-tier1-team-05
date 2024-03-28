@@ -16,6 +16,17 @@ function showContinentMap(event) {
   mapContainer.appendChild(newMap)
 }
 
+// fetch dinosaurs from api
+fetch("https://chinguapi.onrender.com/dinosaurs")
+  .then(response => response.json())
+  .then(data => {
+    dinosaurs = data
+    // find number of dinosaurs per country
+    dinosaursPerCountry = countDinosaursPerCountry(dinosaurs)
+    })
+  .catch(error => console.log(error))
+
+
 function countDinosaursPerCountry(dinosaurs) {
   const countryObject = {}
 
