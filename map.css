@@ -59,6 +59,10 @@ body{
     background: black;
     color: white;
 }
+.black-button {
+    background: black;
+    color: white;
+}
 
 .flexrow-container{
     display: flex;
