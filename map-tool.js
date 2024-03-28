@@ -4,6 +4,7 @@ let dinosaursPerCountry = {}
 
 // DOM elements needed
 const buttonContainer = document.querySelector('.button-container')
+const allButtons = document.querySelectorAll('.continent-button')
 const mapContainer = document.querySelector('.map-container')
 const number = document.querySelector('#number')
 const country = document.querySelector('#country')
@@ -12,8 +13,15 @@ const dinosaurList = document.querySelector('#dinsosaur-list')
 // add eventListeners
 buttonContainer.addEventListener("click", showContinentMap)
 mapContainer.addEventListener("mouseover", showCountryInfo)
+
 // show correct continent map when a button is clicked
 function showContinentMap(event) {
+  // remove black from all buttons
+  allButtons.forEach(button => button.classList.remove('black-button'))
+  let thisButton = document.querySelector(`#${event.target.id}`)
+  thisButton.classList.add('black-button')
+
+  // show correct continent map
   let newMap = document.createElement('div')
   newMap.innerHTML = allMaps[event.target.id]
   mapContainer.replaceChildren()
