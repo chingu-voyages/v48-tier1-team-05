@@ -6,29 +6,45 @@ console.log('tableData = ', tableData)
 
 const dinoContainer = document.getElementById('all-dinos-container');
 
-function onSearch(names) {
+const fetchData = async () =>{
+  try{
+      const res = await fetch("https://chinguapi.onrender.com/dinosaurs");
+      const data = await res.json();
+      return data;
+  }catch(err){
+      console.log("Fetch Error",err);
+  }
+}
+
+async function allDinosaurs() {
+  const apiData = await fetchData();
+  const allDinosaurs = dinosaurs.concat(apiData);
+  return allDinosaurs;
+}
+
+async function onSearch() {
+    const allDinos = await allDinosaurs();
     const search = document.getElementById("dinoSearch").value.toLowerCase();
     const results = document.getElementById("search-result");
     
-    const filtered = names.filter((name) => {
+    const filtered = allDinos.filter((dinosaur) => {
         if (!search) {
-            name.doesMatch = true;
-            return name;
+            dinosaur.doesMatch = true;
+            return true;
         } else {
-            const dinosaurs = name.name.toLowerCase();
-            const nameMatch = dinosaurs.includes(search);
-            name.doesMatch = nameMatch;
+            const name = dinosaur.name.toLowerCase();
+            const nameMatch = name.includes(search);
+            dinosaur.doesMatch = nameMatch;
             return nameMatch;
         }
     });
-    
-    console.log(filtered); 
+    console.log(filtered);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("dinoSearch");
     searchInput.addEventListener("input", function() {
-        onSearch(dinosaurs);
+        onSearch();
     });
 });
 
