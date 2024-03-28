@@ -1,6 +1,28 @@
 import dinosaurs from './dinosaurs.json' assert { type: 'json' }
 console.log('all dinosaurs from dinosaur.json', dinosaurs)
 
+/*** Tab Navigation ***/
+const allSections = document.querySelectorAll('section')
+const allTabs = document.querySelectorAll('.tab')
+const tabsContainer = document.querySelector('.tabs')
+tabsContainer.addEventListener("click", handleClick)
+
+function handleClick(event) {
+  console.log(event.target.name)
+  // manage tab color
+  allTabs.forEach(tab => tab.classList.remove('black-tab'))
+  let thisTab = document.querySelector(`button[name=${event.target.name}]`)
+  thisTab.classList.add('black-tab')
+  //manage sections
+  allSections.forEach(section => {
+    console.log("before adding hidden.. ", section)
+    section.classList.add("hidden")
+    console.log("after adding hidden.. ", section)
+  })
+  let thisSection = document.querySelector(`.${event.target.name}`)
+  console.log(thisSection)
+  thisSection.classList.remove("hidden")
+}
 
 /*** Dinosaur Profiles ***/
 const dinoContainer = document.getElementById('all-dinos-container');
