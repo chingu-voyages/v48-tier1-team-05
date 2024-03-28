@@ -28,6 +28,8 @@ fetch("https://chinguapi.onrender.com/dinosaurs")
 
 // show country information on hover
 function showCountryInfo(event){
+  if (countryCodes[event.target.id]) {
+  }
 }
 
 function countDinosaursPerCountry(dinosaurs) {
