@@ -1,6 +1,17 @@
 import dinosaurs from "./dinosaurs.json" assert { type: "json" };
 console.log(dinosaurs)
 
+const fetchData = async () =>{
+    try{
+        const res = await fetch("https://chinguapi.onrender.com/dinosaurs");
+        const data = await res.json();
+        console.log(data)
+        return data
+    }catch(err){
+        console.log("Fetch Error",err);
+    }
+}
+
 const dinoContainer = document.getElementById('flip-card');
 
 const getSingleDino = async (dinoId) => {
@@ -11,7 +22,7 @@ const getSingleDino = async (dinoId) => {
         console.log(dino)
         return dino
     } catch {
-        console.error(`trouble getting dinosaur #${dinoId}!`);
+        // console.error(`trouble getting dinosaur #${dinoId}!`);
     }
 };
 
@@ -46,7 +57,7 @@ dinoElement.appendChild(dinoFront)
                     <p>Named By: ${dino.namedBy}</p>
                     <p>Description: ${dino.description}</p>
                     `
-                console.log(fetchDetails)
+                // console.log(fetchDetails)
         
 dinoElement.appendChild(dinoDetails)
 
@@ -57,6 +68,7 @@ dinoElement.appendChild(dinoDetails)
 };
 
 const init = async () => {
+    // const dinos = await fetchData()
     displayAllDinos(dinosaurs);
 }
 
