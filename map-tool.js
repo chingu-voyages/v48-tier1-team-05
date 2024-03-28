@@ -5,6 +5,10 @@ let dinosaursPerCountry = {}
 // DOM elements needed
 const buttonContainer = document.querySelector('.button-container')
 const mapContainer = document.querySelector('.map-container')
+const number = document.querySelector('#number')
+const country = document.querySelector('#country')
+const dinosaurList = document.querySelector('#dinsosaur-list')
+
 // add eventListeners
 buttonContainer.addEventListener("click", showContinentMap)
 mapContainer.addEventListener("mouseover", showCountryInfo)
