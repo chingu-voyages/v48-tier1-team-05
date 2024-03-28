@@ -4,6 +4,13 @@ const mapContainer = document.querySelector('.map-container')
 // add eventListeners
 buttonContainer.addEventListener("click", showContinentMap)
 mapContainer.addEventListener("mouseover", showCountryInfo)
+// show correct continent map when a button is clicked
+function showContinentMap(event) {
+  let newMap = document.createElement('div')
+  newMap.innerHTML = allMaps[event.target.id]
+  mapContainer.replaceChildren()
+  mapContainer.appendChild(newMap)
+}
 
 // object holding the svg text for each continent
 const allMaps = {
