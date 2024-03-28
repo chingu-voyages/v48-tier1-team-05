@@ -9,6 +9,10 @@
       }
       .dinosaurs {
         fill: #2a7035;
+        cursor: pointer;
+      }
+      .dinosaurs:hover {
+        fill: #194520;
       }
     </style>
   </defs>

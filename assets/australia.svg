@@ -2,13 +2,14 @@
 <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 442.51 415.55">
   <defs>
     <style>
-      .cls-1 {
+      #Layer_1-2 {
         fill: #2a7035;
+        cursor: pointer;
         stroke: #2a7035;
         stroke-width: .5px;
       }
-      .dinosaurs {
-        fill: #2a7035;
+      #Layer_1-2:hover {
+        fill: #194520;
       }
     </style>
   </defs>
