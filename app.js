@@ -32,6 +32,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+//loader 
+const loader = document.getElementById("loader");
+window.addEventListener("load", function() {
+  setTimeout(function() {
+    loader.style.display = "none";
+  }, 1800); 
+});
+
 /*** Dinosaur Maps ***/
 // global variables needed
 // let dinosaurs = []
@@ -615,11 +623,3 @@ function countDiet(arrayOfDinosaurs) {
   })
   return dietObject
 }
-
-//loader 
-const loader = document.getElementById("loader");
-window.addEventListener("load", function() {
-  setTimeout(function() {
-    loader.style.display = "none";
-  }, 1800); 
-});
