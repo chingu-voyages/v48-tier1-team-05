@@ -12,6 +12,31 @@ function showContinentMap(event) {
   mapContainer.appendChild(newMap)
 }
 
+function countDinosaursPerCountry(dinosaurs) {
+  const countryObject = {}
+
+  dinosaurs.forEach(dinosaur => {
+    // if a dinosaur is found in more than one country
+    // make an array of all the countries it is found in
+    let locationsArray = []
+    if (dinosaur.foundIn.includes(',')) {
+      locationsArray = dinosaur.foundIn.split(', ')
+    } else {
+      locationsArray.push(dinosaur.foundIn)
+    }
+
+    // for each dinosaur's locations, increase count
+    locationsArray.forEach(location => {
+      if (Object.keys(countryObject).includes(location)) {
+        countryObject[location] += 1
+      } else {
+        countryObject[location] = 1
+      }
+    })
+  })
+  return countryObject
+}
+
 // object holding the svg text for each continent
 const allMaps = {
   africa: `<?xml version="1.0" encoding="UTF-8"?>
