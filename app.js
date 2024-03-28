@@ -526,6 +526,10 @@ const allMaps = {
 }
 
 
+/*** Dinosaurs Diets ***/
+const tableData = createTableData(dinosaurs)
+console.log('tableData = ', tableData)
+
 /* Function createTableData(arrayOfAllDinosaurs)
  * Takes the array of all dinosaurs as a parameter
  * and returns an array of javascript data objects that contains the data needed
