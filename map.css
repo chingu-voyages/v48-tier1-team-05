@@ -70,7 +70,7 @@ body{
 .map-container{
     width: 40vw;
 }
-.map-container img{
+svg {
     width: 80%;
 }
 .list-container{
