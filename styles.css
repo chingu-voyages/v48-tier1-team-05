@@ -325,6 +325,7 @@ span {
     justify-content: center;
     text-align: start;
     margin-left: 20px;
+    font-size: 14px;
   }
 
   .flip-card-back-right {
@@ -332,6 +333,7 @@ span {
     justify-content: center;
     display: flex;
     flex: 2;
+    margin-top: 10px;
   }
 
   .dino-description {

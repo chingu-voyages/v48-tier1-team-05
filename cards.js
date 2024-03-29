@@ -53,6 +53,11 @@ flipCardInner.appendChild(dinoFront)
 
 flipCardInner.appendChild(dinoDetails)
 
+            const dinoDetailsTop = document.createElement('div')
+                dinoDetailsTop.classList.add('flip-card-back-top')
+
+dinoDetails.appendChild(dinoDetailsTop)
+
             const dinoDetailsLeft = document.createElement('div')
             dinoDetailsLeft.classList.add('flip-card-back-left')
                 const fetchDetails = getSingleDino(`${dino.id}`)
@@ -67,17 +72,12 @@ flipCardInner.appendChild(dinoDetails)
                 `
                 // console.log(fetchDetails)
 
-                const dinoDetailsTop = document.createElement('div')
-                dinoDetailsTop.classList.add('flip-card-back-top')
-
-dinoDetails.appendChild(dinoDetailsTop)
-
 dinoDetailsTop.appendChild(dinoDetailsLeft)
 
             const dinoDetailsRight = document.createElement('div')
             dinoDetailsRight.classList.add('flip-card-back-right')
                 dinoDetailsRight.innerHTML = `
-                <img width="300" src = "${dino.imageSrc}" alt ="error"></img>
+                <img height="250" src = "${dino.imageSrc}" alt ="error"></img>
                 `
 dinoDetailsTop.appendChild(dinoDetailsRight)
 
