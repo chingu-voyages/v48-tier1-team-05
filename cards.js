@@ -50,9 +50,13 @@ flipCardInner.appendChild(dinoFront)
 
             const dinoDetails = document.createElement('div')
             dinoDetails.classList.add('flip-card-back')
+
+flipCardInner.appendChild(dinoDetails)
+
+            const dinoDetailsLeft = document.createElement('div')
+            dinoDetailsLeft.classList.add('flip-card-back-left')
                 const fetchDetails = getSingleDino(`${dino.id}`)
-                dinoDetails.innerHTML = `
-                <p>Name: ${dino.name}</p>
+                dinoDetailsLeft.innerHTML = `
                 <p>Species: ${dino.typeSpecies}</p>
                 <p>Type: ${dino.typeOfDinosaur}</p>
                 <p>Found In: ${dino.foundIn}</>
@@ -60,11 +64,32 @@ flipCardInner.appendChild(dinoFront)
                 <p>Diet: ${dino.diet}</p>
                 <p>Length: ${dino.length}ft.</p>
                 <p>Named By: ${dino.namedBy}</p>
-                <p>Description: ${dino.description}</p>
                 `
                 // console.log(fetchDetails)
+
+                const dinoDetailsTop = document.createElement('div')
+                dinoDetailsTop.classList.add('flip-card-back-top')
+
+dinoDetails.appendChild(dinoDetailsTop)
+
+dinoDetailsTop.appendChild(dinoDetailsLeft)
+
+            const dinoDetailsRight = document.createElement('div')
+            dinoDetailsRight.classList.add('flip-card-back-right')
+                dinoDetailsRight.innerHTML = `
+                <img width="300" src = "${dino.imageSrc}" alt ="error"></img>
+                `
+dinoDetailsTop.appendChild(dinoDetailsRight)
+
+            const dinoDetailsBottom = document.createElement('div')
+            dinoDetailsBottom.classList.add('flip-card-back-bottom')
+                dinoDetailsBottom.innerHTML = `
+                <p class="dino-description" >Description: ${dino.description}</p>
+                `
+
+dinoDetails.appendChild(dinoDetailsBottom)
         
-flipCardInner.appendChild(dinoDetails)
+// flipCardInner.appendChild(dinoDetails)
 
     })
     } catch {
