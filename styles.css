@@ -25,8 +25,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: black;
+  background-color: #05160F40;
   width: 100%;
+  margin: 0px;
   
 }
 
@@ -59,17 +60,28 @@ main {
   align-items: center;
 }
 
-.heading {
+.heading-container {
   margin: 100px auto;
-  padding: 44px 35px;
-  border-radius: 13px;
-  font-size: 20px;
-  font-weight: 400;
-  background-color: black;
+  padding: 1.75em 2.1875em;
+  border-radius: 0.8125em;
+  background-color: #002E19;
   text-align: center;
-  color: white;
-  width: 90%;
+  width: 80%;
   margin-top: -2em;
+}
+
+.heading-container-title {
+color: white;
+font-size: 1.25em;
+font-weight: 400;
+
+}
+
+.heading-container-subtitle {
+color: white;
+font-size: 0.875em;
+font-weight: 400;
+
 }
 
 .main_about {
