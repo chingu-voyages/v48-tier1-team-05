@@ -11,6 +11,9 @@ body {
   font-family: Inter, sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
+section {
+  margin-bottom: 100px;
+}
 
 #loader {
   background: white url(assets/6K8M.gif) no-repeat center center;
@@ -25,7 +28,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: black;
+  background-color: #05160F40;
+  border-bottom: 4px solid #0A281A70; 
   width: 100%;
   
 }
@@ -59,17 +63,28 @@ main {
   align-items: center;
 }
 
-.heading {
+.heading-container {
   margin: 100px auto;
-  padding: 44px 35px;
-  border-radius: 13px;
-  font-size: 20px;
-  font-weight: 400;
-  background-color: black;
+  padding: 1.75em 2.1875em;
+  border-radius: 0.8125em;
+  background-color: #002E19;
   text-align: center;
-  color: white;
-  width: 90%;
+  width: 80%;
   margin-top: -2em;
+}
+
+.heading-container-title {
+color: white;
+font-size: 1.25em;
+font-weight: 400;
+
+}
+
+.heading-container-subtitle {
+color: white;
+font-size: 0.875em;
+font-weight: 400;
+
 }
 
 .main_about {
@@ -131,6 +146,13 @@ main {
 .tab:focus {
   background-color: black;
   color: white;
+}
+
+.dinosaur-profiles {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .search-bar {
@@ -229,7 +251,7 @@ span {
 
 .source-information {
   width: 942px;
-  margin: 100px 0;
+  margin-top: 100px;
   padding: 44px 35px;
   border-radius: 13px;
   font-size: 20px;
@@ -291,7 +313,14 @@ span {
   width: 70px;
   height: 70px;
 }
-
+.black-button,
+.black-tab {
+    background: black;
+    color: white;
+}
+.hidden {
+  display: none;
+}
 /* .footer-list {
   list-style: none;
   display:flex;
