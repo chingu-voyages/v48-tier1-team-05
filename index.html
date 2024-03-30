@@ -13,29 +13,37 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="map.css">
     <script type="module" src="app.js"></script>
+    <script type="module" src="cards.js"></script>
 </head>
 
 <body id ="top">
     <!-- Top of Page -->
     <div class="top-of-page-section">
-        <div id="loader"></div>
+        <!-- <div id="loader"></div> -->
         <div class="navbar">
             <img src="" alt="LOGO">
             <nav>
+            <!--
                 <ul>
                     <li><a href="Link">Link</a></li>
                     <li><a href="Link">Link</a></li>
                     <li><a href="Link">Link</a></li>
                 </ul>
+            -->
             </nav>
         </div>
         <main>
             <div class="background-picture">
-                <img src="https://dummyimage.com/1200x500/f008f0/fff"> 
+                <img src="assets/dino-home-image.jpg"> 
             </div>
-            <div class="heading">
-                <h1>Website heading</h1>
-                <h2>Subheading </h2>
+            <div class="heading-container">
+            <div class="heading-container-title">
+                <h1>Digging into Dinosaurs</h1>
+            </div>
+            <div class="heading-container-subtitle">
+                <h2>Dive into the ancient world of dinosaurs, where colossal creatures
+                    roamed the earth millions of years ago!</h2>
+            </div>
             </div>
             <div class="main_about">
                 <p>AboutAboutAboutAboutAboutAboutAboutAboutAbout
@@ -55,7 +63,7 @@
             </div>
         </nav>
     </div>
-    
+  
     <!-- Dinosaur Profiles -->
     <section class="dinosaur-profiles">
         <form class="search-bar" role="search">
@@ -85,6 +93,7 @@
                     <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </dd>
                 </dl>
             </div>
+
             <div class="card-container-2"><img src="https://dummyimage.com/200x200/000/fff"></div>
         </div> <!-- end card-container -->
         <div class="results-end">
@@ -205,6 +214,7 @@
                 </div>
             </div>
         </div>
+
     </section> <!-- end dinosaurs-map -->
 
     <!-- Dinosaur Diets -->
@@ -233,6 +243,7 @@
             <a href="#top"><img src="./assets/to-top-arrow.png" alt=""></a>
         </div>
     </div> <!-- end of footer -->
+
     <script src ="fetch.js"></script>
 </body>
 </html>

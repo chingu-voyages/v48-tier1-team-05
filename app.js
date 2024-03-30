@@ -24,7 +24,7 @@ function handleClick(event) {
   thisSection.classList.remove("hidden")
 }
 
-/*** Dinosaur Profiles ***/
+
 const dinoContainer = document.getElementById('all-dinos-container');
 
 const fetchData = async () =>{
