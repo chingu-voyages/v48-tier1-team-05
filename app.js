@@ -8,19 +8,15 @@ const tabsContainer = document.querySelector('.tabs')
 tabsContainer.addEventListener("click", handleClick)
 
 function handleClick(event) {
-  console.log(event.target.name)
   // manage tab color
   allTabs.forEach(tab => tab.classList.remove('black-tab'))
   let thisTab = document.querySelector(`button[name=${event.target.name}]`)
   thisTab.classList.add('black-tab')
   //manage sections
   allSections.forEach(section => {
-    console.log("before adding hidden.. ", section)
     section.classList.add("hidden")
-    console.log("after adding hidden.. ", section)
   })
   let thisSection = document.querySelector(`.${event.target.name}`)
-  console.log(thisSection)
   thisSection.classList.remove("hidden")
 }
 
@@ -186,22 +182,18 @@ function createTableData(arrayOfAllDinosaurs) {
 
   // call the filterByTimePeriod function to create four time period arrays of dinosaurs
   const dinosuarsByTimePeriod = filterByTimePeriod(arrayOfAllDinosaurs)
-  console.log('array of dinosaurs filtered by time period', dinosuarsByTimePeriod)
 
   // for each of the four arrays create a data object with the diet data
   dinosuarsByTimePeriod.forEach(timePeriod => {
     for (const time in timePeriod) {
       let key = time
       let value = countDiet(timePeriod[key])
-      console.log(`${time} diet object`, value)
       let dataObject = {[key]: value}
-      console.log(`${time} data object`, dataObject)
       // push the data object to the return array
       allTableData.push(dataObject)
     }
   })
-
-  console.log('array of data objects', allTableData)
+  
   return allTableData
 }
 
