@@ -159,7 +159,7 @@ function createChart(data) {
   new Chart(graph, {
     type: 'doughnut',
     data: {
-      labels: ['Herbivorous', 'Carnivorous', 'Omnivourous'],
+      labels: ['Herbivorous', 'Carnivorous', 'Omnivorous'],
       datasets: [{
         data: [41, 28, 6],
         borderWidth: 1,
