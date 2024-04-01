@@ -43,3 +43,10 @@ h1 {
 img {
     margin: 20px;
 }
+
+.chart-container {
+    max-width: 40rem;
+    padding auto;
+    margin: 25vh auto;
+}
+
