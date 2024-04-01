@@ -25,6 +25,7 @@ function handleClick(event) {
 }
 
 
+/*** Dinosaur Profiles ***/
 const dinoContainer = document.getElementById('all-dinos-container');
 
 function onSearch(names) {
@@ -148,6 +149,7 @@ function countDinosaursPerCountry(dinosaurs) {
   return countryObject
 }
 
+/*** Dinosaurs Diets ***/
 
 function createChart(tableData) {
   const graph = document.getElementById('graph');
