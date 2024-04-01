@@ -35,14 +35,18 @@ h1 {
     padding: 3px 20px;
     flex: 2;
 }
-.chart-container {
-    width: 200px;
-    height: 300px;
+.image-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#graph {
-    padding: 20px;
+img {
+    margin: 20px;
+}
+
+.chart-container {
+    max-width: 40rem;
+    padding auto;
+    margin: 25vh auto;
 }
 

@@ -8,20 +8,23 @@ const tabsContainer = document.querySelector('.tabs')
 tabsContainer.addEventListener("click", handleClick)
 
 function handleClick(event) {
+  console.log(event.target.name)
   // manage tab color
   allTabs.forEach(tab => tab.classList.remove('black-tab'))
   let thisTab = document.querySelector(`button[name=${event.target.name}]`)
   thisTab.classList.add('black-tab')
   //manage sections
   allSections.forEach(section => {
+    console.log("before adding hidden.. ", section)
     section.classList.add("hidden")
+    console.log("after adding hidden.. ", section)
   })
   let thisSection = document.querySelector(`.${event.target.name}`)
+  console.log(thisSection)
   thisSection.classList.remove("hidden")
 }
 
 
-/*** Dinosaur Profiles ***/
 const dinoContainer = document.getElementById('all-dinos-container');
 
 function onSearch(names) {
@@ -58,10 +61,7 @@ window.addEventListener("load", function() {
   }, 1800); 
 });
 
-
 /*** Dinosaur Maps ***/
-/* large data variables at end of file */
-
 // global variables needed
 let dinosaurArray = []
 let dinosaursPerCountry = {}
@@ -148,86 +148,6 @@ function countDinosaursPerCountry(dinosaurs) {
   return countryObject
 }
 
-/*** Dinosaurs Diets ***/
-const tableData = createTableData(dinosaurs)
-console.log('tableData = ', tableData)
-createChart(tableData)
-
-function createChart(data) {
-  const graph = document.getElementById('graph');
-
-  new Chart(graph, {
-    type: 'doughnut',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3],
-        borderWidth: 1,
-        hoverOffset: 4
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-}
-
-
-function createTableData(arrayOfAllDinosaurs) {
-  // declare the return array
-  let allTableData = []
-
-  // call the filterByTimePeriod function to create four time period arrays of dinosaurs
-  const dinosuarsByTimePeriod = filterByTimePeriod(arrayOfAllDinosaurs)
-
-  // for each of the four arrays create a data object with the diet data
-  dinosuarsByTimePeriod.forEach(timePeriod => {
-    for (const time in timePeriod) {
-      let key = time
-      let value = countDiet(timePeriod[key])
-      let dataObject = {[key]: value}
-      // push the data object to the return array
-      allTableData.push(dataObject)
-    }
-  })
-
-  return allTableData
-}
-
-// helper functions
-function filterByTimePeriod(arrayOfDinosaurs) {
-  let mesozoicDinosaurs = arrayOfDinosaurs
-  let cretaceousDinosaurs = arrayOfDinosaurs.filter(dinosaur => dinosaur.whenLived.includes('Cretaceous'))
-  let jurassicDinosaurs = arrayOfDinosaurs.filter(dinosaur => dinosaur.whenLived.includes('Jurassic'))
-  let triassicDinosaurs = arrayOfDinosaurs.filter(dinosaur => dinosaur.whenLived.includes('Triassic'))
-  let dinosuarsByTimePeriod = [
-    { mesozoic: mesozoicDinosaurs },
-    { cretaceous: cretaceousDinosaurs },
-    { jurrasic: jurassicDinosaurs },
-    { triassic: triassicDinosaurs },
-  ]
-  return dinosuarsByTimePeriod
-}
-
-function countDiet(arrayOfDinosaurs) {
-  const dietObject = {}
-
-  arrayOfDinosaurs.forEach(dinosaur => {
-    if (Object.keys(dietObject).includes(dinosaur.diet)) {
-      dietObject[dinosaur.diet] += 1
-    } else {
-      dietObject[dinosaur.diet] = 1
-    }
-  })
-  return dietObject
-}
-
-/***  Dinosaur Maps Tool data variables ***/
 // on hover, the event.target.id is a country code
 const countryCodes = {
   AQ: 'Antarctica',
@@ -632,4 +552,95 @@ const allMaps = {
       </g>
     </g>
   </svg>`
+}
+
+
+/*** Dinosaurs Diets ***/
+const tableData = createTableData(dinosaurs)
+console.log('tableData = ', tableData)
+
+/* Function createTableData(arrayOfAllDinosaurs)
+ * Takes the array of all dinosaurs as a parameter
+ * and returns an array of javascript data objects that contains the data needed
+ * for each graph with the following structure:
+ *   [
+ *     { mesozoic: {herbivorous: 41, carnivorous: 28, omnivorous: 6} }
+ *     { cretaceous: {carnivorous: 17, herbivorous: 22, omnivorous: 5} }
+ *     { jurassic: {herbivorous: 19, carnivorous: 8} }
+ *     { triassic: {carnivorous: 3, omnivorous: 1} }
+ *   ]
+ * So, an array of time period objects, that each contain a diet object                 
+ * This function calls the filterByTimePeriod function and the countDiet function. */
+
+function createTableData(arrayOfAllDinosaurs) {
+  // declare the return array
+  let allTableData = []
+
+  // call the filterByTimePeriod function to create four time period arrays of dinosaurs
+  const dinosuarsByTimePeriod = filterByTimePeriod(arrayOfAllDinosaurs)
+  console.log('array of dinosaurs filtered by time period', dinosuarsByTimePeriod)
+
+  // for each of the four arrays create a data object with the diet data
+  dinosuarsByTimePeriod.forEach(timePeriod => {
+    for (const time in timePeriod) {
+      let key = time
+      let value = countDiet(timePeriod[key])
+      console.log(`${time} diet object`, value)
+      let dataObject = {[key]: value}
+      console.log(`${time} data object`, dataObject)
+      // push the data object to the return array
+      allTableData.push(dataObject)
+    }
+  })
+
+  console.log('array of data objects', allTableData)
+  return allTableData
+}
+
+/* Function filterByTimePeriod(arrayOfDinosaurs)
+ * Called by creteTableData function
+ * Takes an array of dinosaurs as a parameter
+ * and returns an array of javascript objects where each object key is the 
+ * name of a time period and the value of each is the filtered array of just 
+ * the dinosaurs from that time period.
+ *   [
+ *     {mesozoic: [array of mesozoic dinosaurs] }
+ *     {cretaceous: [array of cretaceous dinosaurs] }
+ *     {jurassic: [array of jurassic dinosaurs] }
+ *     {triassic: [array of triassic dinosaurs] }
+ *   ]                                                                           */
+
+function filterByTimePeriod(arrayOfDinosaurs) {
+  let mesozoicDinosaurs = arrayOfDinosaurs
+  let cretaceousDinosaurs = arrayOfDinosaurs.filter(dinosaur => dinosaur.whenLived.includes('Cretaceous'))
+  let jurassicDinosaurs = arrayOfDinosaurs.filter(dinosaur => dinosaur.whenLived.includes('Jurassic'))
+  let triassicDinosaurs = arrayOfDinosaurs.filter(dinosaur => dinosaur.whenLived.includes('Triassic'))
+  let dinosuarsByTimePeriod = [
+    { mesozoic: mesozoicDinosaurs },
+    { cretaceous: cretaceousDinosaurs },
+    { jurrasic: jurassicDinosaurs },
+    { triassic: triassicDinosaurs },
+  ]
+  return dinosuarsByTimePeriod
+}
+
+/* Function countDiet(arrayOfDinosaurs)
+ * Called by creteTableData function
+ * Takes an array of dinosaurs as a parameter
+ * and returns a javascript diet object whose keys are the different diets of
+ * the dinosaurs in the array and whose values are the number of dinosaurs
+ * in the array that have that particular diet.
+ * For example {herbivorous: 41, carnivorous: 28, omnivorous: 6}            */
+
+function countDiet(arrayOfDinosaurs) {
+  const dietObject = {}
+
+  arrayOfDinosaurs.forEach(dinosaur => {
+    if (Object.keys(dietObject).includes(dinosaur.diet)) {
+      dietObject[dinosaur.diet] += 1
+    } else {
+      dietObject[dinosaur.diet] = 1
+    }
+  })
+  return dietObject
 }
