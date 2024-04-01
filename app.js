@@ -58,6 +58,7 @@ window.addEventListener("load", function() {
   }, 1800); 
 });
 
+
 /*** Dinosaur Maps ***/
 /* large data variables at end of file */
 
@@ -150,8 +151,9 @@ function countDinosaursPerCountry(dinosaurs) {
 /*** Dinosaurs Diets ***/
 const tableData = createTableData(dinosaurs)
 console.log('tableData = ', tableData)
+createChart(tableData)
 
-function createChart(tableData) {
+function createChart(data) {
   const graph = document.getElementById('graph');
 
   new Chart(graph, {
@@ -193,7 +195,7 @@ function createTableData(arrayOfAllDinosaurs) {
       allTableData.push(dataObject)
     }
   })
-  
+
   return allTableData
 }
 
@@ -224,8 +226,6 @@ function countDiet(arrayOfDinosaurs) {
   })
   return dietObject
 }
-
-
 
 /***  Dinosaur Maps Tool data variables ***/
 // on hover, the event.target.id is a country code
