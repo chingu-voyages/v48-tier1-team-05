@@ -149,9 +149,10 @@ function countDinosaursPerCountry(dinosaurs) {
 }
 
 
-const ctx = document.getElementById('myChart');
+function createChart(tableData) {
+  const graph = document.getElementById('graph');
 
-new Chart(ctx, {
+  new Chart(graph, {
     type: 'doughnut',
     data: {
       labels: ['Red', 'Blue', 'Yellow'],
@@ -170,6 +171,7 @@ new Chart(ctx, {
       }
     }
   });
+}
 
 // on hover, the event.target.id is a country code
 const countryCodes = {
