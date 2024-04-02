@@ -1,5 +1,24 @@
 import { countryCodes, allMaps } from "./map_data.js"
 
+
+async function fetchData() {
+  try {
+    const res = await fetch("https://chinguapi.onrender.com/dinosaurs");
+    const data = await res.json();
+
+    return data
+
+  } catch(err) {
+      console.log("Fetch Error",err);
+  }
+}
+
+async function allDinosaurs() {
+  const apiData = await fetchData();
+  const allDinosaurs = dinosaurs.concat(apiData);
+  return allDinosaurs;
+}
+
 /*** Tab Navigation ***/
 const allSections = document.querySelectorAll('section')
 const allTabs = document.querySelectorAll('.tab')
@@ -23,22 +42,10 @@ function handleClick(event) {
 /*** Dinosaur Profiles ***/
 const dinoContainer = document.getElementById('all-dinos-container');
 
-const fetchData = async () => {
-  try {
-    const res = await fetch("https://chinguapi.onrender.com/dinosaurs");
-    const data = await res.json();
-    return data;
-  } catch (err) {
-    console.log("Fetch Error", err);
-  }
-}
-
-
 async function onSearch() {
   const data = await fetchData();
   const search = document.getElementById("dinoSearch").value.toLowerCase();
   const resultContainer = document.getElementById("search-result");
-
   const filtered = data.filter((dinosaur) => {
     if (!search) {
       dinosaur.doesMatch = true;
