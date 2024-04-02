@@ -44,7 +44,6 @@ dinoElement.appendChild(flipCardInner)
             dinoFront.classList.add('flip-card-front')
             dinoFront.innerHTML = `
                 <h2>${dino.name}</h2>
-                <img height="350" src = "${dino.imageSrc}" alt ="error"></img>
                 `
 flipCardInner.appendChild(dinoFront)
 
@@ -52,11 +51,6 @@ flipCardInner.appendChild(dinoFront)
             dinoDetails.classList.add('flip-card-back')
 
 flipCardInner.appendChild(dinoDetails)
-
-            const dinoDetailsTop = document.createElement('div')
-                dinoDetailsTop.classList.add('flip-card-back-top')
-
-dinoDetails.appendChild(dinoDetailsTop)
 
             const dinoDetailsLeft = document.createElement('div')
             dinoDetailsLeft.classList.add('flip-card-back-left')
@@ -69,31 +63,22 @@ dinoDetails.appendChild(dinoDetailsTop)
                 <p>Diet: ${dino.diet}</p>
                 <p>Length: ${dino.length}ft.</p>
                 <p>Named By: ${dino.namedBy}</p>
+                <p class="dino-description" >Description: ${dino.description}</p>
                 `
                 // console.log(fetchDetails)
 
-dinoDetailsTop.appendChild(dinoDetailsLeft)
+dinoDetails.appendChild(dinoDetailsLeft)
 
             const dinoDetailsRight = document.createElement('div')
             dinoDetailsRight.classList.add('flip-card-back-right')
                 dinoDetailsRight.innerHTML = `
                 <img height="250" src = "${dino.imageSrc}" alt ="error"></img>
                 `
-dinoDetailsTop.appendChild(dinoDetailsRight)
-
-            const dinoDetailsBottom = document.createElement('div')
-            dinoDetailsBottom.classList.add('flip-card-back-bottom')
-                dinoDetailsBottom.innerHTML = `
-                <p class="dino-description" >Description: ${dino.description}</p>
-                `
-
-dinoDetails.appendChild(dinoDetailsBottom)
-        
-// flipCardInner.appendChild(dinoDetails)
+dinoDetails.appendChild(dinoDetailsRight)
 
     })
     } catch {
-        console.error('trouble rendering dinosaurs!');
+        console.error('trouble rendering dinosaurs');
     }
 };
 

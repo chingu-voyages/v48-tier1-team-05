@@ -299,24 +299,20 @@ span {
   .flip-card-front {
     background-color: lightblue;
     color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
   }
   
   /* Style the back side */
   .flip-card-back {
-    background-color: dodgerblue;
-    color: white;
+    background-color: white;
+    color: black;
     transform: rotateY(180deg);
     display: flex;
-    flex-direction: column;
-  }
-
-  .flip-card-back-top {
-    flex: 1;
-    display: flex;
-  }
-
-  .flip-card-back-bottom {
-    flex: 1;
+    border: 2px solid black;
   }
 
   .flip-card-back-left {
@@ -324,7 +320,8 @@ span {
     align-items: center;
     justify-content: center;
     text-align: start;
-    margin-left: 20px;
+    margin-left: 30px;
+    margin-top: 30px;
     font-size: 14px;
   }
 
@@ -332,10 +329,30 @@ span {
     align-items: center;
     justify-content: center;
     display: flex;
-    flex: 2;
+    flex: 1;
     margin-top: 10px;
+    margin-right: 10px;
   }
 
   .dino-description {
     font-size: 12px;
+  }
+
+
+  /*I'm having trouble getting the nth child to work for flip-card-front and flip-card-back.
+    Maybe it is because this can only work on the most parent div which is flip-card. I'm not sure, but here is a start. MN */
+  .flip-card:nth-child(4n + 1) {
+    background-color: rgb(14, 14, 131);
+  }
+
+  .flip-card:nth-child(4n + 2) {
+    background-color: rgb(3, 87, 3);
+  }
+
+  .flip-card:nth-child(4n + 3) {
+    background-color: maroon;
+  }
+
+  .flip-card:nth-child(4n) {
+    background-color: rgb(202, 59, 8);
   }
