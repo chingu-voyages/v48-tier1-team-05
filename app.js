@@ -138,11 +138,6 @@ window.addEventListener("load", function () {
 
 
 /*** Dinosaur Maps ***/
-/* large data variables at end of file */
-
-// global variables needed
-let dinosaurArray = []
-let dinosaursPerCountry = {}
 
 // DOM elements needed
 const buttonContainer = document.querySelector('.button-container')
@@ -170,15 +165,7 @@ function showContinentMap(event) {
   mapContainer.appendChild(newMap)
 }
 
-// fetch dinosaurs from api
-fetch("https://chinguapi.onrender.com/dinosaurs")
-  .then(response => response.json())
-  .then(data => {
-    dinosaurArray = data
-    // find number of dinosaurs per country
-    dinosaursPerCountry = countDinosaursPerCountry(dinosaurArray)
-  })
-  .catch(error => console.log(error))
+
 
 // show country information on hover
 function showCountryInfo(event) {
