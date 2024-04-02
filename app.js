@@ -151,12 +151,12 @@ function countDinosaursPerCountry(dinosaurs) {
 /*** Dinosaurs Diets ***/
 const tableData = createTableData(dinosaurs)
 console.log('tableData = ', tableData)
-createChart(tableData)
+createChart()
 
-function createChart(data) {
-  const graph = document.getElementById('graph');
+function createChart() {
+  const ctx = document.getElementById('myChart');
 
-  new Chart(graph, {
+  new Chart(ctx, {
     type: 'doughnut',
     data: {
       labels: ['Red', 'Blue', 'Yellow'],
