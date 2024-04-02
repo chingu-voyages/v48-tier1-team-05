@@ -6,9 +6,9 @@ let allDinosaurs = []
 let dinosaursPerCountry = {}
 let dietData = []
 
-fetchData()
+createData()
 
-async function fetchData() {
+async function createData() {
   try {
     // fetch dinosaurs from api
     const res = await fetch("https://chinguapi.onrender.com/dinosaurs");
