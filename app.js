@@ -32,15 +32,6 @@ async function createData() {
   }
 }
 
-<<<<<<< HEAD
-async function allDinosaurs() {
-  const apiData = await fetchData();
-  const allDinosaurs = dinosaurs.concat(apiData);
-  return allDinosaurs;
-}
-
-=======
->>>>>>> c67491c (add fetch data to allDinosaurs variable in fetchData() function instead and delete allDinosaurs() function)
 /*** Tab Navigation ***/
 const allSections = document.querySelectorAll('section')
 const allTabs = document.querySelectorAll('.tab')
@@ -64,61 +55,60 @@ function handleClick(event) {
 /*** Dinosaur Profiles ***/
 const dinoContainer = document.getElementById('all-dinos-container');
 
-async function onSearch() {
-  const data = await fetchData();
-  const search = document.getElementById("dinoSearch").value.toLowerCase();
-  const resultContainer = document.getElementById("search-result");
-  const filtered = data.filter((dinosaur) => {
-    if (!search) {
-      dinosaur.doesMatch = true;
-      return false;
-    } else {
-      const name = dinosaur.name.toLowerCase();
-      const nameMatch = name.includes(search);
-      dinosaur.doesMatch = nameMatch;
-      return nameMatch;
-    }
-  });
-
- 
-  resultContainer.innerHTML = '';
-
-  filtered.forEach((dinosaur) => {
-
-    const cardContainer = document.createElement('div');
-    cardContainer.classList.add('card-container');
-    cardContainer.style.width = "100%";
-    cardContainer.style.marginBottom = "30px";
-    const dlElement = document.createElement('dl');
-
-    const labels = [
-      { label: 'Type Species', data: dinosaur.typeSpecies },
-      { label: 'Length', data: dinosaur.length },
-      { label: 'Diet', data: dinosaur.diet },
-      { label: 'When Lived', data: dinosaur.whenLived },
-      { label: 'Species', data: dinosaur.typeSpecies },
-      { label: 'Description', data: dinosaur.description }
-    ];
-
-    labels.forEach(item => {
-      const dtElement = document.createElement('dt');
-      const spanElement = document.createElement('span');
-      const ddElement = document.createElement('dd');
-      spanElement.textContent = item.label + ':';
-      ddElement.textContent = item.data;
-      dtElement.appendChild(spanElement);
-      dlElement.appendChild(dtElement);
-      dlElement.appendChild(ddElement);
+function onSearch(allDinos) {
+    const search = document.getElementById("dinoSearch").value.toLowerCase();
+    const resultContainer = document.getElementById("search-result");
+    
+    const filtered = data.filter((dinosaur) => {
+        if (!search) {
+            dinosaur.doesMatch = true;
+            return false;
+        } else {
+            const name = dinosaur.name.toLowerCase();
+            const nameMatch = name.includes(search);
+            dinosaur.doesMatch = nameMatch;
+            return nameMatch;
+        }
     });
 
-    // Append dl to card container
-    cardContainer.appendChild(dlElement);
+    resultContainer.innerHTML = '';
 
-    // Create img element for each dinosaur
-    const imgElement = document.createElement('img');
-    imgElement.src = dinosaur.imageSrc;
-    imgElement.width = 330;
-    imgElement.height = 250;
+    filtered.forEach((dinosaur) => {
+  
+      const cardContainer = document.createElement('div');
+      cardContainer.classList.add('card-container');
+      cardContainer.style.width = "100%";
+      cardContainer.style.marginBottom = "30px";
+      const dlElement = document.createElement('dl');
+  
+      const labels = [
+        { label: 'Type Species', data: dinosaur.typeSpecies },
+        { label: 'Length', data: dinosaur.length },
+        { label: 'Diet', data: dinosaur.diet },
+        { label: 'When Lived', data: dinosaur.whenLived },
+        { label: 'Species', data: dinosaur.typeSpecies },
+        { label: 'Description', data: dinosaur.description }
+      ];
+  
+      labels.forEach(item => {
+        const dtElement = document.createElement('dt');
+        const spanElement = document.createElement('span');
+        const ddElement = document.createElement('dd');
+        spanElement.textContent = item.label + ':';
+        ddElement.textContent = item.data;
+        dtElement.appendChild(spanElement);
+        dlElement.appendChild(dtElement);
+        dlElement.appendChild(ddElement);
+      });
+  
+      // Append dl to card container
+      cardContainer.appendChild(dlElement);
+  
+      // Create img element for each dinosaur
+      const imgElement = document.createElement('img');
+      imgElement.src = dinosaur.imageSrc;
+      imgElement.width = 330;
+      imgElement.height = 250;
 
     // Append img element to card container
     cardContainer.appendChild(imgElement);
@@ -128,22 +118,23 @@ async function onSearch() {
   });
 
 };
-
-document.addEventListener("DOMContentLoaded", function () {
-  const searchInput = document.getElementById("dinoSearch");
-  searchInput.addEventListener("input", function () {
-    onSearch();
-  });
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById("dinoSearch");
+    searchInput.addEventListener("input", function() {
+        onSearch(allDinosaurs);
+    });
 });
 
 
 //loader 
-/*const loader = document.getElementById("loader");
+/*
+const loader = document.getElementById("loader");
 window.addEventListener("load", function () {
   setTimeout(function () {
     loader.style.display = "none";
   }, 1800);
-});
+}); 
+*/
 
 
 /*** Dinosaur Maps ***/
