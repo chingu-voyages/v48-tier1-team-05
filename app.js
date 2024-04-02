@@ -214,8 +214,7 @@ function countDinosaursPerCountry(dinosaurs) {
 }
 
 /*** Dinosaurs Diets ***/
-const tableData = createTableData(dinosaurs)
-console.log('tableData = ', tableData)
+
 createChart()
 
 function createChart() {
