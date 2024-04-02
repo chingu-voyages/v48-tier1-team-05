@@ -6,6 +6,8 @@ let allDinosaurs = []
 let dinosaursPerCountry = {}
 let dietData = []
 
+fetchData()
+
 async function fetchData() {
   try {
     // fetch dinosaurs from api
@@ -16,6 +18,13 @@ async function fetchData() {
     allDinosaurs = data
     console.log("all dinosaurs", allDinosaurs)
 
+    // find number of dinosaurs per country for Map Tool
+    dinosaursPerCountry = countDinosaursPerCountry(allDinosaurs)
+    console.log("map data", dinosaursPerCountry)
+
+    // create diet data for Diet Tool
+    dietData = createDietData(allDinosaurs)
+    console.log("diet data", dietData)
     return data
 
   } catch(err) {
