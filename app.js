@@ -175,7 +175,7 @@ function showCountryInfo(event) {
     country.innerHTML = countryCodes[event.target.id]
 
     // filter for just the dinosaurs in that country
-    let dinosaursInCountry = dinosaurArray.filter(dinosaur => dinosaur.foundIn.includes(countryCodes[event.target.id]))
+    let dinosaursInCountry = allDinosaurs.filter(dinosaur => dinosaur.foundIn.includes(countryCodes[event.target.id]))
 
     // update dinosaur-list in list-container
     dinosaurList.replaceChildren()
