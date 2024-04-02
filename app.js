@@ -28,7 +28,7 @@ async function createData() {
     return data
 
   } catch(err) {
-      console.log("Fetch Error",err);
+      console.log("Fetch Error", err);
   }
 }
 
