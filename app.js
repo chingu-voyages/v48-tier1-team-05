@@ -1,5 +1,10 @@
 import { countryCodes, allMaps } from "./map_data.js"
 
+/*** Create Dinosaur Data ***/
+// global variables needed
+let allDinosaurs = []
+let dinosaursPerCountry = {}
+let dietData = []
 
 async function fetchData() {
   try {
