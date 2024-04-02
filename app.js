@@ -241,9 +241,9 @@ function createChart() {
 }
 
 
-function createTableData(arrayOfAllDinosaurs) {
+function createDietData(arrayOfAllDinosaurs) {
   // declare the return array
-  let allTableData = []
+  let allDietData = []
 
   // call the filterByTimePeriod function to create four time period arrays of dinosaurs
   const dinosuarsByTimePeriod = filterByTimePeriod(arrayOfAllDinosaurs)
@@ -255,11 +255,11 @@ function createTableData(arrayOfAllDinosaurs) {
       let value = countDiet(timePeriod[key])
       let dataObject = { [key]: value }
       // push the data object to the return array
-      allTableData.push(dataObject)
+      allDietData.push(dataObject)
     }
   })
 
-  return allTableData
+  return allDietData
 }
 
 // helper functions
