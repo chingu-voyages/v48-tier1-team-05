@@ -1,6 +1,4 @@
-
 import { countryCodes, allMaps } from "./map_data.js"
-
 
 /*** Tab Navigation ***/
 const allSections = document.querySelectorAll('section')
