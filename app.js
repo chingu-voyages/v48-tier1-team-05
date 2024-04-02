@@ -1,6 +1,6 @@
 import { countryCodes, allMaps } from "./map_data.js"
 
-/*** Create Dinosaur Data ***/
+/********************************* Create Dinosaur Data *********************************/
 // global variables needed
 let allDinosaurs = []
 let dinosaursPerCountry = {}
@@ -32,7 +32,7 @@ async function createData() {
   }
 }
 
-/*** Tab Navigation ***/
+/********************************* Tab Navigation *********************************/
 const allSections = document.querySelectorAll('section')
 const allTabs = document.querySelectorAll('.tab')
 const tabsContainer = document.querySelector('.tabs')
@@ -52,7 +52,7 @@ function handleClick(event) {
 }
 
 
-/*** Dinosaur Profiles ***/
+/********************************* Dinosaur Profiles *********************************/
 const dinoContainer = document.getElementById('all-dinos-container');
 
 function onSearch(allDinos) {
@@ -137,7 +137,7 @@ window.addEventListener("load", function () {
 */
 
 
-/*** Dinosaur Maps ***/
+/********************************* Dinosaur Maps *********************************/
 
 // DOM elements needed
 const buttonContainer = document.querySelector('.button-container')
@@ -213,7 +213,7 @@ function countDinosaursPerCountry(dinosaurs) {
   return countryObject
 }
 
-/*** Dinosaurs Diets ***/
+/********************************* Dinosaurs Diets *********************************/
 
 createChart()
 
