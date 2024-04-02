@@ -41,5 +41,11 @@ h1 {
     justify-content: center;
 }
 img {
-    margin: 20px;
+    padding: 20px;
 }
+.chart-container {
+    max-width: 40rem;
+    padding: auto;
+    margin: 25vh auto;
+  }
+
