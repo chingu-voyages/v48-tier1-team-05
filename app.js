@@ -159,10 +159,9 @@ function createChart() {
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['Red', 'Blue', 'Yellow'],
+      labels: ['Herbivorous', 'Carnivorous', 'Omnivorous'],
       datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3],
+        data: [41, 28, 6],
         borderWidth: 1,
         hoverOffset: 4
       }]
