@@ -8,8 +8,13 @@ let dietData = []
 
 async function fetchData() {
   try {
+    // fetch dinosaurs from api
     const res = await fetch("https://chinguapi.onrender.com/dinosaurs");
     const data = await res.json();
+
+    // put all dinosaurs in allDinosaurs array
+    allDinosaurs = data
+    console.log("all dinosaurs", allDinosaurs)
 
     return data
 
@@ -18,12 +23,15 @@ async function fetchData() {
   }
 }
 
+<<<<<<< HEAD
 async function allDinosaurs() {
   const apiData = await fetchData();
   const allDinosaurs = dinosaurs.concat(apiData);
   return allDinosaurs;
 }
 
+=======
+>>>>>>> c67491c (add fetch data to allDinosaurs variable in fetchData() function instead and delete allDinosaurs() function)
 /*** Tab Navigation ***/
 const allSections = document.querySelectorAll('section')
 const allTabs = document.querySelectorAll('.tab')
