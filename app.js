@@ -1,7 +1,7 @@
 import dinosaurs from './dinosaurs.json' assert { type: 'json' }
 console.log('all dinosaurs from dinosaur.json', dinosaurs)
 
-import { countryCodes, allMaps } from "./map.js"
+import { countryCodes, allMaps } from "./map_data.js"
 
 
 /*** Tab Navigation ***/
