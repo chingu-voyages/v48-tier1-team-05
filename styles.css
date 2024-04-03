@@ -31,7 +31,8 @@ section {
   background-color: #05160F40;
   border-bottom: 4px solid #0A281A70; 
   width: 100%;
-  
+  position:absolute;
+  z-index:10;
 }
 
 .navbar img {
