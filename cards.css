@@ -9,6 +9,8 @@ body {
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
   }
 
+/* Begin mobile card CSS */
+
 .card-mobile {  
     border: 1px solid #000;
     border-radius: .5em;
@@ -129,7 +131,7 @@ body {
 
 
 
-
+/* Begin desktop cards (front) */
 
 
 .card-container-desktop {  
@@ -164,6 +166,7 @@ body {
 }
 
 
+/* Begin desktop cards (back) */
 
 
   
