@@ -1,8 +1,38 @@
-
 import { countryCodes, allMaps } from "./map_data.js"
 
+/********************************* Create Dinosaur Data *********************************/
+// global variables needed
+let allDinosaurs = []
+let dinosaursPerCountry = {}
+let dietData = []
 
-/*** Tab Navigation ***/
+createData()
+
+async function createData() {
+  try {
+    // fetch dinosaurs from api
+    const res = await fetch("https://chinguapi.onrender.com/dinosaurs");
+    const data = await res.json();
+
+    // put all dinosaurs in allDinosaurs array
+    allDinosaurs = data
+    console.log("all dinosaurs", allDinosaurs)
+
+    // find number of dinosaurs per country for Map Tool
+    dinosaursPerCountry = countDinosaursPerCountry(allDinosaurs)
+    console.log("map data", dinosaursPerCountry)
+
+    // create diet data for Diet Tool
+    dietData = createDietData(allDinosaurs)
+    console.log("diet data", dietData)
+    return data
+
+  } catch(err) {
+      console.log("Fetch Error", err);
+  }
+}
+
+/********************************* Tab Navigation *********************************/
 const allSections = document.querySelectorAll('section')
 const allTabs = document.querySelectorAll('.tab')
 const tabsContainer = document.querySelector('.tabs')
@@ -22,76 +52,63 @@ function handleClick(event) {
 }
 
 
-/*** Dinosaur Profiles ***/
+/********************************* Dinosaur Profiles *********************************/
 const dinoContainer = document.getElementById('all-dinos-container');
 
-const fetchData = async () => {
-  try {
-    const res = await fetch("https://chinguapi.onrender.com/dinosaurs");
-    const data = await res.json();
-    return data;
-  } catch (err) {
-    console.log("Fetch Error", err);
-  }
-}
-
-
-async function onSearch() {
-  const data = await fetchData();
-  const search = document.getElementById("dinoSearch").value.toLowerCase();
-  const resultContainer = document.getElementById("search-result");
-
-  const filtered = data.filter((dinosaur) => {
-    if (!search) {
-      dinosaur.doesMatch = true;
-      return false;
-    } else {
-      const name = dinosaur.name.toLowerCase();
-      const nameMatch = name.includes(search);
-      dinosaur.doesMatch = nameMatch;
-      return nameMatch;
-    }
-  });
-
- 
-  resultContainer.innerHTML = '';
-
-  filtered.forEach((dinosaur) => {
-
-    const cardContainer = document.createElement('div');
-    cardContainer.classList.add('card-container');
-    cardContainer.style.width = "100%";
-    cardContainer.style.marginBottom = "30px";
-    const dlElement = document.createElement('dl');
-
-    const labels = [
-      { label: 'Type Species', data: dinosaur.typeSpecies },
-      { label: 'Length', data: dinosaur.length },
-      { label: 'Diet', data: dinosaur.diet },
-      { label: 'When Lived', data: dinosaur.whenLived },
-      { label: 'Species', data: dinosaur.typeSpecies },
-      { label: 'Description', data: dinosaur.description }
-    ];
-
-    labels.forEach(item => {
-      const dtElement = document.createElement('dt');
-      const spanElement = document.createElement('span');
-      const ddElement = document.createElement('dd');
-      spanElement.textContent = item.label + ':';
-      ddElement.textContent = item.data;
-      dtElement.appendChild(spanElement);
-      dlElement.appendChild(dtElement);
-      dlElement.appendChild(ddElement);
+function onSearch(data) {
+    const search = document.getElementById("dinoSearch").value.toLowerCase();
+    const resultContainer = document.getElementById("search-result");
+    
+    const filtered = data.filter((dinosaur) => {
+        if (!search) {
+            dinosaur.doesMatch = true;
+            return false;
+        } else {
+            const name = dinosaur.name.toLowerCase();
+            const nameMatch = name.includes(search);
+            dinosaur.doesMatch = nameMatch;
+            return nameMatch;
+        }
     });
 
-    // Append dl to card container
-    cardContainer.appendChild(dlElement);
+    resultContainer.innerHTML = '';
 
-    // Create img element for each dinosaur
-    const imgElement = document.createElement('img');
-    imgElement.src = dinosaur.imageSrc;
-    imgElement.width = 330;
-    imgElement.height = 250;
+    filtered.forEach((dinosaur) => {
+  
+      const cardContainer = document.createElement('div');
+      cardContainer.classList.add('card-container');
+      cardContainer.style.width = "100%";
+      cardContainer.style.marginBottom = "30px";
+      const dlElement = document.createElement('dl');
+  
+      const labels = [
+        { label: 'Type Species', data: dinosaur.typeSpecies },
+        { label: 'Length', data: dinosaur.length },
+        { label: 'Diet', data: dinosaur.diet },
+        { label: 'When Lived', data: dinosaur.whenLived },
+        { label: 'Species', data: dinosaur.typeSpecies },
+        { label: 'Description', data: dinosaur.description }
+      ];
+  
+      labels.forEach(item => {
+        const dtElement = document.createElement('dt');
+        const spanElement = document.createElement('span');
+        const ddElement = document.createElement('dd');
+        spanElement.textContent = item.label + ':';
+        ddElement.textContent = item.data;
+        dtElement.appendChild(spanElement);
+        dlElement.appendChild(dtElement);
+        dlElement.appendChild(ddElement);
+      });
+  
+      // Append dl to card container
+      cardContainer.appendChild(dlElement);
+  
+      // Create img element for each dinosaur
+      const imgElement = document.createElement('img');
+      imgElement.src = dinosaur.imageSrc;
+      imgElement.width = 330;
+      imgElement.height = 250;
 
     // Append img element to card container
     cardContainer.appendChild(imgElement);
@@ -101,30 +118,26 @@ async function onSearch() {
   });
 
 };
-
-document.addEventListener("DOMContentLoaded", function () {
-  const searchInput = document.getElementById("dinoSearch");
-  searchInput.addEventListener("input", function () {
-    onSearch();
-  });
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById("dinoSearch");
+    searchInput.addEventListener("input", function() {
+        onSearch(allDinosaurs);
+    });
 });
 
 
 //loader 
-/*const loader = document.getElementById("loader");
+/*
+const loader = document.getElementById("loader");
 window.addEventListener("load", function () {
   setTimeout(function () {
     loader.style.display = "none";
   }, 1800);
-});
+}); 
+*/
 
 
-/*** Dinosaur Maps ***/
-/* large data variables at end of file */
-
-// global variables needed
-let dinosaurArray = []
-let dinosaursPerCountry = {}
+/********************************* Dinosaur Maps *********************************/
 
 // DOM elements needed
 const buttonContainer = document.querySelector('.button-container')
@@ -152,15 +165,7 @@ function showContinentMap(event) {
   mapContainer.appendChild(newMap)
 }
 
-// fetch dinosaurs from api
-fetch("https://chinguapi.onrender.com/dinosaurs")
-  .then(response => response.json())
-  .then(data => {
-    dinosaurArray = data
-    // find number of dinosaurs per country
-    dinosaursPerCountry = countDinosaursPerCountry(dinosaurArray)
-  })
-  .catch(error => console.log(error))
+
 
 // show country information on hover
 function showCountryInfo(event) {
@@ -170,7 +175,7 @@ function showCountryInfo(event) {
     country.innerHTML = countryCodes[event.target.id]
 
     // filter for just the dinosaurs in that country
-    let dinosaursInCountry = dinosaurArray.filter(dinosaur => dinosaur.foundIn.includes(countryCodes[event.target.id]))
+    let dinosaursInCountry = allDinosaurs.filter(dinosaur => dinosaur.foundIn.includes(countryCodes[event.target.id]))
 
     // update dinosaur-list in list-container
     dinosaurList.replaceChildren()
@@ -208,9 +213,8 @@ function countDinosaursPerCountry(dinosaurs) {
   return countryObject
 }
 
-/*** Dinosaurs Diets ***/
-const tableData = createTableData(dinosaurs)
-console.log('tableData = ', tableData)
+/********************************* Dinosaurs Diets *********************************/
+
 createChart()
 
 function createChart() {
@@ -237,9 +241,9 @@ function createChart() {
 }
 
 
-function createTableData(arrayOfAllDinosaurs) {
+function createDietData(arrayOfAllDinosaurs) {
   // declare the return array
-  let allTableData = []
+  let allDietData = []
 
   // call the filterByTimePeriod function to create four time period arrays of dinosaurs
   const dinosuarsByTimePeriod = filterByTimePeriod(arrayOfAllDinosaurs)
@@ -251,11 +255,11 @@ function createTableData(arrayOfAllDinosaurs) {
       let value = countDiet(timePeriod[key])
       let dataObject = { [key]: value }
       // push the data object to the return array
-      allTableData.push(dataObject)
+      allDietData.push(dataObject)
     }
   })
 
-  return allTableData
+  return allDietData
 }
 
 // helper functions
