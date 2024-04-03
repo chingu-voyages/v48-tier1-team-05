@@ -1,5 +1,3 @@
-import dinosaurs from './dinosaurs.json' assert { type: 'json' }
-console.log('all dinosaurs from dinosaur.json', dinosaurs)
 
 import { countryCodes, allMaps } from "./map_data.js"
 
@@ -27,54 +25,97 @@ function handleClick(event) {
 /*** Dinosaur Profiles ***/
 const dinoContainer = document.getElementById('all-dinos-container');
 
-const fetchData = async () =>{
-  try{
-      const res = await fetch("https://chinguapi.onrender.com/dinosaurs");
-      const data = await res.json();
-      return data;
-  }catch(err){
-      console.log("Fetch Error",err);
+const fetchData = async () => {
+  try {
+    const res = await fetch("https://chinguapi.onrender.com/dinosaurs");
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.log("Fetch Error", err);
   }
 }
 
-async function allDinosaurs() {
-  const apiData = await fetchData();
-  const allDinosaurs = dinosaurs.concat(apiData);
-  return allDinosaurs;
-}
 
 async function onSearch() {
-    const allDinos = await allDinosaurs();
-    const search = document.getElementById("dinoSearch").value.toLowerCase();
-    const results = document.getElementById("search-result");
-    
-    const filtered = allDinos.filter((dinosaur) => {
-        if (!search) {
-            dinosaur.doesMatch = true;
-            return true;
-        } else {
-            const name = dinosaur.name.toLowerCase();
-            const nameMatch = name.includes(search);
-            dinosaur.doesMatch = nameMatch;
-            return nameMatch;
-        }
-    });
-    console.log(filtered);
-}
+  const data = await fetchData();
+  const search = document.getElementById("dinoSearch").value.toLowerCase();
+  const resultContainer = document.getElementById("search-result");
 
-document.addEventListener("DOMContentLoaded", function() {
-    const searchInput = document.getElementById("dinoSearch");
-    searchInput.addEventListener("input", function() {
-        onSearch();
+  const filtered = data.filter((dinosaur) => {
+    if (!search) {
+      dinosaur.doesMatch = true;
+      return false;
+    } else {
+      const name = dinosaur.name.toLowerCase();
+      const nameMatch = name.includes(search);
+      dinosaur.doesMatch = nameMatch;
+      return nameMatch;
+    }
+  });
+
+ 
+  resultContainer.innerHTML = '';
+
+  filtered.forEach((dinosaur) => {
+
+    const cardContainer = document.createElement('div');
+    cardContainer.classList.add('card-container');
+    cardContainer.style.width = "100%";
+    cardContainer.style.marginBottom = "30px";
+    const dlElement = document.createElement('dl');
+
+    const labels = [
+      { label: 'Type Species', data: dinosaur.typeSpecies },
+      { label: 'Length', data: dinosaur.length },
+      { label: 'Diet', data: dinosaur.diet },
+      { label: 'When Lived', data: dinosaur.whenLived },
+      { label: 'Species', data: dinosaur.typeSpecies },
+      { label: 'Description', data: dinosaur.description }
+    ];
+
+    labels.forEach(item => {
+      const dtElement = document.createElement('dt');
+      const spanElement = document.createElement('span');
+      const ddElement = document.createElement('dd');
+      spanElement.textContent = item.label + ':';
+      ddElement.textContent = item.data;
+      dtElement.appendChild(spanElement);
+      dlElement.appendChild(dtElement);
+      dlElement.appendChild(ddElement);
     });
+
+    // Append dl to card container
+    cardContainer.appendChild(dlElement);
+
+    // Create img element for each dinosaur
+    const imgElement = document.createElement('img');
+    imgElement.src = dinosaur.imageSrc;
+    imgElement.width = 330;
+    imgElement.height = 250;
+
+    // Append img element to card container
+    cardContainer.appendChild(imgElement);
+
+    // Append card container to result container
+    resultContainer.appendChild(cardContainer);
+  });
+
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("dinoSearch");
+  searchInput.addEventListener("input", function () {
+    onSearch();
+  });
 });
 
+
 //loader 
-const loader = document.getElementById("loader");
-window.addEventListener("load", function() {
-  setTimeout(function() {
+/*const loader = document.getElementById("loader");
+window.addEventListener("load", function () {
+  setTimeout(function () {
     loader.style.display = "none";
-  }, 1800); 
+  }, 1800);
 });
 
 
@@ -118,11 +159,11 @@ fetch("https://chinguapi.onrender.com/dinosaurs")
     dinosaurArray = data
     // find number of dinosaurs per country
     dinosaursPerCountry = countDinosaursPerCountry(dinosaurArray)
-    })
+  })
   .catch(error => console.log(error))
 
 // show country information on hover
-function showCountryInfo(event){
+function showCountryInfo(event) {
   if (countryCodes[event.target.id]) {
     // update number of dinosaurs and country name in list-container
     number.innerHTML = dinosaursPerCountry[countryCodes[event.target.id]]
@@ -208,7 +249,7 @@ function createTableData(arrayOfAllDinosaurs) {
     for (const time in timePeriod) {
       let key = time
       let value = countDiet(timePeriod[key])
-      let dataObject = {[key]: value}
+      let dataObject = { [key]: value }
       // push the data object to the return array
       allTableData.push(dataObject)
     }
