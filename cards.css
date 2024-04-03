@@ -134,7 +134,7 @@ body {
 /* Begin desktop cards (front) */
 
 
-.card-container-desktop {  
+.card-container-desktop-front {  
   width: 550px;
   min-height: 300px;
   border-radius: .5em;
