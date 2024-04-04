@@ -257,6 +257,15 @@ span {
   font-size: 20px;
   font-weight: 400;
   background-color: #ECECEC;
+  
+}
+
+.source-information a {
+  color: #000;
+}
+
+.source-information a visited {
+  color: #000;
 }
 .source-information-text {
   margin: 0 0 10px;
