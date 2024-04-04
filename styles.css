@@ -272,7 +272,7 @@ span {
 }
 
 .footer {
-  background-color: black;
+  background-color: #05160F;
   width: 100vw;
   color: white;
   display: flex;
@@ -310,8 +310,8 @@ span {
   text-align: center;
 }
 .footer-menubar img{
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
 }
 .black-button,
 .black-tab {
