@@ -289,3 +289,27 @@ function countDiet(arrayOfDinosaurs) {
   })
   return dietObject
 }
+
+// click action
+document.addEventListener("DOMContentLoaded",()=>{
+  const allEras = document.querySelectorAll('.item-era2');
+  
+})
+
+
+allEras.addEventListener("click", handleClick)
+
+// function eraClick(event) {
+//   // manage tab color
+//   alleras.forEach(tab => tab.classList.remove('black-tab'))
+//   let thisTab = document.querySelector(`button[name=${event.target.name}]`)
+//   thisTab.classList.add('black-tab')
+//   //manage sections
+//   allSections.forEach(section => {
+//     section.classList.add("hidden")
+//   })
+//   let thisSection = document.querySelector(`.${event.target.name}`)
+//   thisSection.classList.remove("hidden")
+// }
+
+
