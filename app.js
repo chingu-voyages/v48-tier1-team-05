@@ -53,7 +53,7 @@ function handleClick(event) {
 
 
 /********************************* Dinosaur Profiles *********************************/
-const dinoContainer = document.getElementById('all-dinos-container');
+
 
 function onSearch(data) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
@@ -82,10 +82,10 @@ function onSearch(data) {
       const dlElement = document.createElement('dl');
   
       const labels = [
-        { label: 'Type Species', data: dinosaur.typeSpecies },
+        { label: 'Type', data: dinosaur.typeOfDinosaur},
         { label: 'Length', data: dinosaur.length },
         { label: 'Diet', data: dinosaur.diet },
-        { label: 'When Lived', data: dinosaur.whenLived },
+        { label: 'Lived', data: dinosaur.whenLived },
         { label: 'Species', data: dinosaur.typeSpecies },
         { label: 'Description', data: dinosaur.description }
       ];
@@ -96,6 +96,7 @@ function onSearch(data) {
         const ddElement = document.createElement('dd');
         spanElement.textContent = item.label + ':';
         ddElement.textContent = item.data;
+        dlElement.style.marginLeft = "15px";
         dtElement.appendChild(spanElement);
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
@@ -109,6 +110,7 @@ function onSearch(data) {
       imgElement.src = dinosaur.imageSrc;
       imgElement.width = 330;
       imgElement.height = 250;
+      
 
     // Append img element to card container
     cardContainer.appendChild(imgElement);

@@ -182,12 +182,12 @@ font-weight: 400;
 
 dl {
   display: grid;
-  grid-template-columns: max-content 200px;
+  grid-template-columns: max-content 180px;
+  
 }
 
 dt {
   padding-bottom: 20px;
-  margin-right: -30px;
 
 }
 
@@ -211,19 +211,16 @@ span {
   display: flex;
   align-items: center;
   font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
-  width: 70%;
+  width: 72%;
   margin-right: 1em;
 }
 
 .card-container-1 {
   min-height: 300px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
   background-color: #fff;
   border: 2px solid #fff;
-
+  margin-left: .7em;
 }
 
 .card-container-2 {
@@ -232,9 +229,7 @@ span {
   padding: 10px;
   background-color: #fff;
   border: 2px solid #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  
 
 }
 
