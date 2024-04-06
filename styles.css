@@ -94,7 +94,8 @@ font-weight: 400;
   border-radius: 13px;
   font-size: 20px;
   font-weight: 400;
-  background-color: #DBDBDB;
+  background-color: #D7EAE2;
+  border: 2px solid #CCE2D9;
   text-align: center;
   color: black;
   width: 60%;
@@ -250,23 +251,23 @@ span {
   border-radius: 13px;
   font-size: 20px;
   font-weight: 400;
-  background-color: #DBDBDB;
+  background-color: #ECECEC;
   
+}
+
+.source-information a {
+  color: #000;
+}
+
+.source-information a visited {
+  color: #000;
 }
 .source-information-text {
   margin: 0 0 10px;
 }
-.source-information-links {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-}
+
 .footer {
-  background-color: black;
+  background-color: #05160F;
   width: 100vw;
   color: white;
   display: flex;
@@ -304,8 +305,8 @@ span {
   text-align: center;
 }
 .footer-menubar img{
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
 }
 .black-button,
 .black-tab {
