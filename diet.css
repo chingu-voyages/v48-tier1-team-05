@@ -7,7 +7,8 @@ body {
     justify-content: center;
 }
 .outer-container {
-    width: 38vw;
+    width: 741px;
+    height: 477px;
     border: 2px solid #000;
     border-radius: 10px;
 }
@@ -37,13 +38,16 @@ h1 {
 }
 .era-container {
     display: grid;
-    grid-template-columns: 0.8fr 1fr;
+    grid-template-columns: 70px 160px;
     grid-template-rows: 1fr 1fr 1fr;
-    margin: 20px;
+    border: 1px solid black;
+    margin: 30px ;
+    width: 230px;
+    height: 355px;
+    box-sizing: border-box;
 }
 .item-era1, .item-era2{
     border: 1px black solid;
-    padding: 5px;
 }
 .item-era1{
     display: flex;

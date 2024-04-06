@@ -290,26 +290,25 @@ function countDiet(arrayOfDinosaurs) {
   return dietObject
 }
 
-// click action
-document.addEventListener("DOMContentLoaded",()=>{
-  const allEras = document.querySelectorAll('.item-era2');
+
+let allEras = document.querySelectorAll('.item-era2');
+let dietEra = [];
+
+allEras.forEach(era => {
+  era.addEventListener("click", eraClick);
+});
+
+
+function eraClick(event){
+  allEras.forEach(era=>{
+    era.classList.remove("black-era");
+  })
+  event.target.classList.add("black-era");
+  // the name of the clicked era
+  const eraClicked = event.target.innerHTML.toLowerCase();
   
-})
-
-
-allEras.addEventListener("click", handleClick)
-
-// function eraClick(event) {
-//   // manage tab color
-//   alleras.forEach(tab => tab.classList.remove('black-tab'))
-//   let thisTab = document.querySelector(`button[name=${event.target.name}]`)
-//   thisTab.classList.add('black-tab')
-//   //manage sections
-//   allSections.forEach(section => {
-//     section.classList.add("hidden")
-//   })
-//   let thisSection = document.querySelector(`.${event.target.name}`)
-//   thisSection.classList.remove("hidden")
-// }
+  dietEra = dietData.find(data => data.hasOwnProperty(eraClicked));
+  console.log(dietEra);
+};
 
 
