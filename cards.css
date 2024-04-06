@@ -9,6 +9,23 @@ body {
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
   }
 
+/* Begin attention-container CSS */
+
+
+  .attention-container {
+    margin: 100px auto;
+    padding: 44px 35px;
+    border-radius: 13px;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #000; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, #000000, #222222);
+    text-align: center;
+    color: #fff;
+    width: 60%;
+  }
+
+
 /* Begin mobile card CSS */
 
 .card-mobile {  
