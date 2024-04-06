@@ -48,15 +48,23 @@ h1 {
 .item-era1{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     grid-row: 1/4;
     grid-column: 1;
-    writing-mode: vertical-lr;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 30px;
+    letter-spacing: 10px;
 }
 .item-era2{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+.item-era2:hover{
+    background-color: black;
+    color: white;
 }
 .black-era{
     background-color: black;
