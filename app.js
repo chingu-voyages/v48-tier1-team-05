@@ -214,9 +214,8 @@ function countDinosaursPerCountry(dinosaurs) {
 }
 
 /********************************* Dinosaurs Diets *********************************/
-
+// global variables needed
 let allEras = document.querySelectorAll('.item-era2');
-let dietEra = [];
 let numCarnivorous;
 let numOmnivorous;
 let numHerbivorous;
@@ -227,28 +226,27 @@ allEras.forEach(era => {
   era.addEventListener("click", eraClick);
 });
 
-
 function eraClick(event){
+  // remove all of the black-era classies
   allEras.forEach(era=>{
     era.classList.remove("black-era");
   })
+  // add the black-era class on the clicked era
   event.target.classList.add("black-era");
-  // the name of the clicked era
   let eraClicked = event.target.innerHTML.toLowerCase();
-  // console.log("eraCliacked",eraClicked);
-  dietEra = dietData.find(data => data.hasOwnProperty(eraClicked));
-  // console.log("dietData",dietEra)
+  let dietEra = dietData.find(data => data.hasOwnProperty(eraClicked));
   numCarnivorous =  dietEra[eraClicked].carnivorous
   numOmnivorous =  dietEra[eraClicked].omnivorous
   numHerbivorous =  dietEra[eraClicked].herbivorous
-  // alert(`${numCarnivorous},${numHerbivorous},${numOmnivorous}`)
   createChart()
 };
-// createChart()
+
+createChart();
 
 function createChart() {
   const ctx = document.getElementById('myChart');
-
+  
+  // if the "canvas" has already used, it will be destroyed
   if(myChart){
     myChart.destroy();
   }
