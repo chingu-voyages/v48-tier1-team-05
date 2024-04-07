@@ -34,7 +34,7 @@ h1 {
     display: flex;
 }
 .text-container {
-    padding: 3px 20px;
+    padding: 3px 10px 3px 40px;
     flex: 2;
     font-size: 20px;
 }
@@ -67,6 +67,7 @@ h1 {
     align-items: center;
     justify-content: flex-start;
     padding: 10px;
+    font-size: 20px;
 }
 .item-era2:hover{
     background-color: black;
