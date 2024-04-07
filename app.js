@@ -165,7 +165,18 @@ function showContinentMap(event) {
   mapContainer.appendChild(newMap)
 }
 
+//adjust the length of the contents
+// function adjustDinosaurListPresentation() {
+//   const items = dinosaurList.querySelectorAll('li');
+//   const columnCount = items.length > 8 ? Math.ceil(items.length / 8) : 1;
+//   dinosaurList.style.columnCount = columnCount;
+//   if(items.length> 8 ){
+//     dinosaurList.style.fontSize = "1px";
+//   }else{
+//     dinosaurList.style.fontSize = "";
+//   }
 
+// }
 
 // show country information on hover
 function showCountryInfo(event) {
@@ -184,6 +195,7 @@ function showCountryInfo(event) {
       newDinosaur.innerHTML = dinosaur.name
       dinosaurList.appendChild(newDinosaur)
     })
+    // adjustDinosaurListPresentation()
   }
 }
 
