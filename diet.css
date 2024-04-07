@@ -17,14 +17,15 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #999;
+    background-color: #D9D9D9;
     text-align: center;
     border-bottom: 2px solid #000;
     border-radius: 9px 9px 0px 0px;
+    
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: normal;
     margin: 0;
 }
@@ -35,6 +36,7 @@ h1 {
 .text-container {
     padding: 3px 20px;
     flex: 2;
+    font-size: 20px;
 }
 .era-container {
     display: grid;
