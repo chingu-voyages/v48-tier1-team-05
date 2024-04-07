@@ -215,17 +215,51 @@ function countDinosaursPerCountry(dinosaurs) {
 
 /********************************* Dinosaurs Diets *********************************/
 
-createChart()
+let allEras = document.querySelectorAll('.item-era2');
+let dietEra = [];
+let numCarnivorous;
+let numOmnivorous;
+let numHerbivorous;
+let myChart = null;
+
+// click function on era-container
+allEras.forEach(era => {
+  era.addEventListener("click", eraClick);
+});
+
+
+function eraClick(event){
+  allEras.forEach(era=>{
+    era.classList.remove("black-era");
+  })
+  event.target.classList.add("black-era");
+  // the name of the clicked era
+  let eraClicked = event.target.innerHTML.toLowerCase();
+  // console.log("eraCliacked",eraClicked);
+  dietEra = dietData.find(data => data.hasOwnProperty(eraClicked));
+  // console.log("dietData",dietEra)
+  numCarnivorous =  dietEra[eraClicked].carnivorous
+  numOmnivorous =  dietEra[eraClicked].omnivorous
+  numHerbivorous =  dietEra[eraClicked].herbivorous
+  // alert(`${numCarnivorous},${numHerbivorous},${numOmnivorous}`)
+  createChart()
+};
+// createChart()
 
 function createChart() {
   const ctx = document.getElementById('myChart');
 
-  new Chart(ctx, {
+  if(myChart){
+    myChart.destroy();
+  }
+
+  myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
       labels: ['Herbivorous', 'Carnivorous', 'Omnivorous'],
       datasets: [{
-        data: [41, 28, 6],
+        data: [numHerbivorous, numCarnivorous, numOmnivorous],
+        // data: [30, 20, 10],
         borderWidth: 1,
         hoverOffset: 4
       }]
@@ -291,24 +325,6 @@ function countDiet(arrayOfDinosaurs) {
 }
 
 
-let allEras = document.querySelectorAll('.item-era2');
-let dietEra = [];
 
-allEras.forEach(era => {
-  era.addEventListener("click", eraClick);
-});
-
-
-function eraClick(event){
-  allEras.forEach(era=>{
-    era.classList.remove("black-era");
-  })
-  event.target.classList.add("black-era");
-  // the name of the clicked era
-  const eraClicked = event.target.innerHTML.toLowerCase();
-  
-  dietEra = dietData.find(data => data.hasOwnProperty(eraClicked));
-  console.log(dietEra);
-};
 
 
