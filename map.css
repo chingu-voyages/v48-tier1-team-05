@@ -86,14 +86,15 @@ svg {
 }
 .list-container{
     width: 30vw;
-    min-height: 40vh;
     border:3px solid black;
     border-radius: 5px;
-    
+    overflow: auto;
+    min-height: 400px;
+    max-height: 600px;
 }
 .list-container h2{
     font-weight: normal;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 
@@ -108,4 +109,19 @@ svg {
 .list-title{
     background-color: #D9D9D9;
     padding: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
+
+/* #dinsosaur-list{
+    column-count: 1;
+    column-gap: 20px;
+    overflow-y: auto;
+    max-height: 800px;
+}
+
+#dinosaur-list li {
+    font-size: 1px; 
+    break-inside: avoid-column;
+} */
