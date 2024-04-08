@@ -150,6 +150,18 @@ font-weight: 400;
   color: white;
 }
 
+.dinosaur-profiles-desktop-explanation {
+  margin: 100px auto;
+  padding: 44px 35px;
+  border-radius: 13px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #ECECEC;
+  text-align: center;
+  color: #000;
+  width: 70%;
+}
+
 .dinosaur-profiles {
   display: flex;
   flex-direction: column;
@@ -273,6 +285,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 100px;
 }
 
 .footer-title{
