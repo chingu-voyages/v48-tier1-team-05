@@ -56,14 +56,16 @@ flipCardInner.appendChild(dinoDetails)
             dinoDetailsLeft.classList.add('flip-card-back-left')
                 const fetchDetails = getSingleDino(`${dino.id}`)
                 dinoDetailsLeft.innerHTML = `
-                <p>Species: ${dino.typeSpecies}</p>
-                <p>Type: ${dino.typeOfDinosaur}</p>
-                <p>Found In: ${dino.foundIn}</>
-                <p>Taxonnomy: ${dino.taxonomy}</p>
-                <p>Diet: ${dino.diet}</p>
-                <p>Length: ${dino.length}ft.</p>
-                <p>Named By: ${dino.namedBy}</p>
-                <p class="dino-description" >Description: ${dino.description}</p>
+                <ul>
+                <li class="flip-card-back-li">Species: ${dino.typeSpecies}</li>
+                <li class="flip-card-back-li">Type: ${dino.typeOfDinosaur}</li>
+                <li class="flip-card-back-li">Found In: ${dino.foundIn}</li>
+                <li class="flip-card-back-li">Taxonnomy: ${dino.taxonomy}</li>
+                <li class="flip-card-back-li">Diet: ${dino.diet}</li>
+                <li class="flip-card-back-li">Length: ${dino.length}ft.</li>
+                <li class="flip-card-back-li">Named By: ${dino.namedBy}</li>
+                <li class="dino-description" >Description: ${dino.description}</li>
+                </ul>
                 `
                 // console.log(fetchDetails)
 

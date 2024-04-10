@@ -325,6 +325,10 @@ span {
     font-size: 14px;
   }
 
+  .flip-card-back-li {
+    margin-bottom: 30px;
+  }
+
   .flip-card-back-right {
     align-items: center;
     justify-content: center;
