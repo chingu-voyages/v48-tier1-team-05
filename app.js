@@ -53,7 +53,6 @@ function handleClick(event) {
 
 
 /********************************* Dinosaur Profiles *********************************/
-const dinoContainer = document.getElementById('all-dinos-container');
 
 function onSearch(data) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
