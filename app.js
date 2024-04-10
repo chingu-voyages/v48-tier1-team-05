@@ -61,7 +61,7 @@ function onSearch(data) {
     const filtered = data.filter((dinosaur) => {
         if (!search) {
             dinosaur.doesMatch = true;
-            return false;
+            return true;
         } else {
             const name = dinosaur.name.toLowerCase();
             const nameMatch = name.includes(search);
