@@ -25,6 +25,9 @@ async function createData() {
     // create diet data for Diet Tool
     dietData = createDietData(allDinosaurs)
     console.log("diet data", dietData)
+
+    // show all dinosaurs by calling onSearch function
+    onSearch(allDinosaurs)
     return data
 
   } catch(err) {
