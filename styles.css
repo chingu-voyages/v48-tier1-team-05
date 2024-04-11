@@ -178,8 +178,7 @@ font-weight: 400;
   background-color: transparent;
   border: none;
 }
-
-/********************************* Desktop Dinosaur Cards *********************************/
+/****************** Desktop Cards ******************/
 .dinosaur-cards {
   display: flex;
   flex-direction: column;
@@ -281,7 +280,7 @@ span2 {
 .card:nth-child(4n+4) .card-back {
   background: linear-gradient(#9A472C,#261009);
 }
-/********************************* Mobile Dinosaur Cards *********************************/
+/****************** Mobile Cards ******************/
 span {
   background-color: #000;
   color: #fff;
@@ -291,7 +290,6 @@ span {
   padding-top: 3px;
   padding-bottom: 3px;
 }
-
 /****************** End of Results ******************/
 .results-end {
   text-align: center;
