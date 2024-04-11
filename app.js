@@ -283,23 +283,21 @@ function createChart() {
     myChart.destroy();
   }
 
+  Chart.defaults.font.size = 24
   myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
       labels: ['Herbivorous', 'Carnivorous', 'Omnivorous'],
       datasets: [{
         data: [numHerbivorous, numCarnivorous, numOmnivorous],
-        // data: [30, 20, 10],
+        backgroundColor: [
+          '#2F683B',
+          '#722E2E',
+          '#9A472C'
+        ],
         borderWidth: 1,
         hoverOffset: 4
       }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
     }
   });
 }
