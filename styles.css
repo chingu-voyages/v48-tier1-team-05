@@ -358,9 +358,7 @@ span {
     border: 1px solid white;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
-
-/* This container is needed to position the front and back side */
-.card-inner {
+.card-body {
   position: relative;
   width: 100%;
   height: 100%;
@@ -369,9 +367,7 @@ span {
   transform-style: preserve-3d;
   margin-bottom: 100px;
 }
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.card:hover .card-inner {
+.card:hover .card-body {
   transform: rotateY(180deg);
 }
 
