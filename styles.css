@@ -266,6 +266,9 @@ font-weight: 400;
   justify-content: center;
   border-radius: 0 1em 1em 0;
 }
+.card-back-image-container img {
+  object-fit: contain;
+}
 dl {
   display: grid;
   grid-template-columns: max-content 200px;
