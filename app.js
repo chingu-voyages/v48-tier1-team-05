@@ -263,6 +263,7 @@ function createChart() {
     myChart.destroy();
   }
 
+  Chart.defaults.font.size = 24
   myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
