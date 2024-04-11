@@ -351,11 +351,11 @@ span {
 
 
 .card {
-    margin-bottom: 50px;
-    background-color: transparent;
-    width: 1000px;
-    height: 500px;
-    perspective: 1000px;
+  width: 550px;
+  min-height: 300px;
+  background-color: transparent;
+  border-radius: .5rem;
+  perspective: 1000px;
 }
 .card-body {
   position: relative;
