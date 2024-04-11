@@ -76,13 +76,27 @@ function onSearch(data) {
     resultContainer.innerHTML = '';
 
     filtered.forEach((dinosaur) => {
-  
-      const cardContainer = document.createElement('div');
-      cardContainer.classList.add('card-container');
-      cardContainer.style.width = "100%";
-      cardContainer.style.marginBottom = "30px";
-      const dlElement = document.createElement('dl');
-  
+      // create elements needed
+      const card = document.createElement('div');
+      const cardBody = document.createElement('div');
+      const cardFront = document.createElement('div');
+      const cardFrontText = document.createElement('p');
+      const cardBack = document.createElement('div');
+      const cardBackText = document.createElement('div');
+      const cardBackImageContainer = document.createElement('div');
+      card.classList.add('card');
+      cardBody.classList.add('card-body')
+      cardFront.classList.add('card-front');
+      cardBack.classList.add('card-back');
+      cardBackText.classList.add('card-back-text');
+      cardBackImageContainer.classList.add('card-back-image-container');
+
+      // create card front
+      cardFrontText.textContent = dinosaur.name;
+      cardFront.appendChild(cardFrontText);
+
+      // create card back
+      // create card back text
       const labels = [
         { label: 'Type Species', data: dinosaur.typeSpecies },
         { label: 'Length', data: dinosaur.length },
@@ -91,32 +105,36 @@ function onSearch(data) {
         { label: 'Species', data: dinosaur.typeSpecies },
         { label: 'Description', data: dinosaur.description }
       ];
-  
       labels.forEach(item => {
+        const dlElement = document.createElement('dl');
         const dtElement = document.createElement('dt');
-        const spanElement = document.createElement('span');
         const ddElement = document.createElement('dd');
+        const spanElement = document.createElement('span');
         spanElement.textContent = item.label + ':';
         ddElement.textContent = item.data;
         dtElement.appendChild(spanElement);
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
+        cardBackText.appendChild(dlElement);
       });
+      
   
-      // Append dl to card container
-      cardContainer.appendChild(dlElement);
-  
-      // Create img element for each dinosaur
+      // create card back image
       const imgElement = document.createElement('img');
       imgElement.src = dinosaur.imageSrc;
-      imgElement.width = 330;
-      imgElement.height = 250;
+      imgElement.width = 200;
+      imgElement.height = 200;
+      cardBackImageContainer.appendChild(imgElement);
 
-    // Append img element to card container
-    cardContainer.appendChild(imgElement);
+      // create card from components
+      cardBack.appendChild(cardBackText);
+      cardBack.appendChild(cardBackImageContainer)
+      cardBody.appendChild(cardFront)
+      cardBody.appendChild(cardBack)
+      card.appendChild(cardBody)
 
-    // Append card container to result container
-    resultContainer.appendChild(cardContainer);
+      // append to result container
+      resultContainer.appendChild(card);
   });
 
 };
