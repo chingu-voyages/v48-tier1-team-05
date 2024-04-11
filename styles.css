@@ -349,7 +349,7 @@ span {
   color: white;
 } */
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
 .card {
     margin-bottom: 50px;
     background-color: transparent;
@@ -369,8 +369,6 @@ span {
 .card:hover .card-body {
   transform: rotateY(180deg);
 }
-
-/* Position the front and back side */
 .card-front, .card-back {
   position: absolute;
   width: 100%;
@@ -378,14 +376,10 @@ span {
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
-
-/* Style the front side (fallback if image is missing) */
 .card-front {
   background-color: lightblue;
   color: black;
 }
-
-/* Style the back side */
 .card-back {
   background-color: dodgerblue;
   color: white;
