@@ -245,8 +245,19 @@ font-weight: 400;
   display: inline-flex;
   font: 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: white;
-  border: 1pt solid green;
   transform: rotateY(180deg);
+}
+.card:nth-child(4n+1) .card-back {
+  border: 2pt solid #2F683B;
+}
+.card:nth-child(4n+2) .card-back {
+  border: 2pt solid #315394;
+}
+.card:nth-child(4n+3) .card-back {
+  border: 2pt solid #722E2E;
+}
+.card:nth-child(4n+4) .card-back {
+  border: 2pt solid #9A472C;
 }
 .card-back-text {
   width: 300px;
