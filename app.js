@@ -273,13 +273,6 @@ function createChart() {
         borderWidth: 1,
         hoverOffset: 4
       }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
     }
   });
 }
