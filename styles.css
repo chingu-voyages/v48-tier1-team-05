@@ -355,8 +355,7 @@ span {
     background-color: transparent;
     width: 1000px;
     height: 500px;
-    border: 1px solid white;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
 }
 .card-body {
   position: relative;
