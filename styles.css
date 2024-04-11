@@ -377,8 +377,13 @@ span {
   backface-visibility: hidden;
 }
 .card-front {
-  background-color: lightblue;
-  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 2.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  border-radius: .5em;
+}
 }
 .card-back {
   background-color: dodgerblue;
