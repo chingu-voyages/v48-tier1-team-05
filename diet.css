@@ -7,7 +7,8 @@ body {
     justify-content: center;
 }
 .outer-container {
-    width: 38vw;
+    width: 741px;
+    height: 477px;
     border: 2px solid #000;
     border-radius: 10px;
 }
@@ -16,14 +17,15 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #999;
+    background-color: #D9D9D9;
     text-align: center;
     border-bottom: 2px solid #000;
     border-radius: 9px 9px 0px 0px;
+    
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: normal;
     margin: 0;
 }
@@ -32,14 +34,53 @@ h1 {
     display: flex;
 }
 .text-container {
-    padding: 3px 20px;
+    padding: 3px 10px 3px 40px;
     flex: 2;
+    font-size: 20px;
 }
-.image-container {
+.era-container {
+    display: grid;
+    grid-template-columns: 70px 160px;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: 1px solid black;
+    margin: 30px ;
+    width: 230px;
+    height: 355px;
+    box-sizing: border-box;
+}
+.item-era1, .item-era2{
+    border: 1px black solid;
+}
+.item-era1{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    grid-row: 1/4;
+    grid-column: 1;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 30px;
+    letter-spacing: 10px;
 }
-img {
-    margin: 20px;
+.item-era2{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    font-size: 20px;
 }
+.item-era2:hover{
+    background-color: black;
+    color: white;
+}
+.black-era{
+    background-color: black;
+    color: white;
+}
+
+.chart-container {
+    max-width: 40rem;
+    padding: auto;
+    margin: 25vh auto;
+}
+

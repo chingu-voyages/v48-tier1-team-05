@@ -1,3 +1,11 @@
+/********************************* General CSS *********************************/
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
 * {
   box-sizing: border-box;
 }
@@ -11,75 +19,89 @@ body {
   font-family: Inter, sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
+section {
+  margin-bottom: 100px;
+}
+.hidden {
+  display: none;
+}
+
+/********************************* Top of Page Section *********************************/
+/****************** Header ******************/
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: black;
+  background-color: #05160F40;
+  border-bottom: 4px solid #0A281A70; 
   width: 100%;
-  
+  position:absolute;
+  z-index:10;
 }
-
 .navbar img {
   width: 100px;
   height: auto;
   color: pink;
   padding-left: 30px;
-  
 }
-
 nav ul {
   padding: 0;
   display: flex;
   align-items: center;
   list-style-type: none;
-  
 }
-
 .navbar nav ul li a {
   color: white; 
   text-decoration: none;
   margin-right: 30px;
 }
-
+/****************** Rest of Top Section ******************/
 main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
-
-.heading {
+/****************** Title ******************/
+.heading-container {
   margin: 100px auto;
-  padding: 44px 35px;
-  border-radius: 13px;
-  font-size: 20px;
-  font-weight: 400;
-  background-color: black;
+  padding: 1.75em 2.1875em;
+  border-radius: 0.8125em;
+  background-color: #002E19;
   text-align: center;
-  color: white;
-  width: 90%;
+  width: 80%;
   margin-top: -2em;
 }
-
+.heading-container-title {
+color: white;
+font-size: 1.25em;
+font-weight: 400;
+}
+.heading-container-subtitle {
+color: white;
+font-size: 0.875em;
+font-weight: 400;
+}
+/****************** About ******************/
 .main_about {
   margin: 100px auto;
   padding: 44px 35px;
   border-radius: 13px;
   font-size: 20px;
   font-weight: 400;
-  background-color: #DBDBDB;
+  background-color: #D7EAE2;
+  border: 2px solid #CCE2D9;
   text-align: center;
   color: black;
   width: 60%;
 }
-
+/****************** Background image ******************/
 .background-picture img {
   width: 100vw;
   background-size: cover;
 }
-
+/****************** Tab Navigation ******************/
 .nav-bar {
   margin: 50px;
   position: relative;
@@ -124,6 +146,25 @@ main {
   color: white;
 }
 
+/********************************* Dinosaur Profiles *********************************/
+.dinosaur-profiles {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.dinosaur-profiles-desktop-explanation {
+  margin: 100px auto;
+  padding: 44px 35px;
+  border-radius: 13px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #ECECEC;
+  text-align: center;
+  color: #000;
+  width: 70%;
+}
+/****************** Search Form ******************/
 .search-bar {
   width: 40vw;
   margin: 50px;
@@ -141,121 +182,203 @@ main {
   border: none;
   width: 30vw;
 }
-
 .search-bar button {
   background-color: transparent;
   border: none;
 }
-
+/****************** Desktop Cards ******************/
 .dinosaur-cards {
-
+  display: flex;
+  flex-direction: column;
 }
-
-dl {
-  display: grid;
-  grid-template-columns: max-content 200px;
+.card {
+  width: 550px;
+  height: 300px;
+  margin: 10px;
+  perspective: 1000px;
 }
-
-dt {
-  grid-column-start: 1;
-  padding-bottom: 20px;
-  margin-right: -30px;
-
+.card-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
-
-dd {
-  grid-column-start: 2;
+.card:hover .card-body {
+  transform: rotateY(180deg);
 }
-
-span {
-  background-color: #777;
-  border-radius: 4px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
 }
-
-* {box-sizing: border-box;}
-
-
-.card-container {  
-  border: 5px solid #777;
-  border-radius: .5em;
+.card-front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 2.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+}
+.card-back {
   padding: 10px;
-  display: inline-flex;
-  padding: 20px;
-  font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+  display: flex;
+  font: 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transform: rotateY(180deg);
 }
-
-.card-container-1 {
-  width: 300px;
+.card-back-text {
+  width: 310px;
   min-height: 300px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #fff;
-  border: 2px solid #fff;
+  background-color: white;
+  border-radius: 1em 0 0 1em;
 }
-
-.card-container-2 {
-  width: 300px;
-  min-height: 300px;
+.card-back-image-container {
+  width: 220px;
+  height: 300px;
   padding: 10px;
-  background-color: #fff;
-  border: 2px solid #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: white;
+  border-radius: 0 1em 1em 0;
 }
-
+.card-back-image-container img {
+  object-fit: contain;
+}
+dl {
+  display: grid;
+  grid-template-columns: max-content 200px;
+}
+dt {
+  grid-column-start: 1;
+  padding-bottom: 20px;
+  margin-right: -30px;
+}
+dd {
+  grid-column-start: 2;
+}
+span2 {
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.card:nth-child(4n+1) .card-front,
+.card:nth-child(4n+1) .card-back {
+  background: linear-gradient(#2F683B,#09150C);
+}
+.card:nth-child(4n+2) .card-front,
+.card:nth-child(4n+2) .card-back {
+  background: linear-gradient(#315394,#0A0F22);
+}
+.card:nth-child(4n+3) .card-front,
+.card:nth-child(4n+3) .card-back {
+  background: linear-gradient(#722E2E,#150909);
+}
+.card:nth-child(4n+4) .card-front,
+.card:nth-child(4n+4) .card-back {
+  background: linear-gradient(#9A472C,#261009);
+}
+/****************** Mobile Cards ******************/
+span {
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+/****************** End of Results ******************/
 .results-end {
   text-align: center;
 }
-
 .results-end hr {
   width: 50vw;
 }
-
+/****************** Source Information ******************/
 .source-information {
   width: 942px;
-  margin: 100px 0;
+  margin-top: 100px;
   padding: 44px 35px;
   border-radius: 13px;
   font-size: 20px;
   font-weight: 400;
-  background-color: #DBDBDB;
-  
+  background-color: #ECECEC;
+}
+.source-information a {
+  color: #000;
+}
+.source-information a visited {
+  color: #000;
 }
 .source-information-text {
   margin: 0 0 10px;
 }
-.source-information-links {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-}
-.footer {
-  background-color: black;
-  width: 100vw;
-}
 
-.footer-list {
+/********************************* Footer *********************************/
+.footer {
+  background-color: #05160F;
+  width: 100vw;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.footer-title{
+  width: 20vw;
+  color: white;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+.footer-title a{
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  font-size: 45px;
+}
+.footer-container{
+  width: 50vw;
+  text-align: center;
+  font-size: 20px;
+}
+.footer-container a{
+  color: white;
+  text-decoration: none;
+}
+.footer-menubar{
+  width: 15vw;
+  text-align: center;
+}
+.footer-menubar img{
+  width: 100px;
+  height: 100px;
+}
+.black-button,
+.black-tab {
+    background: black;
+    color: white;
+}
+/* .footer-list {
   list-style: none;
   display:flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
   margin: auto 20px;
-
 }
-
 .footer-list li {
   display: inline-block;
   color: white;
-}
+} */

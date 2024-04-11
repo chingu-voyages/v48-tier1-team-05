@@ -1,0 +1,253 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  }
+
+/* Begin attention-container CSS */
+
+
+  .attention-container {
+    margin: 100px auto;
+    padding: 44px 35px;
+    border-radius: 13px;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #000; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, #000000, #222222);
+    text-align: center;
+    color: #fff;
+    width: 60%;
+  }
+
+
+/* Begin mobile card CSS */
+
+.card-mobile {  
+    border: 1px solid #000;
+    border-radius: .5em;
+    display: inline-flex;
+    padding: 20px;
+    font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+    box-shadow: 3px 3px 5px #00000025;
+  
+  }
+  
+  * {box-sizing: border-box;}
+  
+  .parent {
+      width: 308px; /* or any other width */
+      height: auto; /* or any other fixed height */
+  }
+
+  .header {
+    display: table;
+    margin: 0 auto;
+    background: linear-gradient(#315394,#0A0F22);
+    width: 286px;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    border-radius: 6px;
+  
+  }
+
+  .header-blue p {
+    margin: 14px;
+  }
+  
+  .header-blue {
+    background: linear-gradient(#315394,#0A0F22);
+
+  }
+
+  .header-green p {
+    margin: 14px;
+  }
+  
+  .header-green {
+    background: linear-gradient(#2F683B,#09150C);
+  
+  }
+
+  .header-red p {
+    margin: 14px;
+  }
+  
+  .header-red {
+    background: linear-gradient(#722E2E,#150909);
+  }
+
+  .header-orange p {
+    margin: 14px;
+  }
+  
+  .header-orange {
+    background: linear-gradient(#9A472C,#261009);
+  }
+  
+  .dinosaur-info {
+    width: 300px;
+    min-height: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #fff;
+    border: 0px solid blue;
+    display: table;
+    margin-top: 20px;
+  }
+  
+  dl {
+    display: grid;
+    grid-template-columns: max-content 200px;
+  }
+  
+  dt {
+    grid-column-start: 1;
+    padding-bottom: 20px;
+    margin-right: -30px;
+  
+  }
+  
+  dd {
+    grid-column-start: 2;
+  }
+  
+  span {
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: max-content 200px;
+  }
+  
+  dt {
+    grid-column-start: 1;
+    padding-bottom: 20px;
+    margin-right: -30px;
+  
+  }
+  
+  dd {
+    grid-column-start: 2;
+  }
+
+
+
+/* Begin desktop cards (front) */
+
+
+.card-container-desktop-front {  
+  width: 550px;
+  min-height: 300px;
+  border-radius: .5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   font: 2.5em Helvetica Neue,     Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+.desktop-front-green {
+  background: linear-gradient(#2F683B,#09150C);
+
+}
+
+.desktop-front-blue {
+  background: linear-gradient(#315394,#0A0F22);
+
+}
+
+.desktop-front-red {
+  background: linear-gradient(#722E2E,#150909);
+
+}
+
+.desktop-front-orange {
+  background: linear-gradient(#9A472C,#261009);
+
+}
+
+
+/* Begin desktop cards (back) */
+
+
+  
+  span2 {
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  
+  * {box-sizing: border-box;}
+  
+  
+  .card-container {  
+    border-radius: 1em;
+    padding: 10px;
+    display: inline-flex;
+    font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+
+  .desktop-back-green {
+    background: linear-gradient(#2F683B,#09150C);
+
+  }
+
+  .desktop-back-blue {
+    background: linear-gradient(#315394,#0A0F22);
+
+  }
+
+  .desktop-back-red {
+    background: linear-gradient(#722E2E,#150909);
+
+  }
+
+  .desktop-back-orange {
+    background: linear-gradient(#9A472C,#261009);
+
+  }
+
+  .card-container-1 {
+    width: 300px;
+    min-height: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #fff;
+    border: 0px solid #fff;
+    border-radius: .5em 0 0 .5em;
+  }
+  
+  .card-container-2 {
+    width: 220px;
+    min-height: 300px;
+    padding: 10px;
+    background-color: #fff;
+    border: 0px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 .5em .5em 0;
+
+  }
