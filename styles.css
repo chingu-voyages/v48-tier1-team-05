@@ -364,13 +364,8 @@ span2 {
     background: black;
     color: white;
 }
-/* .footer-list {
-  list-style: none;
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  margin: auto 20px;
+
+/********************************* Mobile *********************************/
 }
 .footer-list li {
   display: inline-block;
