@@ -292,16 +292,6 @@ span2 {
 .card:nth-child(4n+4) .card-back {
   background: linear-gradient(#9A472C,#261009);
 }
-/****************** Mobile Cards ******************/
-span {
-  background-color: #000;
-  color: #fff;
-  border-radius: 4px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
 /****************** End of Results ******************/
 .results-end {
   text-align: center;
