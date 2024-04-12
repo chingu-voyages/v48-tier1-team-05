@@ -343,20 +343,27 @@ span {
   }
 
 
-  /*I'm having trouble getting the nth child to work for flip-card-front and flip-card-back.
-    Maybe it is because this can only work on the most parent div which is flip-card. I'm not sure, but here is a start. MN */
+  /*flip card front background color, every nth child */
   .flip-card:nth-child(4n + 1) {
-    background-color: rgb(14, 14, 131);
+    .flip-card-front {
+        background-color: rgb(14, 14, 131);
+    }
   }
 
   .flip-card:nth-child(4n + 2) {
+    .flip-card-front {
     background-color: rgb(3, 87, 3);
+    }
   }
 
   .flip-card:nth-child(4n + 3) {
+    .flip-card-front {
     background-color: maroon;
+    }
   }
 
   .flip-card:nth-child(4n) {
+    .flip-card-front {
     background-color: rgb(202, 59, 8);
+    }
   }
