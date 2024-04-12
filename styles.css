@@ -99,7 +99,8 @@ font-weight: 400;
   border: 2px solid #CCE2D9;
   text-align: center;
   color: black;
-  width: 50vw;
+  width: 60vw;
+  margin-top: -2em;
 }
 /****************** Tab Navigation ******************/
 .nav-bar {
