@@ -180,19 +180,20 @@ font-weight: 400;
 }
 /****************** Search Form ******************/
 .search-bar {
-  width: 40vw;
-  margin: 50px;
-  padding: 20px;
+  width: 30vw;
+  height: 5vw;
+  margin: 2.5em;
+  padding: 1.25em;
   border: 3px solid black;
-  border-radius: 9px;
+  border-radius: 0.5625em;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .search-bar input {
   font-family: inherit;
-  font-size: 30px;
-  font-weight: 300;
+  font-size: 1.25em;
+  font-weight: 200;
   border: none;
   width: 30vw;
 }
