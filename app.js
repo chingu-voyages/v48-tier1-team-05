@@ -72,7 +72,7 @@ function onSearch(data) {
             return true;
         } else {
             const name = dinosaur.name.toLowerCase();
-            const nameMatch = name.includes(search);
+            const nameMatch = name.startsWith(search);
             dinosaur.doesMatch = nameMatch;
             return nameMatch;
         }
@@ -103,7 +103,7 @@ function onSearch(data) {
       // create card back
       // create card back text
       const labels = [
-        { label: 'Type Species', data: dinosaur.typeSpecies },
+        { label: 'Type', data: dinosaur.typeOfDinosaur},
         { label: 'Length', data: dinosaur.length },
         { label: 'Diet', data: dinosaur.diet },
         { label: 'When Lived', data: dinosaur.whenLived },
@@ -121,6 +121,7 @@ function onSearch(data) {
         const spanElement = document.createElement('span');
         spanElement.textContent = item.label + ':';
         ddElement.textContent = item.data;
+        dlElement.style.marginLeft = "15px";
         dtElement.appendChild(spanElement);
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
