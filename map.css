@@ -1,21 +1,7 @@
-/* 
-*{
-    margin: 0;
-    padding: 0;
-}
- body{
-    font-family: Inter, sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
 .dinosaur-maps {
     margin: 0;
     padding: 0;
 }
-
 .flexcolumn-container{
     display: flex;
     flex-direction: column;
@@ -24,7 +10,6 @@
     text-align: center;
     margin: 0 auto;
 }
-
 .title-container{
     width: 40vw;
     border: 3px solid black;
@@ -36,14 +21,12 @@
     margin: 0;
     padding: 5px;
     background-color: #D9D9D9;
-
 }
 .title-container p{
     padding: 10px;
     font-size: 20px;
     text-align: left;
 }
-
 .button-container{
     width: 50vw;
     margin-top: 10vh;
@@ -70,14 +53,12 @@
     background: black;
     color: white;
 }
-
 .flexrow-container{
     display: flex;
     align-items: start;
     justify-content: center;
     margin-top: 5vh;
 }
-
 .map-container{
     width: 40vw;
 }
@@ -96,8 +77,6 @@ svg {
     font-weight: normal;
     font-size: 25px;
 }
-
-
 .list-container ul{
     padding: 10px;
 }
@@ -105,7 +84,6 @@ svg {
     list-style: none;
     font-size: 30px;
 }
-
 .list-title{
     background-color: #D9D9D9;
     padding: 5px;
@@ -113,15 +91,3 @@ svg {
     top: 0;
     z-index: 1;
 }
-
-/* #dinsosaur-list{
-    column-count: 1;
-    column-gap: 20px;
-    overflow-y: auto;
-    max-height: 800px;
-}
-
-#dinosaur-list li {
-    font-size: 1px; 
-    break-inside: avoid-column;
-} */
