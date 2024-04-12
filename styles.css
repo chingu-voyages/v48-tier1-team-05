@@ -147,7 +147,7 @@ font-weight: 400;
 }
 
 /********************************* Dinosaur Profiles *********************************/
-.dinosaur-profiles {
+.dinosaur-profiles-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -459,6 +459,9 @@ span {
     justify-content: flex-start;
     align-items: center;
   }
+  section {
+    display: none;
+  }
   .top-of-page-section {
     display: none;
   }
@@ -553,7 +556,7 @@ span {
     text-decoration: none;
   }
   .footer-menubar{
-    width: 15vw;
+    width: auto;
     text-align: center;
   }
   .footer-menubar img{
