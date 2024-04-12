@@ -32,9 +32,9 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #05160F60;
-  border-bottom: 4px solid #0A281A30; 
+  padding-top: 10px;
+  background-color: #05160F90;
+  border-bottom: 4px solid #eaeeec30; 
   width: 100%;
   position:absolute;
   z-index:10;
