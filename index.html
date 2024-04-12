@@ -71,33 +71,35 @@
   
     <!-- Dinosaur Profiles -->
     <section class="dinosaur-profiles">
-        <div class="dinosaur-profiles-desktop-explanation">
-            <p>Our <b>Dinosaur Profiles</b> tool allows you to learn even more about the dinosaurs that 
-                once roamed the Earth. Below is a list of many of these dinosaurs. You are either 
-                able to scroll through this page or type a dinosaur name directly into the search 
-                bar. To see more information on each dinosaur, hover over that dinosaur’s card. The 
-                card will then “flip”, and on the back will be all you need to know about 
-                that specific creature! </p>
-        </div> 
-        <form class="search-bar" role="search">
-            <input
-                type="search"
-                id="dinoSearch"
-                name="input"
-                placeholder="Type to begin searching ..."
-                aria-label="Search for dinosaurs by name"
-            />
-            <button type="button"><img src="./assets/search_google_icon.png" alt=""></button>
-        </form>
-        <div id="search-result" class="dinosaur-cards"></div>
-        <div class="results-end">
-            <p>End of results!</p>
-            <hr />
-        </div>
-        <div class="source-information">
-            <p class="source-information-text">We acknowledge the <a href="https://www.nhm.ac.uk" target="_blank">Natural History Museum of London</a> 
-                for providing access to the dataset containing valuable information about dinosaurs. More information related to dinosaurs 
-                can be found in the National History Museum's <a href="https://www.nhm.ac.uk/discover/dino-directory.html" target="_blank">"Dino Directory"</a>.</p>
+        <div class="dinosaur-profiles-container">
+            <div class="dinosaur-profiles-desktop-explanation">
+                <p>Our <b>Dinosaur Profiles</b> tool allows you to learn even more about the dinosaurs that 
+                    once roamed the Earth. Below is a list of many of these dinosaurs. You are either 
+                    able to scroll through this page or type a dinosaur name directly into the search 
+                    bar. To see more information on each dinosaur, hover over that dinosaur’s card. The 
+                    card will then “flip”, and on the back will be all you need to know about 
+                    that specific creature! </p>
+            </div> 
+            <form class="search-bar" role="search">
+                <input
+                    type="search"
+                    id="dinoSearch"
+                    name="input"
+                    placeholder="Type to begin searching ..."
+                    aria-label="Search for dinosaurs by name"
+                />
+                <button type="button"><img src="./assets/search_google_icon.png" alt=""></button>
+            </form>
+            <div id="search-result" class="dinosaur-cards"></div>
+            <div class="results-end">
+                <p>End of results!</p>
+                <hr />
+            </div>
+            <div class="source-information">
+                <p class="source-information-text">We acknowledge the <a href="https://www.nhm.ac.uk" target="_blank">Natural History Museum of London</a> 
+                    for providing access to the dataset containing valuable information about dinosaurs. More information related to dinosaurs 
+                    can be found in the National History Museum's <a href="https://www.nhm.ac.uk/discover/dino-directory.html" target="_blank">"Dino Directory"</a>.</p>
+            </div>
         </div>
     </section> <!-- end of dinosaur-profiles -->
 
@@ -259,7 +261,7 @@
 
     <!-- Mobile Section -->
     <div class="mobile">
-        <div class="top-of-page-section">
+        <div class="mobile-top-of-page-section">
             <div class="navbar">
                 <img src="" alt="LOGO">
             </div>
@@ -341,9 +343,12 @@
                     can be found in the National History Museum's <a href="https://www.nhm.ac.uk/discover/dino-directory.html" target="_blank">"Dino Directory"</a>.</p>
             </div>
         </div> <!-- end dinosaur profiles -->
-        <div class="footer">
-            <div class="footer-title">
-                <a href="#top">DINODAYS</a>
+        <div class="mobile-footer">
+            <div class="mobile-footer-title-menubar">
+                <a class="mobile-footer-title" href="#top">DINODAYS</a>
+                <div class="footer-menubar">
+                    <a href="#top"><img src="./assets/to-top-arrow.png" alt=""></a>
+                </div>
             </div>
             <div class="footer-container">
                 <p>Made by 
@@ -355,12 +360,11 @@
                     <a target="_blank" href="https://github.com/yusuken1121">@yusuken1121</a>.
                     Facilitated by Chingu.
                 </p>
-                <p>DINODAYS is open source! Find us on Github.</p>
+                <p>DINODAYS is open source! Find us on 
+                    <a target="_blank" href="https://github.com/chingu-voyages/v48-tier1-team-05">GitHub</a>.
+                </p>
             </div>
-            <div class="footer-menubar">
-                <a href="#top"><img src="./assets/to-top-arrow.png" alt=""></a>
-            </div>
-        </div> <!-- end footer -->
+        </div> <!-- end mobile footer -->
     </div> <!-- end mobile -->
 </body>
 </html>
