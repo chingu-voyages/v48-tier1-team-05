@@ -188,8 +188,6 @@ font-weight: 400;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: -1em;
-
 }
 .search-bar input {
   font-family: inherit;
