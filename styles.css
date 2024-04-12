@@ -117,7 +117,7 @@ font-weight: 400;
   background: linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 0%, 1) 33%, hsla(0, 0%, 0%, 1) 66%, hsla(0, 0%, 100%, 1) 100%);;
 }
 .tabs {
-  width: 55vw;
+  width: 50vw;
   height: 110px;
   padding: 0 16px;
   background-color: white;
