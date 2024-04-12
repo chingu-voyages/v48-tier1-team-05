@@ -67,6 +67,11 @@ main {
   justify-content: flex-start;
   align-items: center;
 }
+/****************** Background image ******************/
+.background-picture img {
+  width: 100vw;
+  background-size: cover;
+}
 /****************** Title ******************/
 .heading-container {
   margin: 100px auto;
@@ -99,11 +104,6 @@ font-weight: 400;
   text-align: center;
   color: black;
   width: 60%;
-}
-/****************** Background image ******************/
-.background-picture img {
-  width: 100vw;
-  background-size: cover;
 }
 /****************** Tab Navigation ******************/
 .nav-bar {
