@@ -1,11 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-body {
-    font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-}
 .outer-container {
     width: 741px;
     height: 477px;
@@ -21,15 +13,12 @@ header {
     text-align: center;
     border-bottom: 2px solid #000;
     border-radius: 9px 9px 0px 0px;
-    
 }
-
-h1 {
+header h1 {
     font-size: 30px;
     font-weight: normal;
     margin: 0;
 }
-
 .lower-container {
     display: flex;
 }
@@ -77,7 +66,6 @@ h1 {
     background-color: black;
     color: white;
 }
-
 .chart-container {
     max-width: 40rem;
     padding: auto;
