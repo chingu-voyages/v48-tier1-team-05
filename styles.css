@@ -25,7 +25,11 @@ section {
 .hidden {
   display: none;
 }
-
+/*
+.mobile {
+  display: none;
+}
+*/
 /********************************* Top of Page Section *********************************/
 /****************** Header ******************/
 .navbar {
