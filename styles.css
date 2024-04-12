@@ -269,12 +269,13 @@ font-weight: 400;
   object-fit: contain;
 }
 dl {
+  margin: 5px 0;
   display: grid;
   grid-template-columns: max-content 200px;
 }
 dt {
   grid-column-start: 1;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   margin-right: -30px;
 }
 dd {
