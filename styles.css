@@ -116,6 +116,7 @@ font-weight: 400;
   position: absolute;
   top: 55px;
   background: linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 0%, 1) 33%, hsla(0, 0%, 0%, 1) 66%, hsla(0, 0%, 100%, 1) 100%);;
+  margin-top: -2em;
 }
 .tabs {
   width: 50vw;
@@ -129,6 +130,7 @@ font-weight: 400;
   align-items: center;
   gap: 16px;
   z-index: 2;
+  margin-top: -2em;
 }
 .tab {
   flex: 1;
