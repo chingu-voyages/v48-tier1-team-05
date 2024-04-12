@@ -120,7 +120,11 @@ function onSearch(data) {
   
       // create card back image
       const imgElement = document.createElement('img');
-      imgElement.src = dinosaur.imageSrc;
+      if (dinosaur.imageSrc == 'N/A') {
+        imgElement.src = './assets/no-image.png'
+      } else {
+        imgElement.src = dinosaur.imageSrc;
+      }
       imgElement.width = 200;
       imgElement.height = 200;
       cardBackImageContainer.appendChild(imgElement);
