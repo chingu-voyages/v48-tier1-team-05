@@ -22,9 +22,6 @@ body {
 section {
   margin-bottom: 100px;
 }
-.hidden {
-  display: none;
-}
 
 /********************************* Top of Page Section *********************************/
 /****************** Header ******************/
@@ -370,15 +367,7 @@ span {
     background: black;
     color: white;
 }
-/* .footer-list {
-  list-style: none;
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  margin: auto 20px;
+
+.hidden {
+  display: none;
 }
-.footer-list li {
-  display: inline-block;
-  color: white;
-} */
