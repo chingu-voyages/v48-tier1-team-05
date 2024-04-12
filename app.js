@@ -5,6 +5,9 @@ import { countryCodes, allMaps } from "./map_data.js"
 let allDinosaurs = []
 let dinosaursPerCountry = {}
 let dietData = []
+let numHerbivorous
+let numCarnivorous
+let numOmnivorous
 
 createData()
 
@@ -16,15 +19,18 @@ async function createData() {
 
     // put all dinosaurs in allDinosaurs array
     allDinosaurs = data
-    console.log("all dinosaurs", allDinosaurs)
 
     // find number of dinosaurs per country for Map Tool
     dinosaursPerCountry = countDinosaursPerCountry(allDinosaurs)
-    console.log("map data", dinosaursPerCountry)
 
     // create diet data for Diet Tool
     dietData = createDietData(allDinosaurs)
-    console.log("diet data", dietData)
+    numHerbivorous = dietData[1].cretaceous.herbivorous;
+    numCarnivorous = dietData[1].cretaceous.carnivorous;
+    numOmnivorous = dietData[1].cretaceous.omnivorous;
+
+    // create initial chart
+    createChart()
 
     // show all dinosaurs by calling onSearch function
     onSearch(allDinosaurs)
@@ -100,10 +106,14 @@ function onSearch(data) {
         { label: 'Type', data: dinosaur.typeOfDinosaur},
         { label: 'Length', data: dinosaur.length },
         { label: 'Diet', data: dinosaur.diet },
-        { label: 'Lived', data: dinosaur.whenLived },
-        { label: 'Species', data: dinosaur.typeSpecies },
-        { label: 'Description', data: dinosaur.description }
+        { label: 'When Lived', data: dinosaur.whenLived },
+        { label: 'Species', data: dinosaur.typeSpecies }
       ];
+      if (dinosaur.description == 'N/A') {
+        labels.push( { label: 'Description', data: 'No description'} )
+      } else {
+        labels.push( { label: 'Description', data: dinosaur.description } )
+      }
       labels.forEach(item => {
         const dlElement = document.createElement('dl');
         const dtElement = document.createElement('dt');
@@ -121,7 +131,11 @@ function onSearch(data) {
   
       // create card back image
       const imgElement = document.createElement('img');
-      imgElement.src = dinosaur.imageSrc;
+      if (dinosaur.imageSrc == 'N/A') {
+        imgElement.src = './assets/no-image.png'
+      } else {
+        imgElement.src = dinosaur.imageSrc;
+      }
       imgElement.width = 200;
       imgElement.height = 200;
       cardBackImageContainer.appendChild(imgElement);
@@ -236,9 +250,6 @@ function countDinosaursPerCountry(dinosaurs) {
 /********************************* Dinosaurs Diets *********************************/
 // global variables needed
 let allEras = document.querySelectorAll('.item-era2');
-let numCarnivorous;
-let numOmnivorous;
-let numHerbivorous;
 let myChart = null;
 
 // click function on era-container
@@ -261,16 +272,14 @@ function eraClick(event){
   createChart()
 };
 
-createChart();
-
 function createChart() {
   const ctx = document.getElementById('myChart');
   
-  // if the "canvas" has already used, it will be destroyed
+  // if the "canvas" has already been used, it will be destroyed
   if(myChart){
     myChart.destroy();
   }
-
+  
   Chart.defaults.font.size = 24
   myChart = new Chart(ctx, {
     type: 'doughnut',
@@ -289,7 +298,6 @@ function createChart() {
     }
   });
 }
-
 
 function createDietData(arrayOfAllDinosaurs) {
   // declare the return array
