@@ -107,9 +107,13 @@ function onSearch(data) {
         { label: 'Length', data: dinosaur.length },
         { label: 'Diet', data: dinosaur.diet },
         { label: 'When Lived', data: dinosaur.whenLived },
-        { label: 'Species', data: dinosaur.typeSpecies },
-        { label: 'Description', data: dinosaur.description }
+        { label: 'Species', data: dinosaur.typeSpecies }
       ];
+      if (dinosaur.description == 'N/A') {
+        labels.push( { label: 'Description', data: 'No description'} )
+      } else {
+        labels.push( { label: 'Description', data: dinosaur.description } )
+      }
       labels.forEach(item => {
         const dlElement = document.createElement('dl');
         const dtElement = document.createElement('dt');
@@ -126,7 +130,11 @@ function onSearch(data) {
   
       // create card back image
       const imgElement = document.createElement('img');
-      imgElement.src = dinosaur.imageSrc;
+      if (dinosaur.imageSrc == 'N/A') {
+        imgElement.src = './assets/no-image.png'
+      } else {
+        imgElement.src = dinosaur.imageSrc;
+      }
       imgElement.width = 200;
       imgElement.height = 200;
       cardBackImageContainer.appendChild(imgElement);
