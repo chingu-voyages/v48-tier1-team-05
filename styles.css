@@ -298,7 +298,7 @@ span {
   /* Style the front side (fallback if image is missing) */
   .flip-card-front {
     background-color: lightblue;
-    color: black;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
