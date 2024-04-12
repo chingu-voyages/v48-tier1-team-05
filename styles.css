@@ -419,3 +419,37 @@ span2 {
   display: table;
   margin-top: 20px;
 }
+/********** Media Query Changes for Mobile **********/
+@media screen and (max-width: 500px) {
+  .mobile {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .top-of-page-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .navbar {
+    padding: 10px;
+  }
+  .navbar img {
+    padding-left: 10px;
+  }
+  .heading-container {
+    position: relative;
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0.8125em;
+    background-color: #002E19;
+    text-align: center;
+    width: 80%;
+    margin-top: -1em;
+    z-index: 2;
+  }
+
+}
