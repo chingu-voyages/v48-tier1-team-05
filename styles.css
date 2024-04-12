@@ -155,6 +155,7 @@ font-weight: 400;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: -2em;
 }
 .dinosaur-profiles-desktop-explanation {
   margin: 100px auto;
@@ -177,6 +178,8 @@ font-weight: 400;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: -1em;
+
 }
 .search-bar input {
   font-family: inherit;
@@ -193,6 +196,8 @@ font-weight: 400;
 .dinosaur-cards {
   display: flex;
   flex-direction: column;
+  margin-top: 2em;
+
 }
 .card {
   width: 550px;
