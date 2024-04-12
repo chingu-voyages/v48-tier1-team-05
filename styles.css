@@ -209,8 +209,8 @@ font-weight: 400;
 
 }
 .card {
-  width: 550px;
-  height: 300px;
+  width: 700px;
+  height: 320px;
   margin: 10px;
   perspective: 1000px;
 }
@@ -246,7 +246,7 @@ font-weight: 400;
   transform: rotateY(180deg);
 }
 .card-back-text {
-  width: 310px;
+  width: 460px;
   min-height: 300px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -271,7 +271,7 @@ font-weight: 400;
 dl {
   margin: 5px 0;
   display: grid;
-  grid-template-columns: max-content 200px;
+  grid-template-columns: max-content 350px;
 }
 dt {
   grid-column-start: 1;
