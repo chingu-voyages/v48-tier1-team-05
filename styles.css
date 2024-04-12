@@ -366,8 +366,56 @@ span2 {
 }
 
 /********************************* Mobile *********************************/
+/************* Classes Specific to Mobile *************/
+.attention-container {
+  margin: 100px auto;
+  padding: 44px 35px;
+  border-radius: 13px;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #000; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, #000000, #222222);
+  text-align: center;
+  color: #fff;
+  width: 60%;
 }
-.footer-list li {
-  display: inline-block;
+.card-mobile {  
+  border: 1px solid #000;
+  border-radius: .5em;
+  display: inline-flex;
+  padding: 20px;
+  font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+  box-shadow: 3px 3px 5px #00000025;
+}
+.parent {
+  width: 308px; /* or any other width */
+  height: auto; /* or any other fixed height */
+}
+.header {
+  display: table;
+  margin: 0 auto;
+  background: linear-gradient(#315394,#0A0F22);
+  width: 286px;
+  font-size: 25px;
+  text-align: center;
   color: white;
-} */
+  border-radius: 6px;
+}
+.header-green {
+  background: linear-gradient(#2F683B,#09150C);
+}
+.header-green p {
+  margin: 14px;
+}
+.dinosaur-info {
+  width: 300px;
+  min-height: 300px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fff;
+  border: 0px solid blue;
+  display: table;
+  margin-top: 20px;
+}
