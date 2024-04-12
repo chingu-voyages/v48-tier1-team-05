@@ -22,9 +22,6 @@ body {
 section {
   margin-bottom: 100px;
 }
-.hidden {
-  display: none;
-}
 /*
 .mobile {
   display: none;
@@ -363,6 +360,11 @@ span2 {
 .black-tab {
     background: black;
     color: white;
+}
+
+/********************************* Hidden *********************************/
+.hidden {
+  display: none;
 }
 
 /********************************* Mobile *********************************/
