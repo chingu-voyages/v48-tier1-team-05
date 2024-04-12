@@ -101,9 +101,13 @@ function onSearch(data) {
         { label: 'Length', data: dinosaur.length },
         { label: 'Diet', data: dinosaur.diet },
         { label: 'When Lived', data: dinosaur.whenLived },
-        { label: 'Species', data: dinosaur.typeSpecies },
-        { label: 'Description', data: dinosaur.description }
+        { label: 'Species', data: dinosaur.typeSpecies }
       ];
+      if (dinosaur.description == 'N/A') {
+        labels.push( { label: 'Description', data: 'No description'} )
+      } else {
+        labels.push( { label: 'Description', data: dinosaur.description } )
+      }
       labels.forEach(item => {
         const dlElement = document.createElement('dl');
         const dtElement = document.createElement('dt');
