@@ -81,7 +81,8 @@ function onSearch(data) {
     resultContainer.innerHTML = '';
 
     filtered.forEach((dinosaur) => {
-      // create elements needed
+
+      // create elements needed for desktop cards for desktop cards
       const card = document.createElement('div');
       const cardBody = document.createElement('div');
       const cardFront = document.createElement('div');
@@ -100,8 +101,10 @@ function onSearch(data) {
       cardFrontText.textContent = dinosaur.name;
       cardFront.appendChild(cardFrontText);
 
-      // create card back
-      // create card back text
+      // add dinosaur name to mobile card
+      mobileCardName.textContent = dinosaur.name;
+
+      // create desktop and mobile cards dinosaur info
       const labels = [
         { label: 'Type', data: dinosaur.typeOfDinosaur},
         { label: 'Length', data: dinosaur.length },
@@ -148,15 +151,26 @@ function onSearch(data) {
       imgElement.height = 200;
       cardBackImageContainer.appendChild(imgElement);
 
-      // create card from components
+      // create desktop desktop card from components
       cardBack.appendChild(cardBackText);
       cardBack.appendChild(cardBackImageContainer)
       cardBody.appendChild(cardFront)
       cardBody.appendChild(cardBack)
       card.appendChild(cardBody)
 
-      // append to result container
+      // create mobile card from components
+      mobileCardBody.appendChild(mobileCardName)
+      mobileCardBody.appendChild(mobileCardText)
+      mobileCard.appendChild(mobileCardBody)
+
+      // create mobile card from components
+      mobileCardBody.appendChild(mobileCardName)
+      mobileCardBody.appendChild(mobileCardText)
+      mobileCard.appendChild(mobileCardBody)
+
+      // append to result containerss
       resultContainer.appendChild(card);
+      mobileResultContainer.appendChild(mobileCard);
   });
 
 };

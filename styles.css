@@ -286,19 +286,23 @@ span2 {
   padding-bottom: 4px;
 }
 .card:nth-child(4n+1) .card-front,
-.card:nth-child(4n+1) .card-back {
+.card:nth-child(4n+1) .card-back,
+.card-mobile:nth-child(4n+1) header {
   background: linear-gradient(#2F683B,#09150C);
 }
 .card:nth-child(4n+2) .card-front,
-.card:nth-child(4n+2) .card-back {
+.card:nth-child(4n+2) .card-back,
+.card-mobile:nth-child(4n+2) header {
   background: linear-gradient(#315394,#0A0F22);
 }
 .card:nth-child(4n+3) .card-front,
-.card:nth-child(4n+3) .card-back {
+.card:nth-child(4n+3) .card-back,
+.card-mobile:nth-child(4n+3) header {
   background: linear-gradient(#722E2E,#150909);
 }
 .card:nth-child(4n+4) .card-front,
-.card:nth-child(4n+4) .card-back {
+.card:nth-child(4n+4) .card-back,
+.card-mobile:nth-child(4n+4) header {
   background: linear-gradient(#9A472C,#261009);
 }
 /****************** End of Results ******************/
