@@ -65,7 +65,6 @@ function handleClick(event) {
 function onSearch(data) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
     const resultContainer = document.getElementById("search-result");
-    const mobileResultContainer = document.getElementById("mobile-search-result")
     
     const filtered = data.filter((dinosaur) => {
         if (!search) {
@@ -82,7 +81,7 @@ function onSearch(data) {
     resultContainer.innerHTML = '';
 
     filtered.forEach((dinosaur) => {
-      // create elements needed for desktop cards
+      // create elements needed
       const card = document.createElement('div');
       const cardBody = document.createElement('div');
       const cardFront = document.createElement('div');
@@ -97,26 +96,12 @@ function onSearch(data) {
       cardBackText.classList.add('card-back-text');
       cardBackImageContainer.classList.add('card-back-image-container');
 
-      //create elements needed for mobile cards
-      const mobileCard = document.createElement('div');
-      const mobileCardBody = document.createElement('div');
-      const mobileCardName = document.createElement('div');
-      const mobileCardText = document.createElement('div');
-      mobileCard.classList.add('card-mobile');
-      mobileCardBody.classList.add('parent');
-      mobileCardName.classList.add('child')
-      mobileCardName.classList.add('header')
-      mobileCardText.classList.add('child')
-      mobileCardText.classList.add('dinosaur-info')
-
-      // add dinosaur name to front of desktop card
+      // create card front
       cardFrontText.textContent = dinosaur.name;
       cardFront.appendChild(cardFrontText);
 
-      // add dinosaur name to mobile card
-      mobileCardName.textContent = dinosaur.name;
-
-      // create desktop and mobile cards dinosaur info
+      // create card back
+      // create card back text
       const labels = [
         { label: 'Type', data: dinosaur.typeOfDinosaur},
         { label: 'Length', data: dinosaur.length },
@@ -150,21 +135,9 @@ function onSearch(data) {
         cardBackText.appendChild(dlElement);
         mobileCardText.appendChild(dlElement);
       });
-      labels.forEach(item => {
-        const dlElement = document.createElement('dl');
-        const dtElement = document.createElement('dt');
-        const ddElement = document.createElement('dd');
-        const spanElement = document.createElement('span');
-        spanElement.textContent = item.label + ':';
-        ddElement.textContent = item.data;
-        dlElement.style.marginLeft = "15px";
-        dtElement.appendChild(spanElement);
-        dlElement.appendChild(dtElement);
-        dlElement.appendChild(ddElement);
-        mobileCardText.appendChild(dlElement);
-      });
-
-      // create desktop card back image
+      
+  
+      // create card back image
       const imgElement = document.createElement('img');
       if (dinosaur.imageSrc == 'N/A') {
         imgElement.src = './assets/no-image.png'
@@ -175,21 +148,15 @@ function onSearch(data) {
       imgElement.height = 200;
       cardBackImageContainer.appendChild(imgElement);
 
-      // create desktop card from components
+      // create card from components
       cardBack.appendChild(cardBackText);
       cardBack.appendChild(cardBackImageContainer)
       cardBody.appendChild(cardFront)
       cardBody.appendChild(cardBack)
       card.appendChild(cardBody)
 
-      // create mobile card from components
-      mobileCardBody.appendChild(mobileCardName)
-      mobileCardBody.appendChild(mobileCardText)
-      mobileCard.appendChild(mobileCardBody)
-
-      // append to result containers
+      // append to result container
       resultContainer.appendChild(card);
-      mobileResultContainer.appendChild(mobileCard);
   });
 
 };
