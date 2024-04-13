@@ -28,6 +28,7 @@ const getSingleDino = async (dinoId) => {
 
 const displayAllDinos = (dinoList) => {
     try {
+
         dinoContainer.innerHTML = ""
         dinoList.forEach((dino) => {
             const dinoElement = document.createElement('div')
@@ -58,31 +59,31 @@ flipCardInner.appendChild(dinoDetails)
                 dinoDetailsLeft.innerHTML = `
                 <ul>
                 <li class="flip-card-back-li">
-                    <p class="flip-card-back-category"> Species: </p>
+                    <p class="flip-card-back-category"> Species </p>
                     <p class="card-info"> ${dino.typeSpecies} </p></li>
                 <li class="flip-card-back-li">
-                    <p class="flip-card-back-category"> Type: </p>
+                    <p class="flip-card-back-category"> Type </p>
                     <p class="card-info"> ${dino.typeOfDinosaur} </p></li>
                 <li class="flip-card-back-li">
-                    <p class="flip-card-back-category"> Found In: </p>
+                    <p class="flip-card-back-category"> Found In </p>
                     <p class="card-info"> ${dino.foundIn} </p></li>
                 <li class="flip-card-back-li">
-                    <p class="flip-card-back-category"> Taxonnomy: </p>
+                    <p class="flip-card-back-category"> Taxonnomy </p>
                     <p class="card-info"> ${dino.taxonomy} </p></li>
                 <li class="flip-card-back-li">
-                    <p class="flip-card-back-category"> Diet: </p>
+                    <p class="flip-card-back-category"> Diet </p>
                     <p class="card-info"> ${dino.diet} </p></li>
                 <li class="flip-card-back-li">
-                    <p class="flip-card-back-category"> Length: </p>
+                    <p class="flip-card-back-category"> Length </p>
                     <p class="card-info"> ${dino.length}m </p></li>
                 <li class="flip-card-back-li">
-                    <p class="flip-card-back-category"> Named By: </p>
+                    <p class="flip-card-back-category"> Named By </p>
                     <p class="card-info"> ${dino.namedBy} </p></li>
                 </ul>
                 `
 
                 /* <p class="dino-description">
-                    <p class="flip-card-back-category"> Description: </p>
+                    <p class="flip-card-back-category"> About: </p>
                     <p> ${dino.description} </p></p> */
 
 dinoDetails.appendChild(dinoDetailsLeft)
@@ -95,6 +96,7 @@ dinoDetails.appendChild(dinoDetailsLeft)
 dinoDetails.appendChild(dinoDetailsRight)
 
     })
+
     } catch {
         console.error('trouble rendering dinosaurs');
     }
