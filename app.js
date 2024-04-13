@@ -109,10 +109,17 @@ function onSearch(data) {
         { label: 'When Lived', data: dinosaur.whenLived },
         { label: 'Species', data: dinosaur.typeSpecies }
       ];
+      // replace 'N/A' with 'No description'
       if (dinosaur.description == 'N/A') {
         labels.push( { label: 'Description', data: 'No description'} )
-      } else {
+      } 
+      // shorten description to 200 characters
+      else {
+        if (dinosaur.description.length > 195) {
+          labels.push( { label: 'Description', data: `${dinosaur.description.slice(0, 195)} ...` } )
+        } else {
         labels.push( { label: 'Description', data: dinosaur.description } )
+        }
       }
       labels.forEach(item => {
         const dlElement = document.createElement('dl');
