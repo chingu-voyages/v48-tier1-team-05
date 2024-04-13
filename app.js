@@ -32,8 +32,21 @@ async function createData() {
     // create initial chart
     createChart()
 
-    // show all dinosaurs by calling onSearch function
-    onSearch(allDinosaurs)
+    // set initial search eventListener according to screen size
+    // and call onSearch for initial screen size
+    if (window.innerWidth < 500) {
+      const searchInput = document.getElementById("mobileDinoSearch");
+      searchInput.addEventListener("input", function() {
+        onSearch(allDinosaurs, 'mobileDinoSearch');
+      });
+      onSearch(allDinosaurs, 'mobileDinoSearch');
+    } else {
+      const searchInput = document.getElementById("dinoSearch");
+      searchInput.addEventListener("input", function() {
+        onSearch(allDinosaurs, 'dinoSearch');
+      });
+      onSearch(allDinosaurs, 'dinoSearch');
+    }
     return data
 
   } catch(err) {
@@ -62,8 +75,8 @@ function handleClick(event) {
 
 /********************************* Dinosaur Profiles *********************************/
 
-function onSearch(data) {
-    const search = document.getElementById("dinoSearch").value.toLowerCase();
+function onSearch(data, searchElement) {
+    const search = document.getElementById(searchElement).value.toLowerCase();
     const resultContainer = document.getElementById("search-result");
     const mobileResultContainer = document.getElementById("mobile-search-result")
     
@@ -83,8 +96,7 @@ function onSearch(data) {
     mobileResultContainer.innerHTML = '';
 
     filtered.forEach((dinosaur) => {
-
-      // create elements needed for desktop cards for desktop cards
+      // create elements needed for desktop cards
       const card = document.createElement('div');
       const cardBody = document.createElement('div');
       const cardFront = document.createElement('div');
@@ -111,7 +123,7 @@ function onSearch(data) {
       mobileCardText.classList.add('child')
       mobileCardText.classList.add('dinosaur-info')
 
-      // create card front
+      // add dinosaur name to front of desktop card
       cardFrontText.textContent = dinosaur.name;
       cardFront.appendChild(cardFrontText);
 
@@ -188,23 +200,25 @@ function onSearch(data) {
       mobileCardBody.appendChild(mobileCardText)
       mobileCard.appendChild(mobileCardBody)
 
-      // create mobile card from components
-      mobileCardBody.appendChild(mobileCardName)
-      mobileCardBody.appendChild(mobileCardText)
-      mobileCard.appendChild(mobileCardBody)
-
       // append to result containerss
       resultContainer.appendChild(card);
       mobileResultContainer.appendChild(mobileCard);
   });
-
 };
-document.addEventListener("DOMContentLoaded", function() {
+// change search eventListener if screen size changes
+window.onresize = function() {
+  if (window.innerWidth < 500) {
+    const searchInput = document.getElementById("mobileDinoSearch");
+    searchInput.addEventListener("input", function() {
+      onSearch(allDinosaurs, 'mobileDinoSearch');
+    });
+  } else {
     const searchInput = document.getElementById("dinoSearch");
     searchInput.addEventListener("input", function() {
-        onSearch(allDinosaurs);
+      onSearch(allDinosaurs, 'dinoSearch');
     });
-});
+  }
+}
 
 /********************************* Dinosaur Maps *********************************/
 
