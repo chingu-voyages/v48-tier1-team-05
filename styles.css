@@ -32,9 +32,9 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #05160F60;
-  border-bottom: 4px solid #0A281A30; 
+  padding-top: 10px;
+  background-color: #05160F90;
+  border-bottom: 4px solid #eaeeec30; 
   width: 100%;
   position:absolute;
   z-index:10;
@@ -49,7 +49,7 @@ section {
 }
 
 .navbar img {
-  width: 100px;
+  width: 170px;
   height: auto;
   color: pink;
   padding-left: 30px;
@@ -110,6 +110,7 @@ font-weight: 400;
   color: black;
   width: 60vw;
   margin-top: -2em;
+  margin-bottom: 2em;
 }
 /****************** Tab Navigation ******************/
 .nav-bar {
@@ -179,21 +180,20 @@ font-weight: 400;
 }
 /****************** Search Form ******************/
 .search-bar {
-  width: 40vw;
-  margin: 50px;
-  padding: 20px;
+  width: 30vw;
+  height: 5vw;
+  margin: 2.5em;
+  padding: 1.25em;
   border: 3px solid black;
-  border-radius: 9px;
+  border-radius: 0.5625em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: -1em;
-
 }
 .search-bar input {
   font-family: inherit;
-  font-size: 30px;
-  font-weight: 300;
+  font-size: 1.25em;
+  font-weight: 200;
   border: none;
   width: 30vw;
 }
