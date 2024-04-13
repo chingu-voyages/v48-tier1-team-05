@@ -133,6 +133,7 @@ function onSearch(data) {
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
         cardBackText.appendChild(dlElement);
+        mobileCardText.appendChild(dlElement);
       });
       
   
