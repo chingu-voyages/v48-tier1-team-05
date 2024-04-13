@@ -65,6 +65,7 @@ function handleClick(event) {
 function onSearch(data) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
     const resultContainer = document.getElementById("search-result");
+    const mobileResultContainer = document.getElementById("mobile-search-result")
     
     const filtered = data.filter((dinosaur) => {
         if (!search) {
@@ -81,7 +82,7 @@ function onSearch(data) {
     resultContainer.innerHTML = '';
 
     filtered.forEach((dinosaur) => {
-      // create elements needed
+      // create elements needed for desktop cards
       const card = document.createElement('div');
       const cardBody = document.createElement('div');
       const cardFront = document.createElement('div');
@@ -96,12 +97,26 @@ function onSearch(data) {
       cardBackText.classList.add('card-back-text');
       cardBackImageContainer.classList.add('card-back-image-container');
 
-      // create card front
+      //create elements needed for mobile cards
+      const mobileCard = document.createElement('div');
+      const mobileCardBody = document.createElement('div');
+      const mobileCardName = document.createElement('div');
+      const mobileCardText = document.createElement('div');
+      mobileCard.classList.add('card-mobile');
+      mobileCardBody.classList.add('parent');
+      mobileCardName.classList.add('child')
+      mobileCardName.classList.add('header')
+      mobileCardText.classList.add('child')
+      mobileCardText.classList.add('dinosaur-info')
+
+      // add dinosaur name to front of desktop card
       cardFrontText.textContent = dinosaur.name;
       cardFront.appendChild(cardFrontText);
 
-      // create card back
-      // create card back text
+      // add dinosaur name to mobile card
+      mobileCardName.textContent = dinosaur.name;
+
+      // create desktop and mobile cards dinosaur info
       const labels = [
         { label: 'Type', data: dinosaur.typeOfDinosaur},
         { label: 'Length', data: dinosaur.length },
@@ -133,10 +148,10 @@ function onSearch(data) {
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
         cardBackText.appendChild(dlElement);
+        mobileCardText.appendChild(dlElement);
       });
       
-  
-      // create card back image
+      // create desktop card back image
       const imgElement = document.createElement('img');
       if (dinosaur.imageSrc == 'N/A') {
         imgElement.src = './assets/no-image.png'
@@ -147,15 +162,21 @@ function onSearch(data) {
       imgElement.height = 200;
       cardBackImageContainer.appendChild(imgElement);
 
-      // create card from components
+      // create desktop card from components
       cardBack.appendChild(cardBackText);
       cardBack.appendChild(cardBackImageContainer)
       cardBody.appendChild(cardFront)
       cardBody.appendChild(cardBack)
       card.appendChild(cardBody)
 
-      // append to result container
+      // create mobile card from components
+      mobileCardBody.appendChild(mobileCardName)
+      mobileCardBody.appendChild(mobileCardText)
+      mobileCard.appendChild(mobileCardBody)
+
+      // append to result containers
       resultContainer.appendChild(card);
+      mobileResultContainer.appendChild(mobileCard);
   });
 
 };
