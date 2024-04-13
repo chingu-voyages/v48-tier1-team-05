@@ -39,19 +39,14 @@ section {
   position:absolute;
   z-index:10;
 }
-
 .nav-logo{
   padding-left: 1em;
   text-decoration: none;
   color: #000;
-  font-size: 45px;
-  
 }
-
 .navbar img {
   width: 170px;
   height: auto;
-  color: pink;
   padding-left: 30px;
 }
 nav ul {
@@ -493,6 +488,7 @@ span {
     padding: 10px;
   }
   .navbar img {
+    width: 100px;
     padding-left: 10px;
   }
   .heading-container {
