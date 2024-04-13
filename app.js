@@ -148,9 +148,21 @@ function onSearch(data) {
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
         cardBackText.appendChild(dlElement);
+      });
+      labels.forEach(item => {
+        const dlElement = document.createElement('dl');
+        const dtElement = document.createElement('dt');
+        const ddElement = document.createElement('dd');
+        const spanElement = document.createElement('span');
+        spanElement.textContent = item.label + ':';
+        ddElement.textContent = item.data;
+        dlElement.style.marginLeft = "15px";
+        dtElement.appendChild(spanElement);
+        dlElement.appendChild(dtElement);
+        dlElement.appendChild(ddElement);
         mobileCardText.appendChild(dlElement);
       });
-      
+
       // create desktop card back image
       const imgElement = document.createElement('img');
       if (dinosaur.imageSrc == 'N/A') {
