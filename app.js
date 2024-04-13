@@ -79,7 +79,6 @@ function onSearch(data, searchElement) {
     const search = document.getElementById(searchElement).value.toLowerCase();
     const resultContainer = document.getElementById("search-result");
     const mobileResultContainer = document.getElementById("mobile-search-result")
-    const mobileResultContainer = document.getElementById("mobile-search-result")
     
     const filtered = data.filter((dinosaur) => {
         if (!search) {
@@ -94,7 +93,6 @@ function onSearch(data, searchElement) {
     });
 
     resultContainer.innerHTML = '';
-    mobileResultContainer.innerHTML = '';
     mobileResultContainer.innerHTML = '';
 
     filtered.forEach((dinosaur) => {
@@ -125,38 +123,10 @@ function onSearch(data, searchElement) {
       mobileCardText.classList.add('child')
       mobileCardText.classList.add('dinosaur-info')
 
-      //create elements needed for mobile cards
-      const mobileCard = document.createElement('div');
-      const mobileCardBody = document.createElement('div');
-      const mobileCardName = document.createElement('div');
-      const mobileCardText = document.createElement('div');
-      mobileCard.classList.add('card-mobile');
-      mobileCardBody.classList.add('parent');
-      mobileCardName.classList.add('child')
-      mobileCardName.classList.add('header')
-      mobileCardText.classList.add('child')
-      mobileCardText.classList.add('dinosaur-info')
-
-      //create elements needed for mobile cards
-      const mobileCard = document.createElement('div');
-      const mobileCardBody = document.createElement('div');
-      const mobileCardName = document.createElement('div');
-      const mobileCardText = document.createElement('div');
-      mobileCard.classList.add('card-mobile');
-      mobileCardBody.classList.add('parent');
-      mobileCardName.classList.add('child')
-      mobileCardName.classList.add('header')
-      mobileCardText.classList.add('child')
-      mobileCardText.classList.add('dinosaur-info')
-
       // add dinosaur name to front of desktop card
       cardFrontText.textContent = dinosaur.name;
       cardFront.appendChild(cardFrontText);
 
-      // add dinosaur name to mobile card
-      mobileCardName.textContent = dinosaur.name;
-
-      // create desktop and mobile cards dinosaur info
       // add dinosaur name to mobile card
       mobileCardName.textContent = dinosaur.name;
 
@@ -192,7 +162,6 @@ function onSearch(data, searchElement) {
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
         cardBackText.appendChild(dlElement);
-        mobileCardText.appendChild(dlElement);
       });
       labels.forEach(item => {
         const dlElement = document.createElement('dl');
@@ -231,14 +200,8 @@ function onSearch(data, searchElement) {
       mobileCardBody.appendChild(mobileCardText)
       mobileCard.appendChild(mobileCardBody)
 
-      // create mobile card from components
-      mobileCardBody.appendChild(mobileCardName)
-      mobileCardBody.appendChild(mobileCardText)
-      mobileCard.appendChild(mobileCardBody)
-
       // append to result containerss
       resultContainer.appendChild(card);
-      mobileResultContainer.appendChild(mobileCard);
       mobileResultContainer.appendChild(mobileCard);
   });
 };
