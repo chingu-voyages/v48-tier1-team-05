@@ -66,6 +66,7 @@ function onSearch(data) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
     const resultContainer = document.getElementById("search-result");
     const mobileResultContainer = document.getElementById("mobile-search-result")
+    const mobileResultContainer = document.getElementById("mobile-search-result")
     
     const filtered = data.filter((dinosaur) => {
         if (!search) {
@@ -82,7 +83,7 @@ function onSearch(data) {
     resultContainer.innerHTML = '';
 
     filtered.forEach((dinosaur) => {
-      // create elements needed for desktop cards
+      // create elements needed for desktop cards for desktop cards
       const card = document.createElement('div');
       const cardBody = document.createElement('div');
       const cardFront = document.createElement('div');
@@ -110,9 +111,26 @@ function onSearch(data) {
       mobileCardText.classList.add('dinosaur-info')
 
       // add dinosaur name to front of desktop card
+      //create elements needed for mobile cards
+      const mobileCard = document.createElement('div');
+      const mobileCardBody = document.createElement('div');
+      const mobileCardName = document.createElement('div');
+      const mobileCardText = document.createElement('div');
+      mobileCard.classList.add('card-mobile');
+      mobileCardBody.classList.add('parent');
+      mobileCardName.classList.add('child')
+      mobileCardName.classList.add('header')
+      mobileCardText.classList.add('child')
+      mobileCardText.classList.add('dinosaur-info')
+
+      // add dinosaur name to front of desktop card
       cardFrontText.textContent = dinosaur.name;
       cardFront.appendChild(cardFrontText);
 
+      // add dinosaur name to mobile card
+      mobileCardName.textContent = dinosaur.name;
+
+      // create desktop and mobile cards dinosaur info
       // add dinosaur name to mobile card
       mobileCardName.textContent = dinosaur.name;
 
@@ -148,6 +166,7 @@ function onSearch(data) {
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
         cardBackText.appendChild(dlElement);
+        mobileCardText.appendChild(dlElement);
       });
       labels.forEach(item => {
         const dlElement = document.createElement('dl');
@@ -174,7 +193,7 @@ function onSearch(data) {
       imgElement.height = 200;
       cardBackImageContainer.appendChild(imgElement);
 
-      // create desktop card from components
+      // create desktop desktop card from components
       cardBack.appendChild(cardBackText);
       cardBack.appendChild(cardBackImageContainer)
       cardBody.appendChild(cardFront)
@@ -186,8 +205,14 @@ function onSearch(data) {
       mobileCardBody.appendChild(mobileCardText)
       mobileCard.appendChild(mobileCardBody)
 
-      // append to result containers
+      // create mobile card from components
+      mobileCardBody.appendChild(mobileCardName)
+      mobileCardBody.appendChild(mobileCardText)
+      mobileCard.appendChild(mobileCardBody)
+
+      // append to result containerss
       resultContainer.appendChild(card);
+      mobileResultContainer.appendChild(mobileCard);
       mobileResultContainer.appendChild(mobileCard);
   });
 
