@@ -66,7 +66,6 @@ function onSearch(data) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
     const resultContainer = document.getElementById("search-result");
     const mobileResultContainer = document.getElementById("mobile-search-result")
-    const mobileResultContainer = document.getElementById("mobile-search-result")
     
     const filtered = data.filter((dinosaur) => {
         if (!search) {
@@ -98,19 +97,6 @@ function onSearch(data) {
       cardBackText.classList.add('card-back-text');
       cardBackImageContainer.classList.add('card-back-image-container');
 
-      //create elements needed for mobile cards
-      const mobileCard = document.createElement('div');
-      const mobileCardBody = document.createElement('div');
-      const mobileCardName = document.createElement('div');
-      const mobileCardText = document.createElement('div');
-      mobileCard.classList.add('card-mobile');
-      mobileCardBody.classList.add('parent');
-      mobileCardName.classList.add('child')
-      mobileCardName.classList.add('header')
-      mobileCardText.classList.add('child')
-      mobileCardText.classList.add('dinosaur-info')
-
-      // add dinosaur name to front of desktop card
       //create elements needed for mobile cards
       const mobileCard = document.createElement('div');
       const mobileCardBody = document.createElement('div');
@@ -166,7 +152,6 @@ function onSearch(data) {
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
         cardBackText.appendChild(dlElement);
-        mobileCardText.appendChild(dlElement);
       });
       labels.forEach(item => {
         const dlElement = document.createElement('dl');
