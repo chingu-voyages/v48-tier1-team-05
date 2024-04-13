@@ -22,7 +22,7 @@ body {
 section {
   margin-bottom: 100px;
 }
-.hidden {
+.mobile {
   display: none;
 }
 
@@ -32,15 +32,24 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #05160F40;
-  border-bottom: 4px solid #0A281A70; 
+  padding-top: 10px;
+  background-color: #05160F90;
+  border-bottom: 4px solid #eaeeec30; 
   width: 100%;
   position:absolute;
   z-index:10;
 }
+
+.nav-logo{
+  padding-left: 1em;
+  text-decoration: none;
+  color: #000;
+  font-size: 45px;
+  
+}
+
 .navbar img {
-  width: 100px;
+  width: 170px;
   height: auto;
   color: pink;
   padding-left: 30px;
@@ -63,6 +72,11 @@ main {
   justify-content: flex-start;
   align-items: center;
 }
+/****************** Background image ******************/
+.background-picture img {
+  width: 100vw;
+  background-size: cover;
+}
 /****************** Title ******************/
 .heading-container {
   margin: 100px auto;
@@ -70,8 +84,8 @@ main {
   border-radius: 0.8125em;
   background-color: #002E19;
   text-align: center;
-  width: 80%;
-  margin-top: -2em;
+  width: 65vw;
+  margin-top: -3em;
 }
 .heading-container-title {
 color: white;
@@ -85,7 +99,7 @@ font-weight: 400;
 }
 /****************** About ******************/
 .main_about {
-  margin: 100px auto;
+  
   padding: 44px 35px;
   border-radius: 13px;
   font-size: 20px;
@@ -94,12 +108,9 @@ font-weight: 400;
   border: 2px solid #CCE2D9;
   text-align: center;
   color: black;
-  width: 60%;
-}
-/****************** Background image ******************/
-.background-picture img {
-  width: 100vw;
-  background-size: cover;
+  width: 60vw;
+  margin-top: -2em;
+  margin-bottom: 2em;
 }
 /****************** Tab Navigation ******************/
 .nav-bar {
@@ -115,9 +126,10 @@ font-weight: 400;
   position: absolute;
   top: 55px;
   background: linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 0%, 1) 33%, hsla(0, 0%, 0%, 1) 66%, hsla(0, 0%, 100%, 1) 100%);;
+  margin-top: -2em;
 }
 .tabs {
-  width: 55vw;
+  width: 50vw;
   height: 110px;
   padding: 0 16px;
   background-color: white;
@@ -128,6 +140,7 @@ font-weight: 400;
   align-items: center;
   gap: 16px;
   z-index: 2;
+  margin-top: -2em;
 }
 .tab {
   flex: 1;
@@ -147,14 +160,15 @@ font-weight: 400;
 }
 
 /********************************* Dinosaur Profiles *********************************/
-.dinosaur-profiles {
+.dinosaur-profiles-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: -2em;
 }
 .dinosaur-profiles-desktop-explanation {
-  margin: 100px auto;
+  margin: 50px auto;
   padding: 44px 35px;
   border-radius: 13px;
   font-size: 20px;
@@ -166,19 +180,20 @@ font-weight: 400;
 }
 /****************** Search Form ******************/
 .search-bar {
-  width: 40vw;
-  margin: 50px;
-  padding: 20px;
+  width: 30vw;
+  height: 5vw;
+  margin: 2.5em;
+  padding: 1.25em;
   border: 3px solid black;
-  border-radius: 9px;
+  border-radius: 0.5625em;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .search-bar input {
   font-family: inherit;
-  font-size: 30px;
-  font-weight: 300;
+  font-size: 1.25em;
+  font-weight: 200;
   border: none;
   width: 30vw;
 }
@@ -190,10 +205,11 @@ font-weight: 400;
 .dinosaur-cards {
   display: flex;
   flex-direction: column;
+  margin-top: 2em;
 }
 .card {
-  width: 550px;
-  height: 300px;
+  width: 700px;
+  height: 320px;
   margin: 10px;
   perspective: 1000px;
 }
@@ -229,7 +245,7 @@ font-weight: 400;
   transform: rotateY(180deg);
 }
 .card-back-text {
-  width: 310px;
+  width: 460px;
   min-height: 300px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -252,12 +268,13 @@ font-weight: 400;
   object-fit: contain;
 }
 dl {
+  margin: 5px 0;
   display: grid;
-  grid-template-columns: max-content 200px;
+  grid-template-columns: max-content 350px;
 }
 dt {
   grid-column-start: 1;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   margin-right: -30px;
 }
 dd {
@@ -273,30 +290,24 @@ span2 {
   padding-bottom: 4px;
 }
 .card:nth-child(4n+1) .card-front,
-.card:nth-child(4n+1) .card-back {
+.card:nth-child(4n+1) .card-back,
+.card-mobile:nth-child(4n+1) .header {
   background: linear-gradient(#2F683B,#09150C);
 }
 .card:nth-child(4n+2) .card-front,
-.card:nth-child(4n+2) .card-back {
+.card:nth-child(4n+2) .card-back,
+.card-mobile:nth-child(4n+2) .header {
   background: linear-gradient(#315394,#0A0F22);
 }
 .card:nth-child(4n+3) .card-front,
-.card:nth-child(4n+3) .card-back {
+.card:nth-child(4n+3) .card-back,
+.card-mobile:nth-child(4n+3) .header {
   background: linear-gradient(#722E2E,#150909);
 }
 .card:nth-child(4n+4) .card-front,
-.card:nth-child(4n+4) .card-back {
+.card:nth-child(4n+4) .card-back,
+.card-mobile:nth-child(4n+4) .header {
   background: linear-gradient(#9A472C,#261009);
-}
-/****************** Mobile Cards ******************/
-span {
-  background-color: #000;
-  color: #fff;
-  border-radius: 4px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
 }
 /****************** End of Results ******************/
 .results-end {
@@ -370,15 +381,207 @@ span {
     background: black;
     color: white;
 }
-/* .footer-list {
-  list-style: none;
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  margin: auto 20px;
+
+/********************************* Hidden *********************************/
+.hidden {
+  display: none;
 }
-.footer-list li {
-  display: inline-block;
+
+/********************************* Mobile *********************************/
+/************* Classes Specific to Mobile *************/
+.mobile-top-of-page-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.attention-container {
+  width: 70vw;
+  margin: 20px auto;
+  padding: 44px 35px;
+  border-radius: 13px;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #000; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, #000000, #222222);
+  text-align: center;
+  color: #fff;
+}
+.card-mobile {
+  width: 83vw;
+  border: 1px solid #000;
+  border-radius: .5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 3px 3px 5px #00000025;
+}
+.header {
+  width: 78vw;
+  background: linear-gradient(#315394,#0A0F22);
+  font-size: 25px;
+  text-align: center;
   color: white;
-} */
+  border-radius: 6px;
+}
+.header-green {
+  background: linear-gradient(#2F683B,#09150C);
+}
+.header-green p {
+  margin: 14px;
+}
+.dinosaur-info {
+  width: 78vw;
+  min-height: 300px;
+  background-color: #fff;
+  border: 0px solid blue;
+  display: table;
+}
+span {
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.mobile-footer {
+  background-color: #05160F;
+  width: 100vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+.mobile-footer-title-menubar {
+  width: 85vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-footer-title {
+  width: auto;
+  text-decoration: none;
+  color: white;
+  font-size: 32px;
+}
+/********** Media Query Changes for Mobile **********/
+@media screen and (max-width: 500px) {
+  .mobile {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  section {
+    display: none;
+  }
+  .top-of-page-section {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
+  .navbar {
+    padding: 10px;
+  }
+  .navbar img {
+    padding-left: 10px;
+  }
+  .heading-container {
+    position: relative;
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0.8125em;
+    background-color: #002E19;
+    text-align: center;
+    width: 80%;
+    margin-top: -1em;
+    z-index: 2;
+  }
+  .heading-container h1 {
+    font-size: 20px;
+  }
+  .heading-container h2 {
+    font-size: 14px;
+  }
+  .main_about {
+    width: 70vw;
+    margin: 20px auto;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 18px;
+  }
+  .dinosaur-profiles-desktop-explanation {
+    width: 70vw;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 18px;
+  }
+  .mobile-dinosaur-profiles {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .search-bar {
+    width: 67vw;
+    margin: 30px auto;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .search-bar input {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 300;
+    border: none;
+    width: 50vw;
+  }
+  .search-bar button {
+    background-color: transparent;
+    border: none;
+  }
+  .search-bar button img {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  dl {
+    display: grid;
+    grid-template-columns: max-content auto;
+  }
+  .source-information {
+    width: 70vw;
+    margin: 20px;
+    padding: 20px;
+    font-size: 18px;
+  }
+  .source-information-text {
+    margin: 0 0 10px;
+  }
+  .footer-container{
+    width: 45vw;
+    text-align: center;
+    font-size: 14px;
+  }
+  .footer-container a{
+    color: white;
+    text-decoration: none;
+  }
+  .footer-menubar{
+    width: auto;
+    text-align: center;
+  }
+  .footer-menubar img{
+    width: 50px;
+    height: 50px;
+  }
+}

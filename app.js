@@ -5,6 +5,9 @@ import { countryCodes, allMaps } from "./map_data.js"
 let allDinosaurs = []
 let dinosaursPerCountry = {}
 let dietData = []
+let numHerbivorous
+let numCarnivorous
+let numOmnivorous
 
 createData()
 
@@ -16,15 +19,18 @@ async function createData() {
 
     // put all dinosaurs in allDinosaurs array
     allDinosaurs = data
-    console.log("all dinosaurs", allDinosaurs)
 
     // find number of dinosaurs per country for Map Tool
     dinosaursPerCountry = countDinosaursPerCountry(allDinosaurs)
-    console.log("map data", dinosaursPerCountry)
 
     // create diet data for Diet Tool
     dietData = createDietData(allDinosaurs)
-    console.log("diet data", dietData)
+    numHerbivorous = dietData[1].cretaceous.herbivorous;
+    numCarnivorous = dietData[1].cretaceous.carnivorous;
+    numOmnivorous = dietData[1].cretaceous.omnivorous;
+
+    // create initial chart
+    createChart()
 
     // show all dinosaurs by calling onSearch function
     onSearch(allDinosaurs)
@@ -59,6 +65,7 @@ function handleClick(event) {
 function onSearch(data) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
     const resultContainer = document.getElementById("search-result");
+    const mobileResultContainer = document.getElementById("mobile-search-result")
     
     const filtered = data.filter((dinosaur) => {
         if (!search) {
@@ -66,7 +73,7 @@ function onSearch(data) {
             return true;
         } else {
             const name = dinosaur.name.toLowerCase();
-            const nameMatch = name.includes(search);
+            const nameMatch = name.startsWith(search);
             dinosaur.doesMatch = nameMatch;
             return nameMatch;
         }
@@ -75,7 +82,7 @@ function onSearch(data) {
     resultContainer.innerHTML = '';
 
     filtered.forEach((dinosaur) => {
-      // create elements needed
+      // create elements needed for desktop cards
       const card = document.createElement('div');
       const cardBody = document.createElement('div');
       const cardFront = document.createElement('div');
@@ -90,20 +97,45 @@ function onSearch(data) {
       cardBackText.classList.add('card-back-text');
       cardBackImageContainer.classList.add('card-back-image-container');
 
-      // create card front
+      //create elements needed for mobile cards
+      const mobileCard = document.createElement('div');
+      const mobileCardBody = document.createElement('div');
+      const mobileCardName = document.createElement('div');
+      const mobileCardText = document.createElement('div');
+      mobileCard.classList.add('card-mobile');
+      mobileCardBody.classList.add('parent');
+      mobileCardName.classList.add('child')
+      mobileCardName.classList.add('header')
+      mobileCardText.classList.add('child')
+      mobileCardText.classList.add('dinosaur-info')
+
+      // add dinosaur name to front of desktop card
       cardFrontText.textContent = dinosaur.name;
       cardFront.appendChild(cardFrontText);
 
-      // create card back
-      // create card back text
+      // add dinosaur name to mobile card
+      mobileCardName.textContent = dinosaur.name;
+
+      // create desktop and mobile cards dinosaur info
       const labels = [
-        { label: 'Type Species', data: dinosaur.typeSpecies },
+        { label: 'Type', data: dinosaur.typeOfDinosaur},
         { label: 'Length', data: dinosaur.length },
         { label: 'Diet', data: dinosaur.diet },
         { label: 'When Lived', data: dinosaur.whenLived },
-        { label: 'Species', data: dinosaur.typeSpecies },
-        { label: 'Description', data: dinosaur.description }
+        { label: 'Species', data: dinosaur.typeSpecies }
       ];
+      // replace 'N/A' with 'No description'
+      if (dinosaur.description == 'N/A') {
+        labels.push( { label: 'Description', data: 'No description'} )
+      } 
+      // shorten description to 200 characters
+      else {
+        if (dinosaur.description.length > 195) {
+          labels.push( { label: 'Description', data: `${dinosaur.description.slice(0, 195)} ...` } )
+        } else {
+        labels.push( { label: 'Description', data: dinosaur.description } )
+        }
+      }
       labels.forEach(item => {
         const dlElement = document.createElement('dl');
         const dtElement = document.createElement('dt');
@@ -111,29 +143,52 @@ function onSearch(data) {
         const spanElement = document.createElement('span');
         spanElement.textContent = item.label + ':';
         ddElement.textContent = item.data;
+        dlElement.style.marginLeft = "15px";
         dtElement.appendChild(spanElement);
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
         cardBackText.appendChild(dlElement);
       });
-      
-  
-      // create card back image
+      labels.forEach(item => {
+        const dlElement = document.createElement('dl');
+        const dtElement = document.createElement('dt');
+        const ddElement = document.createElement('dd');
+        const spanElement = document.createElement('span');
+        spanElement.textContent = item.label + ':';
+        ddElement.textContent = item.data;
+        dlElement.style.marginLeft = "15px";
+        dtElement.appendChild(spanElement);
+        dlElement.appendChild(dtElement);
+        dlElement.appendChild(ddElement);
+        mobileCardText.appendChild(dlElement);
+      });
+
+      // create desktop card back image
       const imgElement = document.createElement('img');
-      imgElement.src = dinosaur.imageSrc;
+      if (dinosaur.imageSrc == 'N/A') {
+        imgElement.src = './assets/no-image.png'
+      } else {
+        imgElement.src = dinosaur.imageSrc;
+      }
       imgElement.width = 200;
       imgElement.height = 200;
       cardBackImageContainer.appendChild(imgElement);
 
-      // create card from components
+      // create desktop card from components
       cardBack.appendChild(cardBackText);
       cardBack.appendChild(cardBackImageContainer)
       cardBody.appendChild(cardFront)
       cardBody.appendChild(cardBack)
       card.appendChild(cardBody)
 
-      // append to result container
+      // create mobile card from components
+      mobileCardBody.appendChild(mobileCardName)
+      mobileCardBody.appendChild(mobileCardText)
+      mobileCard.appendChild(mobileCardBody)
+
+      // append to result containers
       resultContainer.appendChild(card);
+      mobileResultContainer.appendChild(mobileCard);
   });
 
 };
@@ -235,9 +290,6 @@ function countDinosaursPerCountry(dinosaurs) {
 /********************************* Dinosaurs Diets *********************************/
 // global variables needed
 let allEras = document.querySelectorAll('.item-era2');
-let numCarnivorous;
-let numOmnivorous;
-let numHerbivorous;
 let myChart = null;
 
 // click function on era-container
@@ -260,16 +312,14 @@ function eraClick(event){
   createChart()
 };
 
-createChart();
-
 function createChart() {
   const ctx = document.getElementById('myChart');
   
-  // if the "canvas" has already used, it will be destroyed
+  // if the "canvas" has already been used, it will be destroyed
   if(myChart){
     myChart.destroy();
   }
-
+  
   Chart.defaults.font.size = 24
   myChart = new Chart(ctx, {
     type: 'doughnut',
@@ -288,7 +338,6 @@ function createChart() {
     }
   });
 }
-
 
 function createDietData(arrayOfAllDinosaurs) {
   // declare the return array

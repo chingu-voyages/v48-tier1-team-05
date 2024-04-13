@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="diet.css">
     
     <script type="module" src="app.js"></script>
-    <script type="module" src="cards.js"></script>
     <script type="module" src="map_data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -25,7 +24,7 @@
     <div class="top-of-page-section">
         <!-- <div id="loader"></div> -->
         <div class="navbar">
-            <img src="" alt="LOGO">
+            <a href="#top" class="nav-logo"><img src="assets/logo.png"></a>
             <nav>
             <!--
                 <ul>
@@ -41,13 +40,13 @@
                 <img src="assets/dino-home-image.jpg"> 
             </div>
             <div class="heading-container">
-            <div class="heading-container-title">
-                <h1>Digging into Dinosaurs</h1>
-            </div>
-            <div class="heading-container-subtitle">
-                <h2>Dive into the ancient world of dinosaurs, where colossal creatures
-                    roamed the earth millions of years ago!</h2>
-            </div>
+                <div class="heading-container-title">
+                    <h1>Digging into Dinosaurs</h1>
+                </div>
+                <div class="heading-container-subtitle">
+                    <h2>Dive into the ancient world of dinosaurs, where colossal creatures
+                        roamed the earth millions of years ago!</h2>
+                </div>
             </div>
             <div class="main_about">
                 <p>Embark on a journey to the prehistoric era of dinosaurs on our interactive website, 
@@ -71,33 +70,35 @@
   
     <!-- Dinosaur Profiles -->
     <section class="dinosaur-profiles">
-        <div class="dinosaur-profiles-desktop-explanation">
-            <p>Our <b>Dinosaur Profiles</b> tool allows you to learn even more about the dinosaurs that 
-                once roamed the Earth. Below is a list of many of these dinosaurs. You are either 
-                able to scroll through this page or type a dinosaur name directly into the search 
-                bar. To see more information on each dinosaur, hover over that dinosaur’s card. The 
-                card will then “flip”, and on the back will be all you need to know about 
-                that specific creature! </p>
-        </div> 
-        <form class="search-bar" role="search">
-            <input
-                type="search"
-                id="dinoSearch"
-                name="input"
-                placeholder="Type to begin searching ..."
-                aria-label="Search for dinosaurs by name"
-            />
-            <button type="button"><img src="./assets/search_google_icon.png" alt=""></button>
-        </form>
-        <div id="search-result" class="dinosaur-cards"></div>
-        <div class="results-end">
-            <p>End of results!</p>
-            <hr />
-        </div>
-        <div class="source-information">
-            <p class="source-information-text">We acknowledge the <a href="https://www.nhm.ac.uk" target="_blank">Natural History Museum of London</a> 
-                for providing access to the dataset containing valuable information about dinosaurs. More information related to dinosaurs 
-                can be found in the National History Museum's <a href="https://www.nhm.ac.uk/discover/dino-directory.html" target="_blank">"Dino Directory"</a>.</p>
+        <div class="dinosaur-profiles-container">
+            <div class="dinosaur-profiles-desktop-explanation">
+                <p>Our <b>Dinosaur Profiles</b> tool allows you to learn even more about the dinosaurs that 
+                    once roamed the Earth. Below is a list of many of these dinosaurs. You are either 
+                    able to scroll through this page or type a dinosaur name directly into the search 
+                    bar. To see more information on each dinosaur, hover over that dinosaur’s card. The 
+                    card will then “flip”, and on the back will be all you need to know about 
+                    that specific creature! </p>
+            </div> 
+            <form class="search-bar" role="search">
+                <input
+                    type="search"
+                    id="dinoSearch"
+                    name="input"
+                    placeholder="Type to begin searching ..."
+                    aria-label="Search for dinosaurs by name"
+                />
+                <button type="button"><img src="./assets/search_google_icon.png" alt=""></button>
+            </form>
+            <div id="search-result" class="dinosaur-cards"></div>
+            <div class="results-end">
+                <p>End of results!</p>
+                <hr />
+            </div>
+            <div class="source-information">
+                <p class="source-information-text">We acknowledge the <a href="https://www.nhm.ac.uk" target="_blank">Natural History Museum of London</a> 
+                    for providing access to the dataset containing valuable information about dinosaurs. More information related to dinosaurs 
+                    can be found in the National History Museum's <a href="https://www.nhm.ac.uk/discover/dino-directory.html" target="_blank">"Dino Directory"</a>.</p>
+            </div>
         </div>
     </section> <!-- end of dinosaur-profiles -->
 
@@ -205,7 +206,6 @@
                 </div>
             </div>
         </div>
-
     </section> <!-- end dinosaurs-map -->
 
     <!-- Dinosaur Diets -->
@@ -224,17 +224,16 @@
                     </div>
                     <div class="era-container">
                         <div class="item-era1">MESOZOIC</div>
-                        <div class="item-era2">Cretaceous</div>
+                        <div class="item-era2 black-era">Cretaceous</div>
                         <div class="item-era2">Jurrasic</div>
                         <div class="item-era2">Triassic</div>
                     </div>
-                </div> <!-- end lower-container -->
-            </div> <!-- end outer-container -->
-            </div> <!-- end diet.html-body -->
-            
-            <div class="chart-container">
-                <canvas id="myChart"></canvas>
+                </div>
             </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -258,5 +257,88 @@
             <a href="#top"><img src="./assets/to-top-arrow.png" alt=""></a>
         </div>
     </div> <!-- end of footer -->
+
+    <!-- Mobile Section -->
+    <div class="mobile">
+        <div class="mobile-top-of-page-section">
+            <div class="navbar">
+                <img src="" alt="LOGO">
+            </div>
+            <div class="background-picture">
+                <img src="assets/dino-home-image.jpg"> 
+            </div>
+            <div class="heading-container">
+                <div class="heading-container-title">
+                    <h1>Digging into Dinosaurs</h1>
+                </div>
+                <div class="heading-container-subtitle">
+                    <h2>Dive into the ancient world of dinosaurs, where colossal creatures
+                        roamed the earth millions of years ago!</h2>
+                </div>
+            </div>
+            <div class="main_about">
+                <p>Embark on a journey to the prehistoric era of dinosaurs on our interactive website, 
+                    where you can explore detailed <b>Dinosaur Profiles</b> to learn even more about 
+                    these magnificent creatures!
+                </p>
+            </div>
+            <div class="attention-container">
+                <p><b>Attention!</b> If you are on a mobile device, please consider viewing this website 
+                    on a desktop browser. This version you are viewing is mobile optimized, and many 
+                    of the interactive features have either been removed or adapted for a better experience 
+                    on a smaller screen. </p>
+            </div>
+        </div> <!-- end top of page -->
+        <div class="mobile-dinosaur-profiles">
+            <div class="dinosaur-profiles-desktop-explanation">
+                <p>Our <b>Dinosaur Profiles</b> tool allows you to learn even more about the dinosaurs that 
+                    once roamed the Earth. Below is a list of many of these dinosaurs. You are either 
+                    able to scroll through this page or type a dinosaur name directly into the search 
+                    bar.</p>
+            </div>
+            <form class="search-bar" role="search">
+                <input
+                    type="search"
+                    id="dinoSearch"
+                    name="input"
+                    placeholder="Type to begin searching ..."
+                    aria-label="Search for dinosaurs by name"
+                />
+                <button type="button"><img src="./assets/search_google_icon.png" alt=""></button>
+            </form>
+            <div id="mobile-search-result" class="dinosaur-cards"></div>
+            <div class="results-end">
+                <p>End of cards!</p>
+                <hr />
+            </div>
+            <div class="source-information">
+                <p class="source-information-text">We acknowledge the <a href="https://www.nhm.ac.uk" target="_blank">Natural History Museum of London</a> 
+                    for providing access to the dataset containing valuable information about dinosaurs. More information related to dinosaurs 
+                    can be found in the National History Museum's <a href="https://www.nhm.ac.uk/discover/dino-directory.html" target="_blank">"Dino Directory"</a>.</p>
+            </div>
+        </div> <!-- end dinosaur profiles -->
+        <div class="mobile-footer">
+            <div class="mobile-footer-title-menubar">
+                <a class="mobile-footer-title" href="#top">DINODAYS</a>
+                <div class="footer-menubar">
+                    <a href="#top"><img src="./assets/to-top-arrow.png" alt=""></a>
+                </div>
+            </div>
+            <div class="footer-container">
+                <p>Made by 
+                    <a target="_blank" href="https://github.com/daehako">@daehako</a>,
+                    <a target="_blank" href="https://github.com/david-nyc-pm">@david-nyc-pm</a>,
+                    <a target="_blank" href="https://github.com/MatthewNeie">@MatthewNeie</a>,
+                    <a target="_blank" href="https://github.com/kikang20">@kikang20</a>,
+                    <a target="_blank" href="https://github.com/terrifricker">@terrifricker</a>,
+                    <a target="_blank" href="https://github.com/yusuken1121">@yusuken1121</a>.
+                    Facilitated by Chingu.
+                </p>
+                <p>DINODAYS is open source! Find us on 
+                    <a target="_blank" href="https://github.com/chingu-voyages/v48-tier1-team-05">GitHub</a>.
+                </p>
+            </div>
+        </div> <!-- end mobile footer -->
+    </div> <!-- end mobile -->
 </body>
 </html>
