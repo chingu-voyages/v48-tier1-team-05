@@ -65,6 +65,7 @@ function handleClick(event) {
 function onSearch(data) {
     const search = document.getElementById("dinoSearch").value.toLowerCase();
     const resultContainer = document.getElementById("search-result");
+    const mobileResultContainer = document.getElementById("mobile-search-result")
     
     const filtered = data.filter((dinosaur) => {
         if (!search) {
@@ -79,6 +80,7 @@ function onSearch(data) {
     });
 
     resultContainer.innerHTML = '';
+    mobileResultContainer.innerHTML = '';
 
     filtered.forEach((dinosaur) => {
 
@@ -96,6 +98,18 @@ function onSearch(data) {
       cardBack.classList.add('card-back');
       cardBackText.classList.add('card-back-text');
       cardBackImageContainer.classList.add('card-back-image-container');
+
+      //create elements needed for mobile cards
+      const mobileCard = document.createElement('div');
+      const mobileCardBody = document.createElement('div');
+      const mobileCardName = document.createElement('div');
+      const mobileCardText = document.createElement('div');
+      mobileCard.classList.add('card-mobile');
+      mobileCardBody.classList.add('parent');
+      mobileCardName.classList.add('child')
+      mobileCardName.classList.add('header')
+      mobileCardText.classList.add('child')
+      mobileCardText.classList.add('dinosaur-info')
 
       // create card front
       cardFrontText.textContent = dinosaur.name;
@@ -136,10 +150,21 @@ function onSearch(data) {
         dlElement.appendChild(dtElement);
         dlElement.appendChild(ddElement);
         cardBackText.appendChild(dlElement);
+      });
+      labels.forEach(item => {
+        const dlElement = document.createElement('dl');
+        const dtElement = document.createElement('dt');
+        const ddElement = document.createElement('dd');
+        const spanElement = document.createElement('span');
+        spanElement.textContent = item.label + ':';
+        ddElement.textContent = item.data;
+        dlElement.style.marginLeft = "15px";
+        dtElement.appendChild(spanElement);
+        dlElement.appendChild(dtElement);
+        dlElement.appendChild(ddElement);
         mobileCardText.appendChild(dlElement);
       });
       
-  
       // create card back image
       const imgElement = document.createElement('img');
       if (dinosaur.imageSrc == 'N/A') {
