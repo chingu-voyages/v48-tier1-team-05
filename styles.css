@@ -84,13 +84,13 @@ main {
 }
 .heading-container-title {
 color: white;
-font-size: 1.25em;
-font-weight: 400;
+font-size: 2em;
+font-weight: 600;
 }
 .heading-container-subtitle {
 color: white;
-font-size: 0.875em;
-font-weight: 400;
+font-size: 1.4em;
+font-weight: 300;
 }
 /****************** About ******************/
 .main_about {

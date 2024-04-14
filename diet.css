@@ -1,6 +1,6 @@
 .outer-container {
-    width: 741px;
-    height: 477px;
+    width: 46em;
+    height: 30em;
     border: 2px solid #000;
     border-radius: 10px;
 }
