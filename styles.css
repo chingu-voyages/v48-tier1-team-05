@@ -412,6 +412,7 @@ span2 {
   align-items: center;
   padding: 10px;
   box-shadow: 3px 3px 5px #00000025;
+  margin-bottom: 20px;
 }
 .header {
   width: 78vw;
@@ -420,13 +421,10 @@ span2 {
   text-align: center;
   color: white;
   border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 6px;
 }
-.header-green {
-  background: linear-gradient(#2F683B,#09150C);
-}
-.header-green p {
-  margin: 14px;
-}
+
 .dinosaur-info {
   width: 78vw;
   min-height: 300px;
