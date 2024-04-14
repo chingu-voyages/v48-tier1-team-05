@@ -71,8 +71,8 @@ svg {
 }
 .list-container{
     width: 30vw;
-    border:3px solid black;
-    border-radius: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
     overflow: auto;
     min-height: 400px;
     max-height: 600px;
@@ -80,6 +80,8 @@ svg {
 .list-container h2{
     font-weight: normal;
     font-size: 25px;
+    border-radius: 9px 9px 0px 0px;
+
 }
 .list-container ul{
     padding: 10px;
