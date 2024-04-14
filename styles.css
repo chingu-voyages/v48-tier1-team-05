@@ -464,6 +464,9 @@ span {
   color: white;
   font-size: 32px;
 }
+.mobile-footer-title img {
+  width: 120px;
+}
 /********** Media Query Changes for Mobile **********/
 @media screen and (max-width: 500px) {
   .mobile {
