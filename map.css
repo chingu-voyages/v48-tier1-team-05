@@ -11,13 +11,15 @@
     margin: 0 auto;
 }
 .title-container{
-    width: 40vw;
+    width: 46em;
+    height: 21em;
     border: 3px solid black;
     margin-top: 10vh;
     border-radius: 5px;
 }
 .title-container h1{
     font-size: 30px;
+    font-weight: normal;
     margin: 0;
     padding: 5px;
     background-color: #D9D9D9;
