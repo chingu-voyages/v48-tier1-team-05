@@ -11,19 +11,24 @@
     margin: 0 auto;
 }
 .title-container{
-    width: 40vw;
-    border: 3px solid black;
+    width: 46em;
+    height: 21em;
+    border: 2px solid black;
     margin-top: 10vh;
-    border-radius: 5px;
+    border-radius: 10px;
+
 }
 .title-container h1{
     font-size: 30px;
+    font-weight: normal;
     margin: 0;
     padding: 5px;
     background-color: #D9D9D9;
+    border-radius: 9px 9px 0px 0px;
+
 }
 .title-container p{
-    padding: 10px;
+    margin: 30px;
     font-size: 20px;
     text-align: left;
 }
@@ -38,12 +43,11 @@
     background-color: white;
     color: black;
     border: 1px solid black;
-    height: 64px;
-    padding: 5px;
     margin: 5px;
+    padding: 10px 14px 10px 14px;
     font-size: 30px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .continent-button:hover{
     background: black;
@@ -67,8 +71,8 @@ svg {
 }
 .list-container{
     width: 30vw;
-    border:3px solid black;
-    border-radius: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
     overflow: auto;
     min-height: 400px;
     max-height: 600px;
@@ -76,6 +80,8 @@ svg {
 .list-container h2{
     font-weight: normal;
     font-size: 25px;
+    border-radius: 9px 9px 0px 0px;
+
 }
 .list-container ul{
     padding: 10px;
